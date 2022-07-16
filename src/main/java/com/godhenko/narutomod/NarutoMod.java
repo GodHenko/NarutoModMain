@@ -1,7 +1,9 @@
 package com.godhenko.narutomod;
 
+import com.godhenko.narutomod.client.ClientProxy;
 import com.godhenko.narutomod.inits.BlockInit;
 import com.godhenko.narutomod.inits.ItemInit;
+import com.godhenko.narutomod.util.IProxy;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -13,6 +15,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -46,6 +49,8 @@ public class NarutoMod
             return new ItemStack(BlockInit.UCHIHA_CLOTH.get());
         }
     };
+    public static final String MODID = "narutomod";
+    public static final IProxy PROXY = DistExecutor.safeRunForDist(() -> com.github.godhenko.narutomod.util.ClientProxy::new, () -> com.github.clevernucleus.playerex.util.ServerProxy::new);
 
     private static final Logger LOGGER = LogUtils.getLogger();
 
