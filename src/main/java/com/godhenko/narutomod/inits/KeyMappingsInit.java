@@ -16,8 +16,9 @@ import org.lwjgl.glfw.GLFW;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = {Dist.CLIENT})
 public class KeyMappingsInit {
 
+    public static final String CATEGORY = "keys.narutomod.category";
     public static final KeyMapping OPEN_STATS_MENU = new KeyMapping("key.narutomod.open_stats_menu", GLFW.GLFW_KEY_C,
-            "key.categories.ui");
+            "key.narutomod.category");
 
     @SubscribeEvent
     public static void registerKeyBindings(FMLClientSetupEvent event) {

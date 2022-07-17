@@ -14,7 +14,11 @@ public class ModEnUsProvider extends LanguageProvider {
 
 	@Override
 	protected void addTranslations() {
-		
+		//Keybindings Categories//
+		add( "key.narutomod.category","Naruto Revival");
+		//Keybindings//
+		add("key.narutomod.open_stats_menu", "Player Card");
+
 		// Item Groups
 		add("itemGroup.food", "Food Tab");
 		add("itemGroup.blocks", "Blocks Tab");
