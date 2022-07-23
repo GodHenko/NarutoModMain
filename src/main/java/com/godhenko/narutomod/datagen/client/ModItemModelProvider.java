@@ -60,6 +60,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 		
 		// Simple Items
 		oneLayerItem(ItemInit.RAMEN.get());
+		oneLayerItem(ItemInit.BRONZE_RYO.get());
+		oneLayerItem(ItemInit.SILVER_RYO.get());
+		oneLayerItem(ItemInit.GOLD_RYO.get());
 	}
 
 }

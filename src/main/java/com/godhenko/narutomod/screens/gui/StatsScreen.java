@@ -2,8 +2,10 @@
 package com.godhenko.narutomod.screens.gui;
 
 import com.godhenko.narutomod.NarutoMod;
-import com.godhenko.narutomod.network.ModVariables;
+import com.godhenko.narutomod.network.NarutoRevivalModVariables;
 import com.godhenko.narutomod.network.StatsButtonMessage;
+import com.godhenko.narutomod.procedures.guiprocedures.*;
+import com.godhenko.narutomod.procedures.guiprocedures.barprocedures.*;
 import com.godhenko.narutomod.world.inventory.StatsMenu;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
@@ -20,6 +22,8 @@ import java.util.HashMap;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
+
+
 public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 	private final static HashMap<String, Object> guistate = StatsMenu.guistate;
 	private final Level world;
@@ -33,8 +37,8 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 		this.y = container.y;
 		this.z = container.z;
 		this.entity = container.entity;
-		this.imageWidth = 176;
-		this.imageHeight = 166;
+		this.imageWidth = 300;
+		this.imageHeight = 180;
 	}
 
 	private static final ResourceLocation texture = new ResourceLocation(NarutoMod.MOD_ID, "textures/gui/stats.png");
@@ -53,6 +57,50 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 		RenderSystem.defaultBlendFunc();
 		RenderSystem.setShaderTexture(0, texture);
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+
+		RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoMod.MOD_ID, "textures/gui/emptybar.png"));
+		this.blit(ms, this.leftPos + 68, this.topPos + 50, 0, 0, 102, 6, 102, 6);
+
+		if (Bar10showProcedure.execute(world)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoMod.MOD_ID, "textures/gui/1_10bar.png"));
+			this.blit(ms, this.leftPos + 68, this.topPos + 50, 0, 0, 102, 6, 102, 6);
+		}
+		if (Bar20showProcedure.execute(world)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoMod.MOD_ID, "textures/gui/2_10bar.png"));
+			this.blit(ms, this.leftPos + 68, this.topPos + 50, 0, 0, 102, 6, 102, 6);
+		}
+		if (Bar30showProcedure.execute(world)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoMod.MOD_ID, "textures/gui/3_10bar.png"));
+			this.blit(ms, this.leftPos + 68, this.topPos + 50, 0, 0, 102, 6, 102, 6);
+		}
+		if (Bar40showProcedure.execute(world)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoMod.MOD_ID, "textures/gui/4_10bar.png"));
+			this.blit(ms, this.leftPos + 68, this.topPos + 50, 0, 0, 102, 6, 102, 6);
+		}
+		if (Bar50ShowProcedure.execute(world)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoMod.MOD_ID, "textures/gui/5_10bar.png"));
+			this.blit(ms, this.leftPos + 68, this.topPos + 50, 0, 0, 102, 6, 102, 6);
+		}
+		if (Bar60ShowProcedure.execute(world)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoMod.MOD_ID, "textures/gui/6_10bar.png"));
+			this.blit(ms, this.leftPos + 68, this.topPos + 50, 0, 0, 102, 6, 102, 6);
+		}
+		if (Bar70showProcedure.execute(world)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoMod.MOD_ID, "textures/gui/7_10bar.png"));
+			this.blit(ms, this.leftPos + 68, this.topPos + 50, 0, 0, 102, 6, 102, 6);
+		}
+		if (Bar80showProcedure.execute(world)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoMod.MOD_ID, "textures/gui/8_10bar.png"));
+			this.blit(ms, this.leftPos + 68, this.topPos + 50, 0, 0, 102, 6, 102, 6);
+		}
+		if (Bar90showProcedure.execute(world)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoMod.MOD_ID, "textures/gui/9_10bar.png"));
+			this.blit(ms, this.leftPos + 68, this.topPos + 50, 0, 0, 102, 6, 102, 6);
+		}
+		if (FullbarshowProcedure.execute(world)) {
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoMod.MOD_ID, "textures/gui/fullbar.png"));
+			this.blit(ms, this.leftPos + 68, this.topPos + 50, 0, 0, 102, 6, 102, 6);
+		}
 		RenderSystem.disableBlend();
 	}
 
@@ -72,64 +120,26 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "Ninjutsu", 6, 7, -12829636);
-		this.font.draw(poseStack, "" + (int) ((entity.getCapability(ModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new ModVariables.PlayerVariables())).ninjutsu) + "", 80, 7, -12829636);
-
-		this.font.draw(poseStack, "Taijutsu", 6, 17, -12829636);
-		this.font.draw(poseStack, "" + (int) ((entity.getCapability(ModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new ModVariables.PlayerVariables())).taijutsu) + "", 80, 17, -12829636);
-
-		this.font.draw(poseStack, "Genjutsu", 6, 27, -12829636);
-		this.font.draw(poseStack, "" + (int) ((entity.getCapability(ModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new ModVariables.PlayerVariables())).genjutsu) + "", 80, 27, -12829636);
-
-		this.font.draw(poseStack, "Kenjutsu", 6, 37, -12829636);
-		this.font.draw(poseStack, "" + (int) ((entity.getCapability(ModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new ModVariables.PlayerVariables())).kenjutsu) + "", 80, 37, -12829636);
-
-		this.font.draw(poseStack, "Shurikenjutsu", 6, 47, -12829636);
-		this.font.draw(poseStack, "" + (int) ((entity.getCapability(ModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new ModVariables.PlayerVariables())).shurikenjutsu) + "", 80, 47, -12829636);
-
-		this.font.draw(poseStack, "Summoning", 6, 57, -12829636);
-		this.font.draw(poseStack, "" + (int) ((entity.getCapability(ModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new ModVariables.PlayerVariables())).summoning) + "", 80, 57, -12829636);
-
-		this.font.draw(poseStack, "Kinjutsu", 6, 67, -12829636);
-		this.font.draw(poseStack, "" + (int) ((entity.getCapability(ModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new ModVariables.PlayerVariables())).kinjutsu) + "", 80, 67, -12829636);
-
-		this.font.draw(poseStack, "Senjutsu", 6, 77, -12829636);
-		this.font.draw(poseStack, "" + (int) ((entity.getCapability(ModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new ModVariables.PlayerVariables())).senjutsu) + "", 80, 77, -12829636);
-
-		this.font.draw(poseStack, "Medical", 6, 87, -12829636);
-		this.font.draw(poseStack, "" + (int) ((entity.getCapability(ModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new ModVariables.PlayerVariables())).medical) + "", 80, 87, -12829636);
-
-		this.font.draw(poseStack, "Speed", 6, 97, -12829636);
-		this.font.draw(poseStack, "" + (int) ((entity.getCapability(ModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new ModVariables.PlayerVariables())).speed) + "", 80, 97, -12829636);
-
-		this.font.draw(poseStack, "Intelligence", 6, 107, -12829636);
-		this.font.draw(poseStack, "" + (int) ((entity.getCapability(ModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new ModVariables.PlayerVariables())).intelligence) + "", 80, 107, -12829636);
-
-
-
-
-		this.font.draw(poseStack, "Lvl:", 47, 127, -12829636);
-		this.font.draw(poseStack, "XP:", 47, 137, -12829636);
-		this.font.draw(poseStack, "" + (int) ((entity.getCapability(ModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new ModVariables.PlayerVariables())).level) + "", 80, 127, -12829636);
-		this.font.draw(poseStack,
-				"" + (int) ((entity.getCapability(ModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new ModVariables.PlayerVariables())).xp) + " / "
-						+ (int) ((entity.getCapability(ModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new ModVariables.PlayerVariables())).xpMax)
-						+ "",
-				80, 137, -12829636);
+		this.font.draw(poseStack, "" + (int) (NarutoRevivalModVariables.MapVariables.get(world).XP) + "", 68, 32, -12829636);
+		this.font.draw(poseStack, "/", 104, 32, -12829636);
+		this.font.draw(poseStack, "" + (int) (NarutoRevivalModVariables.MapVariables.get(world).maxLvlXp) + "", 113, 32, -12829636);
+		this.font.draw(poseStack, "Lvl: " + (int) (NarutoRevivalModVariables.MapVariables.get(world).Lvl) + "", 68, 14, -12829636);
+		this.font.draw(poseStack, "strength", 64, 82, -12829636);
+		this.font.draw(poseStack, "SKILLS", 68, 64, -12829636);
+		this.font.draw(poseStack, "skill points: " + (int) (NarutoRevivalModVariables.MapVariables.get(world).skillPoints) + "", 127, 64, -12829636);
+		this.font.draw(poseStack, "--------------------------------", 64, 71, -12829636);
+		this.font.draw(poseStack, "" + (int) (NarutoRevivalModVariables.MapVariables.get(world).strength) + "", 64, 95, -12829636);
+		this.font.draw(poseStack, "--------------------------------", 64, 104, -12829636);
+		this.font.draw(poseStack, "agility", 64, 113, -12829636);
+		this.font.draw(poseStack, "" + (int) (NarutoRevivalModVariables.MapVariables.get(world).agility) + "", 64, 127, -12829636);
+		this.font.draw(poseStack, "--------------------------------", 64, 136, -12829636);
+		this.font.draw(poseStack, "--------------------------------", 64, 55, -12829636);
+		this.font.draw(poseStack, "speed", 64, 145, -12829636);
+		this.font.draw(poseStack, "" + (int) (NarutoRevivalModVariables.MapVariables.get(world).speed) + "", 64, 158, -12829636);
+		this.font.draw(poseStack, "+ " + (int) (NarutoRevivalModVariables.MapVariables.get(world).addstrength) + "", 151, 88, -12829636);
+		this.font.draw(poseStack, "+ " + (int) (NarutoRevivalModVariables.MapVariables.get(world).addagility) + "", 151, 122, -12829636);
+		this.font.draw(poseStack, "+ " + (int) (NarutoRevivalModVariables.MapVariables.get(world).addspeed) + "", 151, 154, -12829636);
+		this.font.draw(poseStack, "" + (int) (NarutoRevivalModVariables.MapVariables.get(world).progresspercent) + " %", 173, 47, -12829636);
 	}
 
 	@Override
@@ -142,72 +152,77 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(new Button(this.leftPos + -10, this.topPos + 5, 10, 10, new TextComponent("+"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 116, this.topPos + 83, 30, 20, new TextComponent("-"), e -> {
 			if (true) {
 				NarutoMod.PACKET_HANDLER.sendToServer(new StatsButtonMessage(0, x, y, z));
 				StatsButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + -10, this.topPos + 15, 10, 10, new TextComponent("+"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 199, this.topPos + 83, 30, 20, new TextComponent("+"), e -> {
 			if (true) {
 				NarutoMod.PACKET_HANDLER.sendToServer(new StatsButtonMessage(1, x, y, z));
 				StatsButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
 		}));
-		this.addRenderableWidget(new Button(this.leftPos + -10, this.topPos + 25, 10, 10, new TextComponent("+"), e -> {
-			if (true) {
+		this.addRenderableWidget(new Button(this.leftPos + 254, this.topPos + 83, 35, 20, new TextComponent("OK"), e -> {
+			if (ShowOkstrengthProcedure.execute(world)) {
 				NarutoMod.PACKET_HANDLER.sendToServer(new StatsButtonMessage(2, x, y, z));
 				StatsButtonMessage.handleButtonAction(entity, 2, x, y, z);
 			}
-		}));
-
-		this.addRenderableWidget(new Button(this.leftPos + -10, this.topPos + 35, 10, 10, new TextComponent("+"), e -> {
+		}) {
+			@Override
+			public void render(PoseStack ms, int gx, int gy, float ticks) {
+				if (ShowOkstrengthProcedure.execute(world))
+					super.render(ms, gx, gy, ticks);
+			}
+		});
+		this.addRenderableWidget(new Button(this.leftPos + 116, this.topPos + 116, 30, 20, new TextComponent("-"), e -> {
 			if (true) {
 				NarutoMod.PACKET_HANDLER.sendToServer(new StatsButtonMessage(3, x, y, z));
-				StatsButtonMessage.handleButtonAction(entity, 2, x, y, z);
+				StatsButtonMessage.handleButtonAction(entity, 3, x, y, z);
 			}
 		}));
-
-		this.addRenderableWidget(new Button(this.leftPos + -10, this.topPos + 45, 10, 10, new TextComponent("+"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 199, this.topPos + 116, 30, 20, new TextComponent("+"), e -> {
 			if (true) {
 				NarutoMod.PACKET_HANDLER.sendToServer(new StatsButtonMessage(4, x, y, z));
-				StatsButtonMessage.handleButtonAction(entity, 2, x, y, z);
+				StatsButtonMessage.handleButtonAction(entity, 4, x, y, z);
 			}
 		}));
-
-		this.addRenderableWidget(new Button(this.leftPos + -10, this.topPos + 55, 10, 10, new TextComponent("+"), e -> {
-			if (true) {
+		this.addRenderableWidget(new Button(this.leftPos + 254, this.topPos + 116, 35, 20, new TextComponent("OK"), e -> {
+			if (ShowOkagilityProcedure.execute(world)) {
 				NarutoMod.PACKET_HANDLER.sendToServer(new StatsButtonMessage(5, x, y, z));
-				StatsButtonMessage.handleButtonAction(entity, 2, x, y, z);
+				StatsButtonMessage.handleButtonAction(entity, 5, x, y, z);
 			}
-		}));
-
-		this.addRenderableWidget(new Button(this.leftPos + -10, this.topPos + 65, 10, 10, new TextComponent("+"), e -> {
+		}) {
+			@Override
+			public void render(PoseStack ms, int gx, int gy, float ticks) {
+				if (ShowOkagilityProcedure.execute(world))
+					super.render(ms, gx, gy, ticks);
+			}
+		});
+		this.addRenderableWidget(new Button(this.leftPos + 116, this.topPos + 148, 30, 20, new TextComponent("-"), e -> {
 			if (true) {
 				NarutoMod.PACKET_HANDLER.sendToServer(new StatsButtonMessage(6, x, y, z));
-				StatsButtonMessage.handleButtonAction(entity, 2, x, y, z);
+				StatsButtonMessage.handleButtonAction(entity, 6, x, y, z);
 			}
 		}));
-
-		this.addRenderableWidget(new Button(this.leftPos + -10, this.topPos + 75, 10, 10, new TextComponent("+"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 199, this.topPos + 148, 30, 20, new TextComponent("+"), e -> {
 			if (true) {
 				NarutoMod.PACKET_HANDLER.sendToServer(new StatsButtonMessage(7, x, y, z));
-				StatsButtonMessage.handleButtonAction(entity, 2, x, y, z);
+				StatsButtonMessage.handleButtonAction(entity, 7, x, y, z);
 			}
 		}));
-
-		this.addRenderableWidget(new Button(this.leftPos + -10, this.topPos + 85, 10, 10, new TextComponent("+"), e -> {
-			if (true) {
+		this.addRenderableWidget(new Button(this.leftPos + 254, this.topPos + 148, 35, 20, new TextComponent("OK"), e -> {
+			if (ShowOkspeedProcedure.execute(world)) {
 				NarutoMod.PACKET_HANDLER.sendToServer(new StatsButtonMessage(8, x, y, z));
-				StatsButtonMessage.handleButtonAction(entity, 2, x, y, z);
+				StatsButtonMessage.handleButtonAction(entity, 8, x, y, z);
 			}
-		}));
-
-		this.addRenderableWidget(new Button(this.leftPos + -10, this.topPos + 95, 10, 10, new TextComponent("+"), e -> {
-			if (true) {
-				NarutoMod.PACKET_HANDLER.sendToServer(new StatsButtonMessage(9, x, y, z));
-				StatsButtonMessage.handleButtonAction(entity, 2, x, y, z);
+		}) {
+			@Override
+			public void render(PoseStack ms, int gx, int gy, float ticks) {
+				if (ShowOkspeedProcedure.execute(world))
+					super.render(ms, gx, gy, ticks);
 			}
-		}));
+		});
 	}
 }

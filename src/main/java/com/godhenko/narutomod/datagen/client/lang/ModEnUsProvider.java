@@ -22,6 +22,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		// Item Groups
 		add("itemGroup.food", "Food Tab");
 		add("itemGroup.blocks", "Blocks Tab");
+		add("itemGroup.misc", "Misc Tab");
 		
 		// Items
 		add(ItemInit.RAMEN.get(), "Ramen");

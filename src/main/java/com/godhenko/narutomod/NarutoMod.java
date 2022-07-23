@@ -1,8 +1,11 @@
 package com.godhenko.narutomod;
 
+import com.godhenko.narutomod.entity.ModEntityTypes;
+import com.godhenko.narutomod.entity.renderers.RamenTraderRenderer;
 import com.godhenko.narutomod.inits.BlockInit;
 import com.godhenko.narutomod.inits.ItemInit;
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.MenuType;
@@ -13,6 +16,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.network.NetworkRegistry;
@@ -52,6 +56,14 @@ public class NarutoMod
         }
     };
 
+    public static final CreativeModeTab MISC_TAB = new CreativeModeTab("Misc") {
+        @Override
+        @OnlyIn(Dist.CLIENT)
+        public ItemStack makeIcon() {
+            return new ItemStack(ItemInit.BRONZE_RYO.get());
+        }
+    };
+
 
     private static final Logger LOGGER = LogUtils.getLogger();
 
@@ -61,8 +73,11 @@ public class NarutoMod
 
         ItemInit.ITEMS.register(bus);
         BlockInit.BLOCKS.register(bus);
+        ModEntityTypes.register(bus);
 
         MinecraftForge.EVENT_BUS.register(this);
+    }
+    private void clientSetup(final FMLClientSetupEvent event) {
     }
 
     public static <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder,

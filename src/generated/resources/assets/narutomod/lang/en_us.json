@@ -4,5 +4,7 @@
   "itemGroup.blocks": "Blocks Tab",
   "itemGroup.food": "Food Tab",
   "key.narutomod.category": "Naruto Revival",
-  "key.narutomod.open_stats_menu": "Player Card"
+  "key.narutomod.open_stats_menu": "Player Card",
+  "key.statsgui.open_stats": "Naruto Revival",
+  "key.categories.stats": "Naruto"
 }

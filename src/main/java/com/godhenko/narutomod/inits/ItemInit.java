@@ -19,6 +19,15 @@ public class ItemInit {
             () -> new Item(new Item.Properties().tab(NarutoMod.Food_TAB).food(new FoodProperties.Builder().nutrition(50)
                     .saturationMod(10.0f).build())));
 
+    public static final RegistryObject<Item> BRONZE_RYO = register("bronze_ryo",() -> new Item(new Item.Properties()
+            .tab(NarutoMod.MISC_TAB)));
+
+    public static final RegistryObject<Item> SILVER_RYO = register("silver_ryo",() -> new Item(new Item.Properties()
+            .tab(NarutoMod.MISC_TAB)));
+
+    public static final RegistryObject<Item> GOLD_RYO = register("gold_ryo",() -> new Item(new Item.Properties()
+            .tab(NarutoMod.MISC_TAB)));
+
 
     private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item) {
         return ITEMS.register(name, item);

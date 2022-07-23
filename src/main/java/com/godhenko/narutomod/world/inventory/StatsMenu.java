@@ -1,10 +1,7 @@
 
 package com.godhenko.narutomod.world.inventory;
 
-import com.godhenko.narutomod.NarutoMod;
-
 import com.godhenko.narutomod.inits.MenusInit;
-import com.godhenko.narutomod.network.ModVariables;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.IItemHandler;
 
@@ -19,6 +16,7 @@ import net.minecraft.core.BlockPos;
 import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
+
 
 public class StatsMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
 	public final static HashMap<String, Object> guistate = new HashMap<>();

@@ -34,7 +34,6 @@ public class TutorialDataGeneration {
 		if (event.includeServer()) {
 			
 			ModBlockTagsProvider blockTags = new ModBlockTagsProvider(generator, helper);
-			
 			// Server Data Generation
 			generator.addProvider(blockTags);
 			generator.addProvider(new ModItemTagsProvider(generator, blockTags, helper));
