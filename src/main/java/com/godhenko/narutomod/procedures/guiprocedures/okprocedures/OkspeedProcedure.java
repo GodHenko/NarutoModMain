@@ -1,4 +1,4 @@
-package com.godhenko.narutomod.procedures.guiprocedures;
+package com.godhenko.narutomod.procedures.guiprocedures.okprocedures;
 
 import com.godhenko.narutomod.network.NarutoRevivalModVariables;
 import net.minecraft.world.level.LevelAccessor;

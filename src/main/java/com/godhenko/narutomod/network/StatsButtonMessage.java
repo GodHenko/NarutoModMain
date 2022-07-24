@@ -2,10 +2,15 @@
 package com.godhenko.narutomod.network;
 
 import com.godhenko.narutomod.NarutoMod;
-import com.godhenko.narutomod.procedures.guiprocedures.*;
 import com.godhenko.narutomod.procedures.guiprocedures.lessprocecdures.LessagilityProcedure;
 import com.godhenko.narutomod.procedures.guiprocedures.lessprocecdures.LessspeedProcedure;
 import com.godhenko.narutomod.procedures.guiprocedures.lessprocecdures.LessstrengthProcedure;
+import com.godhenko.narutomod.procedures.guiprocedures.moreprocedures.MoreagilityProcedure;
+import com.godhenko.narutomod.procedures.guiprocedures.moreprocedures.MorespeedProcedure;
+import com.godhenko.narutomod.procedures.guiprocedures.moreprocedures.MorestrengthProcedure;
+import com.godhenko.narutomod.procedures.guiprocedures.okprocedures.OkagilityProcedure;
+import com.godhenko.narutomod.procedures.guiprocedures.okprocedures.OkspeedProcedure;
+import com.godhenko.narutomod.procedures.guiprocedures.okprocedures.OkstrengthProcedure;
 import com.godhenko.narutomod.world.inventory.StatsMenu;
 import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
