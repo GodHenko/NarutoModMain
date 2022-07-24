@@ -26,7 +26,11 @@ public class ModEnUsProvider extends LanguageProvider {
 		
 		// Items
 		add(ItemInit.RAMEN.get(), "Ramen");
-		
+		add(ItemInit.BRONZE_RYO.get(),"Bronze Ryo");
+		add(ItemInit.SILVER_RYO.get(),"Silver Ryo");
+		add(ItemInit.GOLD_RYO.get(),"Gold Ryo");
+
+
 		// Blocks
 		add(BlockInit.UCHIHA_CLOTH.get(), "Example Block");
 

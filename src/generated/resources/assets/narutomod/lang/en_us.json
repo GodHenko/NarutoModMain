@@ -1,10 +1,12 @@
 {
   "block.narutomod.uchiha_cloth": "Example Block",
+  "item.narutomod.bronze_ryo": "Bronze Ryo",
+  "item.narutomod.gold_ryo": "Gold Ryo",
   "item.narutomod.ramen": "Ramen",
+  "item.narutomod.silver_ryo": "Silver Ryo",
   "itemGroup.blocks": "Blocks Tab",
   "itemGroup.food": "Food Tab",
+  "itemGroup.misc": "Misc Tab",
   "key.narutomod.category": "Naruto Revival",
-  "key.narutomod.open_stats_menu": "Player Card",
-  "key.statsgui.open_stats": "Naruto Revival",
-  "key.categories.stats": "Naruto"
+  "key.narutomod.open_stats_menu": "Player Card"
 }

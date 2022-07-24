@@ -1,14 +1,11 @@
 package com.godhenko.narutomod;
 
 import com.godhenko.narutomod.entity.ModEntityTypes;
-import com.godhenko.narutomod.entity.renderers.RamenTraderRenderer;
 import com.godhenko.narutomod.inits.BlockInit;
 import com.godhenko.narutomod.inits.ItemInit;
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
@@ -21,7 +18,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
-import org.apache.logging.log4j.LogManager;
 import org.slf4j.Logger;
 
 import java.util.function.BiConsumer;
@@ -56,7 +52,7 @@ public class NarutoMod
         }
     };
 
-    public static final CreativeModeTab MISC_TAB = new CreativeModeTab("Misc") {
+    public static final CreativeModeTab MISC_TAB = new CreativeModeTab("misc") {
         @Override
         @OnlyIn(Dist.CLIENT)
         public ItemStack makeIcon() {
