@@ -1,0 +1,14 @@
+{
+  "ninja_hurt_sfx": {
+    "subtitle": "sounds.narutorevival.ninja_hurt_sfx",
+    "sounds": [
+      "narutorevival:ninja_hurt_sfx"
+    ]
+  },
+  "ninja_death_sfx": {
+    "subtitle": "sounds.narutorevival.ninja_death_sfx",
+    "sounds": [
+      "narutorevival:ninja_death_sfx"
+    ]
+  }
+}

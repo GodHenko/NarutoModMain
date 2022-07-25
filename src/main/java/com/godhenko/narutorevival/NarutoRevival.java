@@ -1,9 +1,12 @@
 package com.godhenko.narutorevival;
 
 import com.godhenko.narutorevival.entity.ModEntityTypes;
+import com.godhenko.narutorevival.entity.genin.GeninRenderer;
 import com.godhenko.narutorevival.inits.BlockInit;
 import com.godhenko.narutorevival.inits.ItemInit;
+import com.godhenko.narutorevival.sounds.ModSounds;
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
@@ -69,6 +72,7 @@ public class NarutoRevival
         ItemInit.ITEMS.register(bus);
         BlockInit.BLOCKS.register(bus);
         ModEntityTypes.register(bus);
+        ModSounds.register(bus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }

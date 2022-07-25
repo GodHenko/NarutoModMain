@@ -31,6 +31,9 @@ public class ItemInit {
     public static final RegistryObject<Item> RAMEN_TRADER_SPAWN_EGG = register("ramen_trader_spawn_egg",() -> new
             ForgeSpawnEggItem(ModEntityTypes.RAMEN_TRADER,0xff0000, 0x00ff00, new Item.Properties().tab(NarutoRevival.MISC_TAB)));
 
+    public static final RegistryObject<Item> GENIN_SPAWN_EGG = register("genin_spawn_egg",() -> new
+            ForgeSpawnEggItem(ModEntityTypes.GENIN,0xff0000, 0x00ff00, new Item.Properties().tab(NarutoRevival.MISC_TAB)));
+
 
     private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item) {
         return ITEMS.register(name, item);
