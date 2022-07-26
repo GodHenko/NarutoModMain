@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "narutorevival:block/uchiha_cloth"
+  }
+}

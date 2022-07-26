@@ -1,0 +1,16 @@
+{
+  "block.narutorevival.uchiha_cloth": "Example Block",
+  "entity.narutorevival.genin": "Genin",
+  "entity.narutorevival.ramen_trader": "Ramen Trader",
+  "item.narutorevival.bronze_ryo": "Bronze Ryo",
+  "item.narutorevival.genin_spawn_egg": "Genin Spawn Egg",
+  "item.narutorevival.gold_ryo": "Gold Ryo",
+  "item.narutorevival.ramen": "Ramen",
+  "item.narutorevival.ramen_trader_spawn_egg": "Ramen Trader Spawn Egg",
+  "item.narutorevival.silver_ryo": "Silver Ryo",
+  "itemGroup.blocks": "Blocks Tab",
+  "itemGroup.food": "Food Tab",
+  "itemGroup.misc": "Misc Tab",
+  "key.narutorevival.category": "Naruto Revival",
+  "key.narutorevival.open_stats_menu": "Player Card"
+}
