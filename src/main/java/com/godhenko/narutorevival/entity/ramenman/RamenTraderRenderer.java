@@ -9,7 +9,7 @@ import javax.annotation.Nonnull;
 
 public class RamenTraderRenderer extends HumanoidMobRenderer<RamenTraderEntity, RamenTraderModel> {
 
-    private static final ResourceLocation TEXTURE = new ResourceLocation(NarutoRevival.MOD_ID, "textures/entity/genin.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation(NarutoRevival.MOD_ID, "textures/entity/ramen_trader.png");
 
     public RamenTraderRenderer(EntityRendererProvider.Context context) {
         super(context, new RamenTraderModel(context.bakeLayer(RamenTraderModel.RAMEN_TRADER_LAYER)), 1f);
