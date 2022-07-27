@@ -1,6 +1,8 @@
 package com.godhenko.narutorevival.procedures.guiprocedures.addxpprocedures;
 
 import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
+import com.mojang.brigadier.CommandDispatcher;
+import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.world.level.LevelAccessor;
 
 

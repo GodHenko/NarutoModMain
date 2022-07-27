@@ -97,6 +97,7 @@ public class NarutoRevivalModVariables {
 		public double Lvl = 1.0;
 		public double progress = 0;
 		public double skillPoints = 0;
+		public double jutsuPoints = 0;
 		public double ninjutsu = 0;
 		public double taijutsu = 0;
 		public double genjutsu = 0;
@@ -139,6 +140,7 @@ public class NarutoRevivalModVariables {
 			Lvl = nbt.getDouble("Lvl");
 			progress = nbt.getDouble("progress");
 			skillPoints = nbt.getDouble("skillPoints");
+			jutsuPoints = nbt.getDouble("jutsuPoints");
 
 			ninjutsu = nbt.getDouble("ninjutsu");
 			taijutsu = nbt.getDouble("taijutsu");
@@ -179,6 +181,7 @@ public class NarutoRevivalModVariables {
 			nbt.putDouble("Lvl", Lvl);
 			nbt.putDouble("progress", progress);
 			nbt.putDouble("skillPoints", skillPoints);
+			nbt.putDouble("jutsuPoints",jutsuPoints);
 
 			nbt.putDouble("ninjutsu",ninjutsu);
 			nbt.putDouble("taijutsu",taijutsu);

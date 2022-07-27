@@ -19,6 +19,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add( "key.narutorevival.category","Naruto Revival");
 		//Keybindings//
 		add("key.narutorevival.open_stats_menu", "Player Card");
+		add("key.gatherChakra", "Charge Chakra");
 
 		// Item Groups
 		add("itemGroup.food", "Food Tab");
@@ -38,6 +39,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		// Entities
 		add(ModEntityTypes.GENIN.get(),"Genin");
 		add(ModEntityTypes.RAMEN_TRADER.get(),"Ramen Trader");
+		add("entity.minecraft.villager.narutorevival.ramentrader", "Ramen Trader");
 
 
 	}

@@ -1,12 +1,13 @@
 package com.godhenko.narutorevival;
 
 import com.godhenko.narutorevival.entity.ModEntityTypes;
-import com.godhenko.narutorevival.entity.genin.GeninRenderer;
+import com.godhenko.narutorevival.entity.tradeprofressions.ModVillagers;
+import com.godhenko.narutorevival.event.Messages;
 import com.godhenko.narutorevival.inits.BlockInit;
 import com.godhenko.narutorevival.inits.ItemInit;
+import com.godhenko.narutorevival.inits.KeyMappingsInit;
 import com.godhenko.narutorevival.sounds.ModSounds;
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
@@ -17,6 +18,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.network.NetworkRegistry;
@@ -73,10 +75,20 @@ public class NarutoRevival
         BlockInit.BLOCKS.register(bus);
         ModEntityTypes.register(bus);
         ModSounds.register(bus);
+        ModVillagers.register(bus);
+
 
         MinecraftForge.EVENT_BUS.register(this);
     }
     private void clientSetup(final FMLClientSetupEvent event) {
+        KeyMappingsInit.init();
+    }
+
+    private void setup(final FMLCommonSetupEvent event){
+        event.enqueueWork(() -> {
+            ModVillagers.registerPOIs();
+    });
+        Messages.register();
     }
 
     public static <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder,

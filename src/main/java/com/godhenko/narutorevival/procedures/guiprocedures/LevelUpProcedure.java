@@ -44,6 +44,8 @@ public class LevelUpProcedure {
 			NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
 			NarutoRevivalModVariables.MapVariables.get(world).skillPoints = NarutoRevivalModVariables.MapVariables.get(world).skillPoints + 5;
 			NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+			NarutoRevivalModVariables.MapVariables.get(world).jutsuPoints = NarutoRevivalModVariables.MapVariables.get(world).jutsuPoints + 5;
+			NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
 			if (entity instanceof Player _player && !_player.level.isClientSide())
 				_player.displayClientMessage(new TextComponent(
 						("LevelUp! " + "[ lvl " + oldlvl + " ]" + " ---> " + "[ lvl " + NarutoRevivalModVariables.MapVariables.get(world).Lvl + " ]")),
