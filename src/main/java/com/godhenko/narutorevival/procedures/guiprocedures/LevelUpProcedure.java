@@ -37,7 +37,7 @@ public class LevelUpProcedure {
 					- NarutoRevivalModVariables.MapVariables.get(world).maxLvlXp;
 			NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
 			NarutoRevivalModVariables.MapVariables.get(world).maxLvlXp = NarutoRevivalModVariables.MapVariables.get(world).maxLvlXp
-					+ 2 * NarutoRevivalModVariables.MapVariables.get(world).Lvl;
+					+ 0.2f * NarutoRevivalModVariables.MapVariables.get(world).Lvl;
 			NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
 			oldlvl = NarutoRevivalModVariables.MapVariables.get(world).Lvl;
 			NarutoRevivalModVariables.MapVariables.get(world).Lvl = NarutoRevivalModVariables.MapVariables.get(world).Lvl + 1;
