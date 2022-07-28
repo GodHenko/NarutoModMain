@@ -46,9 +46,4 @@ public class ModVillagers {
         POI_TYPES.register(eventBus);
         VILLAGER_PROFESSIONS.register(eventBus);
     }
-
-    public interface ItemListing {
-        @Nullable
-        MerchantOffer getOffer(Entity pTrader, Random pRand);
-    }
 }

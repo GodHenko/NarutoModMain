@@ -121,9 +121,7 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "" + (int) (NarutoRevivalModVariables.MapVariables.get(world).XP) + "", 16, 272, Color.black.getRGB());
-		this.font.draw(poseStack, "/", 40, 272, Color.black.getRGB());
-		this.font.draw(poseStack, "" + (int) (NarutoRevivalModVariables.MapVariables.get(world).maxLvlXp) + "", 50, 272, Color.black.getRGB());
+		this.font.draw(poseStack, (int) (NarutoRevivalModVariables.MapVariables.get(world).XP) + "/" + (int) (NarutoRevivalModVariables.MapVariables.get(world).maxLvlXp) + "", 16, 272, Color.black.getRGB());
 		this.font.draw(poseStack, "Lvl: " + (int) (NarutoRevivalModVariables.MapVariables.get(world).Lvl) + "", 92, 272, Color.black.getRGB());
 		this.font.draw(poseStack, "Ninjutsu", 10, 64, Color.black.getRGB());
 		this.font.draw(poseStack, ":", 90, 64, Color.black.getRGB());
@@ -179,13 +177,14 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 		this.font.draw(poseStack, ":", 90, 164, Color.black.getRGB());
 		this.font.draw(poseStack, "" + (int) (NarutoRevivalModVariables.MapVariables.get(world).intelligence) + "", 92, 164, Color.black.getRGB());
 		this.font.draw(poseStack, "+ " + (int) (NarutoRevivalModVariables.MapVariables.get(world).addintelligence) + "", 116, 164, Color.black.getRGB());
+		this.font.draw(poseStack, (NarutoRevivalModVariables.MapVariables.get(world).chakra) + "/" + (int) (NarutoRevivalModVariables.MapVariables.get(world).maxChakra) + "", 200, 200, Color.black.getRGB());
 
 
 
 
 
-		this.font.draw(poseStack, "Skill points: " + (int) (NarutoRevivalModVariables.MapVariables.get(world).skillPoints) + "", 220, 280, Color.black.getRGB());
-		this.font.draw(poseStack, "Jutsu points: " + (int) (NarutoRevivalModVariables.MapVariables.get(world).jutsuPoints) + "", 220, 272, Color.black.getRGB());
+		this.font.draw(poseStack, "Skill Points: " + (int) (NarutoRevivalModVariables.MapVariables.get(world).skillPoints) + "", 220, 280, Color.black.getRGB());
+		this.font.draw(poseStack, "Jutsu Points: " + (int) (NarutoRevivalModVariables.MapVariables.get(world).jutsuPoints) + "", 220, 272, Color.black.getRGB());
 		this.font.draw(poseStack, "" + (int) (NarutoRevivalModVariables.MapVariables.get(world).progresspercent) + " %", 127, 279, Color.black.getRGB());
 	}
 

@@ -22,6 +22,4 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 				.add(ItemInit.SILVER_RYO.get())
 				.add(ItemInit.GOLD_RYO.get());
 	}
-
-
 }

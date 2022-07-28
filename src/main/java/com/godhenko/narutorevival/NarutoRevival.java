@@ -2,10 +2,10 @@ package com.godhenko.narutorevival;
 
 import com.godhenko.narutorevival.entity.ModEntityTypes;
 import com.godhenko.narutorevival.entity.tradeprofressions.ModVillagers;
-import com.godhenko.narutorevival.event.Messages;
 import com.godhenko.narutorevival.inits.BlockInit;
 import com.godhenko.narutorevival.inits.ItemInit;
 import com.godhenko.narutorevival.inits.KeyMappingsInit;
+import com.godhenko.narutorevival.screens.gui.ChakraOverlay;
 import com.godhenko.narutorevival.sounds.ModSounds;
 import com.mojang.logging.LogUtils;
 import net.minecraft.network.FriendlyByteBuf;
@@ -14,6 +14,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.gui.OverlayRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -28,6 +29,8 @@ import org.slf4j.Logger;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
+
+import static net.minecraftforge.client.gui.ForgeIngameGui.HOTBAR_ELEMENT;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(NarutoRevival.MOD_ID)
@@ -84,12 +87,15 @@ public class NarutoRevival
         KeyMappingsInit.init();
     }
 
+
     private void setup(final FMLCommonSetupEvent event){
         event.enqueueWork(() -> {
             ModVillagers.registerPOIs();
     });
-        Messages.register();
+
     }
+
+
 
     public static <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder,
                                              BiConsumer<T, Supplier<NetworkEvent.Context>> messageConsumer) {

@@ -65,6 +65,10 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(ItemInit.GOLD_RYO.get());
 
 		withExistingParent(ItemInit.GENIN_SPAWN_EGG.get().getRegistryName().getPath(), mcLoc("item/template_spawn_egg"));
+		withExistingParent(ItemInit.CHUNIN_SPAWN_EGG.get().getRegistryName().getPath(), mcLoc("item/template_spawn_egg"));
+		withExistingParent(ItemInit.JONIN_SPAWN_EGG.get().getRegistryName().getPath(), mcLoc("item/template_spawn_egg"));
+
+
 		withExistingParent(ItemInit.RAMEN_TRADER_SPAWN_EGG.get().getRegistryName().getPath(), mcLoc("item/template_spawn_egg"));
 
 

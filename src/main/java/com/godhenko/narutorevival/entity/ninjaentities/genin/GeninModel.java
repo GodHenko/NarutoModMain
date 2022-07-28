@@ -1,4 +1,4 @@
-package com.godhenko.narutorevival.entity.genin;
+package com.godhenko.narutorevival.entity.ninjaentities.genin;
 
 import com.godhenko.narutorevival.NarutoRevival;
 import net.minecraft.client.model.HumanoidModel;

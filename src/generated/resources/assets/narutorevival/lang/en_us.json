@@ -1,16 +1,24 @@
 {
   "block.narutorevival.uchiha_cloth": "Example Block",
+  "entity.minecraft.villager.narutorevival.ramentrader": "Ramen Trader",
+  "entity.narutorevival.chunin": "Chunin",
   "entity.narutorevival.genin": "Genin",
+  "entity.narutorevival.jonin": "Jonin",
   "entity.narutorevival.ramen_trader": "Ramen Trader",
   "item.narutorevival.bronze_ryo": "Bronze Ryo",
+  "item.narutorevival.chunin_spawn_egg": "Chunin Spawn Egg",
   "item.narutorevival.genin_spawn_egg": "Genin Spawn Egg",
   "item.narutorevival.gold_ryo": "Gold Ryo",
+  "item.narutorevival.jonin_spawn_egg": "Jonin Spawn Egg",
   "item.narutorevival.ramen": "Ramen",
   "item.narutorevival.ramen_trader_spawn_egg": "Ramen Trader Spawn Egg",
   "item.narutorevival.silver_ryo": "Silver Ryo",
   "itemGroup.blocks": "Blocks Tab",
   "itemGroup.food": "Food Tab",
   "itemGroup.misc": "Misc Tab",
+  "key.gatherChakra": "Charge Chakra",
   "key.narutorevival.category": "Naruto Revival",
-  "key.narutorevival.open_stats_menu": "Player Card"
+  "key.narutorevival.open_stats_menu": "Player Card",
+  "sounds.narutorevival.ninja_death_sfx": "Genin Died",
+  "sounds.narutorevival.ninja_hurt_sfx": "Genin Grunt"
 }

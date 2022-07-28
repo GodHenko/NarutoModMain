@@ -32,14 +32,23 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.SILVER_RYO.get(),"Silver Ryo");
 		add(ItemInit.GOLD_RYO.get(),"Gold Ryo");
 		add(ItemInit.GENIN_SPAWN_EGG.get(),"Genin Spawn Egg");
+		add(ItemInit.CHUNIN_SPAWN_EGG.get(),"Chunin Spawn Egg");
+		add(ItemInit.JONIN_SPAWN_EGG.get(),"Jonin Spawn Egg");
 		add(ItemInit.RAMEN_TRADER_SPAWN_EGG.get(),"Ramen Trader Spawn Egg");
 
 		// Blocks
 		add(BlockInit.UCHIHA_CLOTH.get(), "Example Block");
 		// Entities
 		add(ModEntityTypes.GENIN.get(),"Genin");
+		add(ModEntityTypes.CHUNIN.get(),"Chunin");
+		add(ModEntityTypes.JONIN.get(),"Jonin");
+
 		add(ModEntityTypes.RAMEN_TRADER.get(),"Ramen Trader");
+		//POIS
 		add("entity.minecraft.villager.narutorevival.ramentrader", "Ramen Trader");
+		//Sounds
+		add("sounds.narutorevival.ninja_hurt_sfx","Genin Grunt");
+		add("sounds.narutorevival.ninja_death_sfx","Genin Died");
 
 
 	}

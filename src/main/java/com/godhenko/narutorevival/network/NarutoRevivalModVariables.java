@@ -93,6 +93,8 @@ public class NarutoRevivalModVariables {
 	public static class MapVariables extends SavedData {
 		public static final String DATA_NAME = "statsgui_mapvars";
 		public double XP = 0;
+		public double chakra = 0;
+		public double maxChakra = 100;
 		public double maxLvlXp = 10.0;
 		public double Lvl = 1.0;
 		public double progress = 0;
@@ -136,6 +138,8 @@ public class NarutoRevivalModVariables {
 
 		public void read(CompoundTag nbt) {
 			XP = nbt.getDouble("XP");
+			chakra = nbt.getDouble("chakra");
+			maxChakra = nbt.getDouble("maxChakra");
 			maxLvlXp = nbt.getDouble("maxLvlXp");
 			Lvl = nbt.getDouble("Lvl");
 			progress = nbt.getDouble("progress");
@@ -177,6 +181,8 @@ public class NarutoRevivalModVariables {
 		@Override
 		public CompoundTag save(CompoundTag nbt) {
 			nbt.putDouble("XP", XP);
+			nbt.putDouble("chakra",chakra);
+			nbt.putDouble("maxChakra",maxChakra);
 			nbt.putDouble("maxLvlXp", maxLvlXp);
 			nbt.putDouble("Lvl", Lvl);
 			nbt.putDouble("progress", progress);
