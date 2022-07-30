@@ -96,6 +96,7 @@ public class NarutoRevivalModVariables {
 		public double chakra = 0;
 		public double maxChakra = 100;
 		public double maxLvlXp = 10.0;
+		public double maxIntelligence = 100;
 		public double Lvl = 1.0;
 		public double progress = 0;
 		public double skillPoints = 0;
@@ -141,6 +142,7 @@ public class NarutoRevivalModVariables {
 			chakra = nbt.getDouble("chakra");
 			maxChakra = nbt.getDouble("maxChakra");
 			maxLvlXp = nbt.getDouble("maxLvlXp");
+			maxIntelligence = nbt.getDouble("maxIntelligence");
 			Lvl = nbt.getDouble("Lvl");
 			progress = nbt.getDouble("progress");
 			skillPoints = nbt.getDouble("skillPoints");
@@ -184,6 +186,7 @@ public class NarutoRevivalModVariables {
 			nbt.putDouble("chakra",chakra);
 			nbt.putDouble("maxChakra",maxChakra);
 			nbt.putDouble("maxLvlXp", maxLvlXp);
+			nbt.putDouble("maxIntelligence",maxIntelligence);
 			nbt.putDouble("Lvl", Lvl);
 			nbt.putDouble("progress", progress);
 			nbt.putDouble("skillPoints", skillPoints);

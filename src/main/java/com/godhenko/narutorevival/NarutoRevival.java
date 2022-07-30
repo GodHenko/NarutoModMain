@@ -17,6 +17,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.gui.OverlayRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -36,6 +37,7 @@ import static net.minecraftforge.client.gui.ForgeIngameGui.HOTBAR_ELEMENT;
 @Mod(NarutoRevival.MOD_ID)
 public class NarutoRevival
 {
+    
     public static final String MOD_ID = "narutorevival";
     private static final String PROTOCOL_VERSION = "1";
     public static final SimpleChannel PACKET_HANDLER = NetworkRegistry.newSimpleChannel(new ResourceLocation(MOD_ID, MOD_ID), () -> PROTOCOL_VERSION,
@@ -84,7 +86,8 @@ public class NarutoRevival
         MinecraftForge.EVENT_BUS.register(this);
     }
     private void clientSetup(final FMLClientSetupEvent event) {
-        KeyMappingsInit.init();
+        KeyMappingsInit.registerKeyBindings(event);
+        
     }
 
 
@@ -94,6 +97,7 @@ public class NarutoRevival
     });
 
     }
+    
 
 
 
