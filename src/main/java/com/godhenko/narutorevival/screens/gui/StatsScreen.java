@@ -26,6 +26,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 
 
 public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
+	public static final ResourceLocation button = new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/addbutton.png");
 	private final static HashMap<String, Object> guistate = StatsMenu.guistate;
 	private final Level world;
 	private final int x, y, z;
@@ -43,6 +44,8 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 	}
 
 	private static final ResourceLocation texture = new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/stats.png");
+
+
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -101,6 +104,18 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 		if (FullbarshowProcedure.execute(world)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/fullbar.png"));
 			this.blit(ms, this.leftPos + 16, this.topPos + 280, 0, 0, 102, 6, 102, 6);
+		}
+		if (NarutoRevivalModVariables.MapVariables.get(world).clan == 1){
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID,"textures/gui/clans/uchiha.png"));
+			this.blit(ms, this.leftPos + 223, this.topPos + 58, 0, 0, 250, 250, 250, 250);
+		}
+		if (NarutoRevivalModVariables.MapVariables.get(world).clan == 2){
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID,"textures/gui/clans/hyuga.png"));
+			this.blit(ms, this.leftPos + 223, this.topPos + 58, 0, 0, 250, 250, 250, 250);
+		}
+		if (NarutoRevivalModVariables.MapVariables.get(world).clan == 3){
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID,"textures/gui/clans/uzumaki.png"));
+			this.blit(ms, this.leftPos + 223, this.topPos + 58, 0, 0, 250, 250, 250, 250);
 		}
 		RenderSystem.disableBlend();
 	}
@@ -179,13 +194,23 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 		this.font.draw(poseStack, "+ " + (int) (NarutoRevivalModVariables.MapVariables.get(world).addintelligence) + "", 116, 164, Color.black.getRGB());
 		this.font.draw(poseStack, (NarutoRevivalModVariables.MapVariables.get(world).chakra) + "/" + (int) (NarutoRevivalModVariables.MapVariables.get(world).maxChakra) + "", 200, 200, Color.black.getRGB());
 
-
+		if (NarutoRevivalModVariables.MapVariables.get(world).clan == 0){
+			this.font.draw(poseStack, "Clan:" , 200, 64, Color.black.getRGB());
+		} else if (NarutoRevivalModVariables.MapVariables.get(world).clan == 1){
+			this.font.draw(poseStack, "Clan:    "  + "Uchiha", 200, 64, Color.black.getRGB());
+		} else if (NarutoRevivalModVariables.MapVariables.get(world).clan == 2){
+			this.font.draw(poseStack, "Clan:    "  + "Hyuga", 200, 64, Color.black.getRGB());
+		} else if(NarutoRevivalModVariables.MapVariables.get(world).clan == 3){
+			this.font.draw(poseStack, "Clan:    "  + "Uzumaki", 200, 64, Color.black.getRGB());
+		}
 
 
 
 		this.font.draw(poseStack, "Skill Points: " + (int) (NarutoRevivalModVariables.MapVariables.get(world).skillPoints) + "", 220, 280, Color.black.getRGB());
 		this.font.draw(poseStack, "Jutsu Points: " + (int) (NarutoRevivalModVariables.MapVariables.get(world).jutsuPoints) + "", 220, 272, Color.black.getRGB());
 		this.font.draw(poseStack, "" + (int) (NarutoRevivalModVariables.MapVariables.get(world).progresspercent) + " %", 127, 279, Color.black.getRGB());
+		this.font.draw(poseStack, "Battlepower:"+ (NarutoRevivalModVariables.MapVariables.get(world).battlepower), 16, 240, Color.black.getRGB());
+
 	}
 
 	@Override

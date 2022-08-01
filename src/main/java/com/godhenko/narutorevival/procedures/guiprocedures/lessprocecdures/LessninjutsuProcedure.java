@@ -12,6 +12,8 @@ public class LessninjutsuProcedure {
 			NarutoRevivalModVariables.MapVariables.get(world).skillPoints = NarutoRevivalModVariables.MapVariables.get(world).skillPoints + 1;
 			NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
 			NarutoRevivalModVariables.MapVariables.get(world).maxChakra = NarutoRevivalModVariables.MapVariables.get(world).maxChakra - 5;
+			NarutoRevivalModVariables.MapVariables.get(world).battlepower = NarutoRevivalModVariables.MapVariables.get(world).battlepower - 5;
+			NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
 
 		}
 	}

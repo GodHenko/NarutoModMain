@@ -69,6 +69,14 @@ public class NarutoRevival
         }
     };
 
+    public static final CreativeModeTab ARMOR_TAB = new CreativeModeTab("armor") {
+        @Override
+        @OnlyIn(Dist.CLIENT)
+        public ItemStack makeIcon() {
+            return new ItemStack(ItemInit.GENIN_HELMET.get());
+        }
+    };
+
 
     private static final Logger LOGGER = LogUtils.getLogger();
 

@@ -24,6 +24,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		// Item Groups
 		add("itemGroup.food", "Food Tab");
 		add("itemGroup.blocks", "Blocks Tab");
+		add("itemGroup.armor", "Armor Tab");
 		add("itemGroup.misc", "Misc Tab");
 		
 		// Items
@@ -35,6 +36,12 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.CHUNIN_SPAWN_EGG.get(),"Chunin Spawn Egg");
 		add(ItemInit.JONIN_SPAWN_EGG.get(),"Jonin Spawn Egg");
 		add(ItemInit.RAMEN_TRADER_SPAWN_EGG.get(),"Ramen Trader Spawn Egg");
+		add(ItemInit.SCROLL.get(),"Scroll");
+		add(ItemInit.CLAN_ROLL.get(),"Clan Roll");
+		add(ItemInit.GENIN_HELMET.get(),"Genin Headband");
+		add(ItemInit.GENIN_CHESTPLATE.get(),"Genin Chestplate");
+		add(ItemInit.GENIN_LEGGINGS.get(),"Genin Leggings");
+		add(ItemInit.GENIN_BOOTS.get(),"Genin Boots");
 
 		// Blocks
 		add(BlockInit.UCHIHA_CLOTH.get(), "Example Block");
@@ -49,6 +56,13 @@ public class ModEnUsProvider extends LanguageProvider {
 		//Sounds
 		add("sounds.narutorevival.ninja_hurt_sfx","Genin Grunt");
 		add("sounds.narutorevival.ninja_death_sfx","Genin Died");
+
+		//Translations
+		add("You are now part of the Uzumaki Clan","You are now part of the Uzumaki Clan");
+		add("You are now part of the Uchiha Clan","You are now part of the Uchiha Clan");
+		add("You are now part of the Hyuga Clan","You are now part of the Hyuga Clan");
+
+
 
 
 	}

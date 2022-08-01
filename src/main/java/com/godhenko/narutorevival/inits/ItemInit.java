@@ -1,9 +1,14 @@
 package com.godhenko.narutorevival.inits;
 
 import com.godhenko.narutorevival.NarutoRevival;
+import com.godhenko.narutorevival.custom.armor.ModArmorMaterials;
+import com.godhenko.narutorevival.custom.customitems.ClanRoll;
+import com.godhenko.narutorevival.custom.customitems.IntelligenceScroll;
 import com.godhenko.narutorevival.entity.ModEntityTypes;
 import com.google.common.base.Supplier;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
@@ -39,6 +44,28 @@ public class ItemInit {
 
     public static final RegistryObject<Item> JONIN_SPAWN_EGG = register("jonin_spawn_egg",() -> new
             ForgeSpawnEggItem(ModEntityTypes.JONIN,0x808080, 0xFFFF00, new Item.Properties().tab(NarutoRevival.MISC_TAB)));
+
+    public static final RegistryObject<Item> SCROLL = register("scroll",() -> new IntelligenceScroll(new Item.Properties()
+            .tab(NarutoRevival.MISC_TAB)));
+
+    public static final RegistryObject<Item> CLAN_ROLL = register("clan_roll",() -> new ClanRoll(new Item.Properties()
+            .tab(NarutoRevival.MISC_TAB)));
+
+    public static final RegistryObject<Item> NINJA_FABRIC = register("ninja_fabric",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.MISC_TAB)));
+
+    public static final RegistryObject<Item> GENIN_HELMET = ITEMS.register("genin_helmet",
+            () -> new ArmorItem(ModArmorMaterials.GENIN, EquipmentSlot.HEAD,
+                    new Item.Properties().tab(NarutoRevival.ARMOR_TAB)));
+    public static final RegistryObject<Item> GENIN_CHESTPLATE = ITEMS.register("genin_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.GENIN, EquipmentSlot.CHEST,
+                    new Item.Properties().tab(NarutoRevival.ARMOR_TAB)));
+    public static final RegistryObject<Item> GENIN_LEGGINGS = ITEMS.register("genin_leggings",
+            () -> new ArmorItem(ModArmorMaterials.GENIN, EquipmentSlot.LEGS,
+                    new Item.Properties().tab(NarutoRevival.ARMOR_TAB)));
+    public static final RegistryObject<Item> GENIN_BOOTS = ITEMS.register("genin_boots",
+            () -> new ArmorItem(ModArmorMaterials.GENIN, EquipmentSlot.FEET,
+                    new Item.Properties().tab(NarutoRevival.ARMOR_TAB)));
 
 
 

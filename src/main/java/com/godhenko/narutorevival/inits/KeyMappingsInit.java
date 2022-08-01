@@ -3,6 +3,7 @@ package com.godhenko.narutorevival.inits;
 
 import com.godhenko.narutorevival.NarutoRevival;
 import com.godhenko.narutorevival.network.OpenStatsMessage;
+import com.godhenko.narutorevival.network.PressedChargeChakraMessage;
 import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
@@ -20,18 +21,13 @@ public class KeyMappingsInit {
 
     public static final KeyMapping OPEN_STATS = new KeyMapping("key.narutorevival.open_stats_menu", GLFW.GLFW_KEY_C, "key.narutorevival.category");
 
-    public static final String KEY_CATEGORIES_NARUTO_REVIVAL = "key.categories.naruto_revival";
-    public static final String KEY_GATHER_CHAKRA = "key.gatherChakra";
+    public static final KeyMapping CHARGE_CHAKRA = new KeyMapping("key.narutorevival.charge_chakra", InputConstants.KEY_N,"key.narutorevival.category");
 
-    public static KeyMapping gatherChakraKeyMapping;
 
-    public static void init() {
-        gatherChakraKeyMapping = new KeyMapping(KEY_GATHER_CHAKRA, KeyConflictContext.IN_GAME, InputConstants.getKey("key.keyboard.period"), KEY_CATEGORIES_NARUTO_REVIVAL);
-        ClientRegistry.registerKeyBinding(gatherChakraKeyMapping);
-    }
     @SubscribeEvent
     public static void registerKeyBindings(FMLClientSetupEvent event) {
         ClientRegistry.registerKeyBinding(OPEN_STATS);
+        ClientRegistry.registerKeyBinding(CHARGE_CHAKRA);
     }
 
     @Mod.EventBusSubscriber({Dist.CLIENT})

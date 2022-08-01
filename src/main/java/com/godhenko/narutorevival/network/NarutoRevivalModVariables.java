@@ -92,6 +92,7 @@ public class NarutoRevivalModVariables {
 
 	public static class MapVariables extends SavedData {
 		public static final String DATA_NAME = "statsgui_mapvars";
+		public double battlepower = 0;
 		public double XP = 0;
 		public double chakra = 0;
 		public double maxChakra = 100;
@@ -131,6 +132,12 @@ public class NarutoRevivalModVariables {
 		public double addspeed = 0;
 		public double progresspercent = 0;
 
+		//Clans
+		public double clan = 0;
+		public double uchiha = 0;
+		public double hyuga = 0;
+		public double uzumaki = 0;
+
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
 			data.read(tag);
@@ -138,6 +145,7 @@ public class NarutoRevivalModVariables {
 		}
 
 		public void read(CompoundTag nbt) {
+			battlepower = nbt.getDouble("battlepower");
 			XP = nbt.getDouble("XP");
 			chakra = nbt.getDouble("chakra");
 			maxChakra = nbt.getDouble("maxChakra");
@@ -178,10 +186,18 @@ public class NarutoRevivalModVariables {
 			addagility = nbt.getDouble("addagility");
 			addspeed = nbt.getDouble("addspeed");
 			progresspercent = nbt.getDouble("progresspercent");
+
+			//clans
+			clan = nbt.getDouble("clan");
+			uchiha = nbt.getDouble("uchiha");
+			hyuga = nbt.getDouble("hyuga");
+			uzumaki = nbt.getDouble("uzumaki");
+
 		}
 
 		@Override
 		public CompoundTag save(CompoundTag nbt) {
+			nbt.putDouble("battlepower",battlepower);
 			nbt.putDouble("XP", XP);
 			nbt.putDouble("chakra",chakra);
 			nbt.putDouble("maxChakra",maxChakra);
@@ -222,6 +238,13 @@ public class NarutoRevivalModVariables {
 			nbt.putDouble("addagility", addagility);
 			nbt.putDouble("addspeed", addspeed);
 			nbt.putDouble("progresspercent", progresspercent);
+
+			//Clans
+			nbt.putDouble("clan",clan);
+			nbt.putDouble("uchiha",uchiha);
+			nbt.putDouble("hyuga",hyuga);
+			nbt.putDouble("uzumaki",uzumaki);
+
 			return nbt;
 		}
 
