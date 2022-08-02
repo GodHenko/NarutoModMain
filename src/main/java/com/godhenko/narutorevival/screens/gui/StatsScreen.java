@@ -26,7 +26,6 @@ import com.mojang.blaze3d.systems.RenderSystem;
 
 
 public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
-	public static final ResourceLocation button = new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/addbutton.png");
 	private final static HashMap<String, Object> guistate = StatsMenu.guistate;
 	private final Level world;
 	private final int x, y, z;
@@ -44,6 +43,7 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 	}
 
 	private static final ResourceLocation texture = new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/stats.png");
+	public static final ResourceLocation addbutton = new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/addbutton.png");
 
 
 
