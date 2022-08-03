@@ -31,9 +31,9 @@ public class OverwiteSpeedProcedure {
 		if (entity == null)
 			return;
 		if (entity instanceof Player) {
-			entity.setDeltaMovement(new Vec3((entity.getDeltaMovement().x() * (0.99 + NarutoRevivalModVariables.MapVariables.get(world).speed / 1000)),
+			entity.setDeltaMovement(new Vec3((entity.getDeltaMovement().x() * (0.99 + NarutoRevivalModVariables.MapVariables.get(world).speed / 300)),
 					(entity.getDeltaMovement().y()),
-					(entity.getDeltaMovement().z() * (0.99 + NarutoRevivalModVariables.MapVariables.get(world).speed / 1000))));
+					(entity.getDeltaMovement().z() * (0.99 + NarutoRevivalModVariables.MapVariables.get(world).speed / 300))));
 		}
 	}
 }
