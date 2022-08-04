@@ -42,6 +42,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.GENIN_CHESTPLATE.get(),"Genin Chestplate");
 		add(ItemInit.GENIN_LEGGINGS.get(),"Genin Leggings");
 		add(ItemInit.GENIN_BOOTS.get(),"Genin Boots");
+		add(ItemInit.XP_10000.get(),"10,000 XP Scroll");
 
 		// Blocks
 		add(BlockInit.UCHIHA_CLOTH.get(), "Example Block");

@@ -4,6 +4,7 @@ import com.godhenko.narutorevival.NarutoRevival;
 import com.godhenko.narutorevival.custom.armor.ModArmorMaterials;
 import com.godhenko.narutorevival.custom.customitems.ClanRoll;
 import com.godhenko.narutorevival.custom.customitems.IntelligenceScroll;
+import com.godhenko.narutorevival.custom.customitems.xp10000;
 import com.godhenko.narutorevival.entity.ModEntityTypes;
 import com.google.common.base.Supplier;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -66,6 +67,9 @@ public class ItemInit {
     public static final RegistryObject<Item> GENIN_BOOTS = ITEMS.register("genin_boots",
             () -> new ArmorItem(ModArmorMaterials.GENIN, EquipmentSlot.FEET,
                     new Item.Properties().tab(NarutoRevival.ARMOR_TAB)));
+
+    public static final RegistryObject<Item> XP_10000 = ITEMS.register("xp_10000",
+            () -> new xp10000(new Item.Properties().tab(NarutoRevival.MISC_TAB)));
 
 
 

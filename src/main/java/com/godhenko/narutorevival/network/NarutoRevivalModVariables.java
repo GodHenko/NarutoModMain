@@ -134,10 +134,16 @@ public class NarutoRevivalModVariables {
 
 		//Clans
 		public double clan = 0;
-		public double uchiha = 0;
-		public double hyuga = 0;
-		public double uzumaki = 0;
-
+		public double uchiha = 1;
+		public double hyuga = 2;
+		public double uzumaki = 3;
+		//Villages
+		public double village = 0;
+		public double konohagakure = 1;
+		public double sunagakure = 2;
+		public double kirigakure = 3;
+		public double kumogakure = 4;
+		public double iwagakure = 5;
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
 			data.read(tag);
@@ -192,6 +198,9 @@ public class NarutoRevivalModVariables {
 			uchiha = nbt.getDouble("uchiha");
 			hyuga = nbt.getDouble("hyuga");
 			uzumaki = nbt.getDouble("uzumaki");
+			//villages
+			village = nbt.getDouble("village");
+			konohagakure = nbt.getDouble("konohagakure");
 
 		}
 

@@ -1,5 +1,5 @@
 47a2ad232d135013fa3b04c3767b2790f09d873f assets/narutorevival/blockstates/uchiha_cloth.json
-5d691447f7c31483dbf2c998eeabc3a3d3e6bb5f assets/narutorevival/lang/en_us.json
+65c71af30650fa69b7510e62390d580abfd0f9db assets/narutorevival/lang/en_us.json
 e8e4920efcd277aa461cecab8f15b84aaca0330e assets/narutorevival/models/block/uchiha_cloth.json
 18536b5da0e66d24ade6b225ee334edc852b6dba assets/narutorevival/models/item/bronze_ryo.json
 98167609bf3898587f7565736a6fc24a7966cacd assets/narutorevival/models/item/chunin_spawn_egg.json
@@ -16,6 +16,7 @@ f7eda85c7946408619e6ed1cb7eef72d5f4d037b assets/narutorevival/models/item/ramen.
 be2e6fc632545795604c4dccd530dc9c8b1b96bd assets/narutorevival/models/item/scroll.json
 e1e41fc9214a3a697d17768aa8628bbc27501d2b assets/narutorevival/models/item/silver_ryo.json
 c34f0e7b937ae3fe725cac81e142cddab9fadf71 assets/narutorevival/models/item/uchiha_cloth.json
+8a520b6851cd3b1028ff3ac41ec6bdba5af84f73 assets/narutorevival/models/item/xp_10000.json
 db3920a82c8efe464738824af5a0c7ecdb59b760 data/minecraft/tags/blocks/mineable/pickaxe.json
 235e3488aaad2c29f06836ca1acab54bb26d4b0a data/narutorevival/loot_tables/blocks/uchiha_cloth.json
 787c58854d321b2bc2496d64a72df5931a4359c1 data/narutorevival/tags/items/ryo.json
