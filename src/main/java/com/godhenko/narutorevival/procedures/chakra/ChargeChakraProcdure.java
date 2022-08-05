@@ -34,10 +34,20 @@ public class ChargeChakraProcdure {
         {
             if (entity instanceof ServerPlayer _ent) {
                 BlockPos _bpos = new BlockPos(x, y, z);
-                if (KeyMappingsInit.CHARGE_CHAKRA.isDown()){
-                    NarutoRevivalModVariables.MapVariables.get(world).chakra = NarutoRevivalModVariables.MapVariables.get(world).chakra ++;
+                if (KeyMappingsInit.CHARGE_CHAKRA.isDown()) {
+                    if (NarutoRevivalModVariables.MapVariables.get(world).chakra > NarutoRevivalModVariables.MapVariables.get(world).maxChakra)
+                        NarutoRevivalModVariables.MapVariables.get(world).chakra = NarutoRevivalModVariables.MapVariables.get(world).maxChakra;
+                    NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+                    NarutoRevivalModVariables.MapVariables.get(world).chakra = NarutoRevivalModVariables.MapVariables.get(world).chakra + 0;
+                    NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+                } else if
+                (NarutoRevivalModVariables.MapVariables.get(world).chakra < 0)
+                    NarutoRevivalModVariables.MapVariables.get(world).chakra = NarutoRevivalModVariables.MapVariables.get(world).chakra;
+                    NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+                    NarutoRevivalModVariables.MapVariables.get(world).chakra = NarutoRevivalModVariables.MapVariables.get(world).chakra + 1;
+                    NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
                 }
             }
         }
     }
-}
+

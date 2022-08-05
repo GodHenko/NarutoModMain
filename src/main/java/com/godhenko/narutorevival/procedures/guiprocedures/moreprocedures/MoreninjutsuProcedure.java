@@ -1,5 +1,6 @@
 package com.godhenko.narutorevival.procedures.guiprocedures.moreprocedures;
 
+import com.godhenko.narutorevival.inits.KeyMappingsInit;
 import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
 import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.world.level.LevelAccessor;

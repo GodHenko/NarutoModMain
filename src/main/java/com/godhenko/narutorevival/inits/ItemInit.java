@@ -7,11 +7,14 @@ import com.godhenko.narutorevival.custom.customitems.IntelligenceScroll;
 import com.godhenko.narutorevival.custom.customitems.xp10000;
 import com.godhenko.narutorevival.entity.ModEntityTypes;
 import com.google.common.base.Supplier;
+import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SwordItem;
 import net.minecraftforge.common.ForgeSpawnEggItem;
+import net.minecraftforge.common.ForgeTier;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -70,6 +73,9 @@ public class ItemInit {
 
     public static final RegistryObject<Item> XP_10000 = ITEMS.register("xp_10000",
             () -> new xp10000(new Item.Properties().tab(NarutoRevival.MISC_TAB)));
+
+    public static final RegistryObject<Item> KATANA = ITEMS.register("katana",
+            () -> new SwordItem(TiersInit.GENIN,2,3f,new Item.Properties().tab(NarutoRevival.MISC_TAB)));
 
 
 

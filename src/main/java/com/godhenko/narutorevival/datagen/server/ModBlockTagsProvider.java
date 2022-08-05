@@ -20,6 +20,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 		tag(BlockTags.MINEABLE_WITH_PICKAXE)
 				.add(BlockInit.UCHIHA_CLOTH.get());
 
+
 	}
 
 }

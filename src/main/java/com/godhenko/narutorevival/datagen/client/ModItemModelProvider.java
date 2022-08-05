@@ -70,6 +70,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(ItemInit.GENIN_LEGGINGS.get());
 		oneLayerItem(ItemInit.GENIN_BOOTS.get());
 		oneLayerItem(ItemInit.XP_10000.get());
+		//layer
+		oneLayerHeldItem(ItemInit.KATANA.get());
 
 
 		withExistingParent(ItemInit.GENIN_SPAWN_EGG.get().getRegistryName().getPath(), mcLoc("item/template_spawn_egg"));

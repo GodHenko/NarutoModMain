@@ -205,6 +205,9 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 		}
 
 
+		//this.font.draw(poseStack, (), 90, 164, Color.black.getRGB());
+
+
 
 		this.font.draw(poseStack, "Skill Points: " + (int) (NarutoRevivalModVariables.MapVariables.get(world).skillPoints) + "", 220, 280, Color.black.getRGB());
 		this.font.draw(poseStack, "Jutsu Points: " + (int) (NarutoRevivalModVariables.MapVariables.get(world).jutsuPoints) + "", 220, 272, Color.black.getRGB());

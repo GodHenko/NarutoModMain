@@ -18,6 +18,7 @@
   "item.narutorevival.genin_spawn_egg": "Genin Spawn Egg",
   "item.narutorevival.gold_ryo": "Gold Ryo",
   "item.narutorevival.jonin_spawn_egg": "Jonin Spawn Egg",
+  "item.narutorevival.katana": "Iron Katana",
   "item.narutorevival.ramen": "Ramen",
   "item.narutorevival.ramen_trader_spawn_egg": "Ramen Trader Spawn Egg",
   "item.narutorevival.scroll": "Scroll",
@@ -31,5 +32,7 @@
   "key.narutorevival.category": "Naruto Revival",
   "key.narutorevival.open_stats_menu": "Player Card",
   "sounds.narutorevival.ninja_death_sfx": "Genin Died",
-  "sounds.narutorevival.ninja_hurt_sfx": "Genin Grunt"
+  "sounds.narutorevival.ninja_hurt_sfx": "Genin Grunt",
+  "key.narutorevival.fast_add": "fast add",
+  "key.narutorevival.charge_chakra": "charge chakra"
 }

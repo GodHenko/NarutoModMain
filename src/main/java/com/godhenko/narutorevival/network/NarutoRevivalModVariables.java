@@ -144,6 +144,19 @@ public class NarutoRevivalModVariables {
 		public double kirigakure = 3;
 		public double kumogakure = 4;
 		public double iwagakure = 5;
+		//Rank
+		public double academy_student = 0;
+		public double genin = 1;
+		public double chunin = 2;
+		public double jonin = 3;
+		//Natures
+		public double fire = 0;
+		public double wind = 0;
+		public double earth = 0;
+		public double lightning = 0;
+		public double water = 0;
+
+
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
 			data.read(tag);
@@ -201,6 +214,23 @@ public class NarutoRevivalModVariables {
 			//villages
 			village = nbt.getDouble("village");
 			konohagakure = nbt.getDouble("konohagakure");
+			sunagakure = nbt.getDouble("sunagakure");
+			kirigakure = nbt.getDouble("kirigakure");
+			kumogakure = nbt.getDouble("kumogakure");
+			iwagakure = nbt.getDouble("iwagakure");
+			//Rank
+			academy_student = nbt.getDouble("academy_student");
+			genin = nbt.getDouble("genin");
+			chunin = nbt.getDouble("chunin");
+			jonin = nbt.getDouble("jonin");
+
+			//Natures
+			fire = nbt.getDouble("fire");
+			wind = nbt.getDouble("wind");
+			earth = nbt.getDouble("earth");
+			lightning = nbt.getDouble("lightning");
+			water = nbt.getDouble("water");
+
 
 		}
 
@@ -253,6 +283,22 @@ public class NarutoRevivalModVariables {
 			nbt.putDouble("uchiha",uchiha);
 			nbt.putDouble("hyuga",hyuga);
 			nbt.putDouble("uzumaki",uzumaki);
+
+			//Village
+			nbt.putDouble("village",village);
+			nbt.putDouble("konohagakure",konohagakure);
+			nbt.putDouble("sunagakure",sunagakure);
+			nbt.putDouble("kirigakure",kirigakure);
+			nbt.putDouble("kumogakure",kumogakure);
+			nbt.putDouble("iwagakure",iwagakure);
+
+			//Rank
+			nbt.putDouble("academy_student",academy_student);
+			nbt.putDouble("genin",genin);
+			nbt.putDouble("chunin",chunin);
+			nbt.putDouble("jonin",jonin);
+
+
 
 			return nbt;
 		}

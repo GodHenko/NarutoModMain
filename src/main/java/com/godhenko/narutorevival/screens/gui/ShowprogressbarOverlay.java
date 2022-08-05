@@ -4,7 +4,6 @@ package com.godhenko.narutorevival.screens.gui;
 import com.godhenko.narutorevival.NarutoRevival;
 import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
 import com.godhenko.narutorevival.procedures.guiprocedures.barprocedures.*;
-import org.checkerframework.checker.units.qual.h;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -20,6 +19,8 @@ import net.minecraft.client.Minecraft;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.platform.GlStateManager;
+
+import java.awt.*;
 
 
 @Mod.EventBusSubscriber({Dist.CLIENT})
@@ -101,6 +102,9 @@ public class ShowprogressbarOverlay {
 						posX + 97, posY + 80, -1);
 				Minecraft.getInstance().font.draw(event.getMatrixStack(), "" + (int) (NarutoRevivalModVariables.MapVariables.get(world).XP) + " / "
 						+ (int) (NarutoRevivalModVariables.MapVariables.get(world).maxLvlXp) + "", posX + 96, posY + 92, -1);
+				Minecraft.getInstance().font.draw(event.getMatrixStack(), (NarutoRevivalModVariables.MapVariables.get(world).chakra) + "/" + (int)
+						(NarutoRevivalModVariables.MapVariables.get(world).maxChakra) + "", 96, 100, Color.black.getRGB());
+
 			}
 			RenderSystem.depthMask(true);
 			RenderSystem.defaultBlendFunc();

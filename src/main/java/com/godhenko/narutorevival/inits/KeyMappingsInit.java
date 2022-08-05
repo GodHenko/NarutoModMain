@@ -42,6 +42,13 @@ public class KeyMappingsInit {
                     }
                 }
             }
+            if (event.getKey() == CHARGE_CHAKRA.getKey().getValue()){
+                if (KeyMappingsInit.CHARGE_CHAKRA.consumeClick()){
+                    NarutoRevival.PACKET_HANDLER.sendToServer(new PressedChargeChakraMessage(0,0));
+                    PressedChargeChakraMessage.pressAction(Minecraft.getInstance().player,0,0);
+                }
+            }
+
         }
     }
 }

@@ -5,6 +5,7 @@ import com.godhenko.narutorevival.entity.ModEntityTypes;
 import com.godhenko.narutorevival.inits.BlockInit;
 import com.godhenko.narutorevival.inits.ItemInit;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.LanguageProvider;
 
 public class ModEnUsProvider extends LanguageProvider {
@@ -43,6 +44,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.GENIN_LEGGINGS.get(),"Genin Leggings");
 		add(ItemInit.GENIN_BOOTS.get(),"Genin Boots");
 		add(ItemInit.XP_10000.get(),"10,000 XP Scroll");
+		add(ItemInit.KATANA.get(),"Iron Katana");
 
 		// Blocks
 		add(BlockInit.UCHIHA_CLOTH.get(), "Example Block");
