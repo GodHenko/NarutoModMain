@@ -105,6 +105,8 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/fullbar.png"));
 			this.blit(ms, this.leftPos + 16, this.topPos + 280, 0, 0, 102, 6, 102, 6);
 		}
+
+		//CLANS
 		if (NarutoRevivalModVariables.MapVariables.get(world).clan == 1){
 			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID,"textures/gui/clans/uchiha.png"));
 			this.blit(ms, this.leftPos + 223, this.topPos + 58, 0, 0, 250, 250, 250, 250);
@@ -117,6 +119,83 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID,"textures/gui/clans/uzumaki.png"));
 			this.blit(ms, this.leftPos + 223, this.topPos + 58, 0, 0, 250, 250, 250, 250);
 		}
+		if (NarutoRevivalModVariables.MapVariables.get(world).clan == 4){
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID,"textures/gui/clans/aburame.png"));
+			this.blit(ms, this.leftPos + 223, this.topPos + 58, 0, 0, 250, 250, 250, 250);
+		}
+		if (NarutoRevivalModVariables.MapVariables.get(world).clan == 5){
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID,"textures/gui/clans/akimichi.png"));
+			this.blit(ms, this.leftPos + 223, this.topPos + 58, 0, 0, 250, 250, 250, 250);
+		}
+		if (NarutoRevivalModVariables.MapVariables.get(world).clan == 6){
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID,"textures/gui/clans/hatake.png"));
+			this.blit(ms, this.leftPos + 223, this.topPos + 58, 0, 0, 250, 250, 250, 250);
+		}
+		if (NarutoRevivalModVariables.MapVariables.get(world).clan == 7){
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID,"textures/gui/clans/hozuki.png"));
+			this.blit(ms, this.leftPos + 223, this.topPos + 58, 0, 0, 250, 250, 250, 250);
+		}
+		if (NarutoRevivalModVariables.MapVariables.get(world).clan == 8){
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID,"textures/gui/clans/iburi.png"));
+			this.blit(ms, this.leftPos + 223, this.topPos + 58, 0, 0, 250, 250, 250, 250);
+		}
+		if (NarutoRevivalModVariables.MapVariables.get(world).clan == 9){
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID,"textures/gui/clans/inuzuka.png"));
+			this.blit(ms, this.leftPos + 223, this.topPos + 58, 0, 0, 250, 250, 250, 250);
+		}
+		if (NarutoRevivalModVariables.MapVariables.get(world).clan == 10){
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID,"textures/gui/clans/jugo.png"));
+			this.blit(ms, this.leftPos + 223, this.topPos + 58, 0, 0, 250, 250, 250, 250);
+		}
+		if (NarutoRevivalModVariables.MapVariables.get(world).clan == 11){
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID,"textures/gui/clans/kaguya.png"));
+			this.blit(ms, this.leftPos + 223, this.topPos + 58, 0, 0, 250, 250, 250, 250);
+		}
+		if (NarutoRevivalModVariables.MapVariables.get(world).clan == 12){
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID,"textures/gui/clans/kurama.png"));
+			this.blit(ms, this.leftPos + 223, this.topPos + 58, 0, 0, 250, 250, 250, 250);
+		}
+		if (NarutoRevivalModVariables.MapVariables.get(world).clan == 13){
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID,"textures/gui/clans/tsuchigumo.png"));
+			this.blit(ms, this.leftPos + 223, this.topPos + 58, 0, 0, 250, 250, 250, 250);
+		}
+		if (NarutoRevivalModVariables.MapVariables.get(world).clan == 14){
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID,"textures/gui/clans/nara.png"));
+			this.blit(ms, this.leftPos + 223, this.topPos + 58, 0, 0, 250, 250, 250, 250);
+		}
+		if (NarutoRevivalModVariables.MapVariables.get(world).clan == 15){
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID,"textures/gui/clans/sarutobi.png"));
+			this.blit(ms, this.leftPos + 223, this.topPos + 58, 0, 0, 250, 250, 250, 250);
+		}
+		if (NarutoRevivalModVariables.MapVariables.get(world).clan == 16){
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID,"textures/gui/clans/fuma.png"));
+			this.blit(ms, this.leftPos + 223, this.topPos + 58, 0, 0, 250, 250, 250, 250);
+		}
+		if (NarutoRevivalModVariables.MapVariables.get(world).clan == 17){
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID,"textures/gui/clans/senju.png"));
+			this.blit(ms, this.leftPos + 223, this.topPos + 58, 0, 0, 250, 250, 250, 250);
+		}
+		if (NarutoRevivalModVariables.MapVariables.get(world).clan == 18){
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID,"textures/gui/clans/yuki.png"));
+			this.blit(ms, this.leftPos + 223, this.topPos + 58, 0, 0, 250, 250, 250, 250);
+		}
+		if (NarutoRevivalModVariables.MapVariables.get(world).clan == 19){
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID,"textures/gui/clans/yamanaka.png"));
+			this.blit(ms, this.leftPos + 223, this.topPos + 58, 0, 0, 250, 250, 250, 250);
+		}
+		if (NarutoRevivalModVariables.MapVariables.get(world).clan == 20){
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID,"textures/gui/clans/lee.png"));
+			this.blit(ms, this.leftPos + 223, this.topPos + 58, 0, 0, 250, 250, 250, 250);
+		}
+		if (NarutoRevivalModVariables.MapVariables.get(world).clan == 21){
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID,"textures/gui/clans/chinoike.png"));
+			this.blit(ms, this.leftPos + 223, this.topPos + 58, 0, 0, 250, 250, 250, 250);
+		}
+		if (NarutoRevivalModVariables.MapVariables.get(world).clan == 22){
+			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID,"textures/gui/clans/shirogane.png"));
+			this.blit(ms, this.leftPos + 223, this.topPos + 58, 0, 0, 250, 250, 250, 250);
+		}
+
 		RenderSystem.disableBlend();
 	}
 
@@ -202,10 +281,48 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 			this.font.draw(poseStack, "Clan:    "  + "Hyuga", 200, 64, Color.black.getRGB());
 		} else if(NarutoRevivalModVariables.MapVariables.get(world).clan == 3){
 			this.font.draw(poseStack, "Clan:    "  + "Uzumaki", 200, 64, Color.black.getRGB());
+		}else if(NarutoRevivalModVariables.MapVariables.get(world).clan == 4){
+			this.font.draw(poseStack, "Clan:    "  + "Aburame", 200, 64, Color.black.getRGB());
+		}else if(NarutoRevivalModVariables.MapVariables.get(world).clan == 5){
+			this.font.draw(poseStack, "Clan:    "  + "Akimichi", 200, 64, Color.black.getRGB());
+		}else if(NarutoRevivalModVariables.MapVariables.get(world).clan == 6){
+			this.font.draw(poseStack, "Clan:    "  + "Hatake", 200, 64, Color.black.getRGB());
+		}else if(NarutoRevivalModVariables.MapVariables.get(world).clan == 7){
+			this.font.draw(poseStack, "Clan:    "  + "Hozuki", 200, 64, Color.black.getRGB());
+		}else if(NarutoRevivalModVariables.MapVariables.get(world).clan == 8){
+			this.font.draw(poseStack, "Clan:    "  + "Iburi", 200, 64, Color.black.getRGB());
+		}else if(NarutoRevivalModVariables.MapVariables.get(world).clan == 9){
+			this.font.draw(poseStack, "Clan:    "  + "Inuzuka", 200, 64, Color.black.getRGB());
+		}else if(NarutoRevivalModVariables.MapVariables.get(world).clan == 10){
+			this.font.draw(poseStack, "Clan:    "  + "Jugo", 200, 64, Color.black.getRGB());
+		}else if(NarutoRevivalModVariables.MapVariables.get(world).clan == 11){
+			this.font.draw(poseStack, "Clan:    "  + "Kaguya", 200, 64, Color.black.getRGB());
+		}else if(NarutoRevivalModVariables.MapVariables.get(world).clan == 12){
+			this.font.draw(poseStack, "Clan:    "  + "Kurama", 200, 64, Color.black.getRGB());
+		}else if(NarutoRevivalModVariables.MapVariables.get(world).clan == 13){
+			this.font.draw(poseStack, "Clan:    "  + "Tsuchigumo", 200, 64, Color.black.getRGB());
+		}else if(NarutoRevivalModVariables.MapVariables.get(world).clan == 14){
+			this.font.draw(poseStack, "Clan:    "  + "Nara", 200, 64, Color.black.getRGB());
+		}else if(NarutoRevivalModVariables.MapVariables.get(world).clan == 15){
+			this.font.draw(poseStack, "Clan:    "  + "Sarutobi", 200, 64, Color.black.getRGB());
+		}else if(NarutoRevivalModVariables.MapVariables.get(world).clan == 16){
+			this.font.draw(poseStack, "Clan:    "  + "Fuma", 200, 64, Color.black.getRGB());
+		}else if(NarutoRevivalModVariables.MapVariables.get(world).clan == 17){
+			this.font.draw(poseStack, "Clan:    "  + "Senju", 200, 64, Color.black.getRGB());
+		}else if(NarutoRevivalModVariables.MapVariables.get(world).clan == 18){
+			this.font.draw(poseStack, "Clan:    "  + "Yuki", 200, 64, Color.black.getRGB());
+		}else if(NarutoRevivalModVariables.MapVariables.get(world).clan == 19){
+			this.font.draw(poseStack, "Clan:    "  + "Yamanaka", 200, 64, Color.black.getRGB());
+		}else if(NarutoRevivalModVariables.MapVariables.get(world).clan == 20){
+			this.font.draw(poseStack, "Clan:    "  + "Lee", 200, 64, Color.black.getRGB());
+		}else if(NarutoRevivalModVariables.MapVariables.get(world).clan == 21){
+			this.font.draw(poseStack, "Clan:    "  + "Chinoike", 200, 64, Color.black.getRGB());
+		} else if(NarutoRevivalModVariables.MapVariables.get(world).clan == 22){
+			this.font.draw(poseStack, "Clan:    "  + "Shirogane", 200, 64, Color.black.getRGB());
 		}
 
 
-		//this.font.draw(poseStack, (), 90, 164, Color.black.getRGB());
+
 
 
 

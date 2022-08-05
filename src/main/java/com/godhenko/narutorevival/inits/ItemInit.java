@@ -37,6 +37,65 @@ public class ItemInit {
     public static final RegistryObject<Item> GOLD_RYO = register("gold_ryo",() -> new Item(new Item.Properties()
             .tab(NarutoRevival.MISC_TAB)));
 
+
+    public static final RegistryObject<Item> UCHIHA = register("uchiha",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.CLAN_TAB)));
+    public static final RegistryObject<Item> HYUGA = register("hyuga",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.CLAN_TAB)));
+    public static final RegistryObject<Item> UZUMAKI = register("uzumaki",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.CLAN_TAB)));
+    public static final RegistryObject<Item> ABURAME = register("aburame",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.CLAN_TAB)));
+    public static final RegistryObject<Item> AKIMICHI = register("akimichi",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.CLAN_TAB)));
+    public static final RegistryObject<Item> HATAKE = register("hatake",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.CLAN_TAB)));
+    public static final RegistryObject<Item> HOZUKI = register("hozuki",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.CLAN_TAB)));
+    public static final RegistryObject<Item> IBURI = register("iburi",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.CLAN_TAB)));
+    public static final RegistryObject<Item> INUZUKA = register("inuzuka",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.CLAN_TAB)));
+    public static final RegistryObject<Item> JUGO = register("jugo",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.CLAN_TAB)));
+    public static final RegistryObject<Item> KAGUYA = register("kaguya",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.CLAN_TAB)));
+    public static final RegistryObject<Item> KURAMA = register("kurama",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.CLAN_TAB)));
+    public static final RegistryObject<Item> TSUCHIGUMO = register("tsuchigumo",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.CLAN_TAB)));
+    public static final RegistryObject<Item> NARA = register("nara",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.CLAN_TAB)));
+    public static final RegistryObject<Item> SARUTOBI = register("sarutobi",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.CLAN_TAB)));
+    public static final RegistryObject<Item> FUMA = register("fuma",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.CLAN_TAB)));
+    public static final RegistryObject<Item> SENJU = register("senju",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.CLAN_TAB)));
+    public static final RegistryObject<Item> YUKI = register("yuki",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.CLAN_TAB)));
+    public static final RegistryObject<Item> YAMANAKA = register("yamanaka",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.CLAN_TAB)));
+    public static final RegistryObject<Item> LEE = register("lee",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.CLAN_TAB)));
+    public static final RegistryObject<Item> CHINIOKE = register("chinoike",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.CLAN_TAB)));
+    public static final RegistryObject<Item> SHIROGANE = register("shirogane",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.CLAN_TAB)));
+    //Natures
+    public static final RegistryObject<Item> FIRE_NATURE = register("fire_nature",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.NATURES_TAB)));
+    public static final RegistryObject<Item> WATER_NATURE = register("water_nature",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.NATURES_TAB)));
+    public static final RegistryObject<Item> WIND_NATURE = register("wind_nature",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.NATURES_TAB)));
+    public static final RegistryObject<Item> EARTH_NATURE = register("earth_nature",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.NATURES_TAB)));
+    public static final RegistryObject<Item> LIGHTNING_NATURE = register("lightning_nature",() -> new Item(new Item.Properties()
+            .tab(NarutoRevival.NATURES_TAB)));
+
+
+
     public static final RegistryObject<Item> RAMEN_TRADER_SPAWN_EGG = register("ramen_trader_spawn_egg",() -> new
             ForgeSpawnEggItem(ModEntityTypes.RAMEN_TRADER,0xff0000, 0x00ff00, new Item.Properties().tab(NarutoRevival.MISC_TAB)));
 

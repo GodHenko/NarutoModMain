@@ -56,14 +56,6 @@ public class NarutoRevival
         }
     };
 
-    public static final CreativeModeTab MISC_TAB = new CreativeModeTab("misc") {
-        @Override
-        @OnlyIn(Dist.CLIENT)
-        public ItemStack makeIcon() {
-            return new ItemStack(ItemInit.BRONZE_RYO.get());
-        }
-    };
-
     public static final CreativeModeTab ARMOR_TAB = new CreativeModeTab("armor") {
         @Override
         @OnlyIn(Dist.CLIENT)
@@ -72,6 +64,28 @@ public class NarutoRevival
         }
     };
 
+    public static final CreativeModeTab CLAN_TAB = new CreativeModeTab("clans") {
+        @Override
+        @OnlyIn(Dist.CLIENT)
+        public ItemStack makeIcon() {
+            return new ItemStack(ItemInit.UCHIHA.get());
+        }
+    };
+
+    public static final CreativeModeTab NATURES_TAB = new CreativeModeTab("natures") {
+        @Override
+        @OnlyIn(Dist.CLIENT)
+        public ItemStack makeIcon() {
+            return new ItemStack(ItemInit.FIRE_NATURE.get());
+        }
+    };
+    public static final CreativeModeTab MISC_TAB = new CreativeModeTab("misc") {
+        @Override
+        @OnlyIn(Dist.CLIENT)
+        public ItemStack makeIcon() {
+            return new ItemStack(ItemInit.BRONZE_RYO.get());
+        }
+    };
 
     private static final Logger LOGGER = LogUtils.getLogger();
 

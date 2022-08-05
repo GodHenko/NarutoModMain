@@ -57,7 +57,29 @@ public class ModItemModelProvider extends ItemModelProvider {
 		
 		// Block Items
 		simpleBlockItem(BlockInit.UCHIHA_CLOTH.get().asItem());
-		
+
+		oneLayerItem(ItemInit.UCHIHA.get());
+		oneLayerItem(ItemInit.HYUGA.get());
+		oneLayerItem(ItemInit.UZUMAKI.get());
+		oneLayerItem(ItemInit.ABURAME.get());
+		oneLayerItem(ItemInit.AKIMICHI.get());
+		oneLayerItem(ItemInit.HATAKE.get());
+		oneLayerItem(ItemInit.HOZUKI.get());
+		oneLayerItem(ItemInit.IBURI.get());
+		oneLayerItem(ItemInit.INUZUKA.get());
+		oneLayerItem(ItemInit.JUGO.get());
+		oneLayerItem(ItemInit.KAGUYA.get());
+		oneLayerItem(ItemInit.KURAMA.get());
+		oneLayerItem(ItemInit.TSUCHIGUMO.get());
+		oneLayerItem(ItemInit.NARA.get());
+		oneLayerItem(ItemInit.SARUTOBI.get());
+		oneLayerItem(ItemInit.FUMA.get());
+		oneLayerItem(ItemInit.SENJU.get());
+		oneLayerItem(ItemInit.YUKI.get());
+		oneLayerItem(ItemInit.YAMANAKA.get());
+		oneLayerItem(ItemInit.LEE.get());
+		oneLayerItem(ItemInit.CHINIOKE.get());
+		oneLayerItem(ItemInit.SHIROGANE.get());
 		// Simple Items
 		oneLayerItem(ItemInit.RAMEN.get());
 		oneLayerItem(ItemInit.BRONZE_RYO.get());
@@ -70,8 +92,12 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(ItemInit.GENIN_LEGGINGS.get());
 		oneLayerItem(ItemInit.GENIN_BOOTS.get());
 		oneLayerItem(ItemInit.XP_10000.get());
+
+
 		//layer
 		oneLayerHeldItem(ItemInit.KATANA.get());
+
+
 
 
 		withExistingParent(ItemInit.GENIN_SPAWN_EGG.get().getRegistryName().getPath(), mcLoc("item/template_spawn_egg"));

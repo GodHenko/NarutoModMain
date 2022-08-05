@@ -46,6 +46,33 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.XP_10000.get(),"10,000 XP Scroll");
 		add(ItemInit.KATANA.get(),"Iron Katana");
 
+		//Clans
+		add(ItemInit.UCHIHA.get(),"Uchiha Clan Learner");
+		add(ItemInit.HYUGA.get(),"Hyuga Clan Learner");
+		add(ItemInit.UZUMAKI.get(),"Uzumaki Clan Learner");
+		add(ItemInit.ABURAME.get(),"Aburame Clan Learner");
+		add(ItemInit.AKIMICHI.get(),"Akimichi Clan Learner");
+		add(ItemInit.HATAKE.get(),"Hatake Clan Learner");
+		add(ItemInit.HOZUKI.get(),"Hozuki Clan Learner");
+		add(ItemInit.IBURI.get(),"Iburi Clan Learner");
+		add(ItemInit.INUZUKA.get(),"Inuzuka Clan Learner");
+		add(ItemInit.JUGO.get(),"Jugo Clan Learner");
+		add(ItemInit.KAGUYA.get(),"Kaguya Clan Learner");
+		add(ItemInit.KURAMA.get(),"Kurama Clan Learner");
+		add(ItemInit.TSUCHIGUMO.get(),"Tsuchigumo Clan Learner");
+		add(ItemInit.NARA.get(),"Nara Clan Learner");
+		add(ItemInit.SARUTOBI.get(),"Sarutobi Clan Learner");
+		add(ItemInit.FUMA.get(),"Fuma Clan Learner");
+		add(ItemInit.SENJU.get(),"Senju Clan Learner");
+		add(ItemInit.YUKI.get(),"Yuki Clan Learner");
+		add(ItemInit.YAMANAKA.get(),"Yamanaka Clan Learner");
+		add(ItemInit.LEE.get(),"Lee Clan Learner");
+		add(ItemInit.CHINIOKE.get(),"Chinoike Clan Learner");
+		add(ItemInit.SHIROGANE.get(),"Shirogane Clan Learner");
+
+
+
+
 		// Blocks
 		add(BlockInit.UCHIHA_CLOTH.get(), "Example Block");
 		// Entities

@@ -137,13 +137,53 @@ public class NarutoRevivalModVariables {
 		public double uchiha = 1;
 		public double hyuga = 2;
 		public double uzumaki = 3;
+		public double aburame  =4;
+		public double akimichi  =5;
+		public double hatake  =6;
+		public double hozuki  =7;
+		public double iburi  =8;
+		public double inuzuka  =9;
+		public double jugo  =10;
+		public double kaguya  =11;
+		public double kurama  =12;
+		public double tsuchigumo  =13;
+		public double nara  =14;
+		public double sarutobi  =15;
+		public double fuma  =16;
+		public double senju  =17;
+		public double yuki  = 18;
+		public double yamanaka  =19;
+		public double lee  =20;
+		public double chinoike  =21;
+		public double shirogane  =22;
+
 		//Villages
 		public double village = 0;
 		public double konohagakure = 1;
 		public double sunagakure = 2;
-		public double kirigakure = 3;
-		public double kumogakure = 4;
-		public double iwagakure = 5;
+		public double kumogakure = 3;
+		public double iwagakure = 4;
+		public double akatsuki = 5;
+		public double amegakure = 6;
+		public double getsugakure = 7;
+		public double hoshigakure = 8;
+		public double ishigakure = 9;
+		public double jomae = 10;
+		public double kirigakure = 11;
+		public double kusagakure = 12;
+		public double nadeshiko = 13;
+		public double otagakure = 14;
+		public double ryuchi_cave = 15;
+		public double shimogakure = 16;
+		public double takigaure = 17;
+		public double takumi = 18;
+		public double tanigakure = 19;
+		public double mount_myoboku = 20;
+		public double yugagakure = 21;
+		public double yukigakure = 22;
+		public double yumegakure = 23;
+		public double shikotsu = 24;
+
 		//Rank
 		public double academy_student = 0;
 		public double genin = 1;
@@ -155,6 +195,18 @@ public class NarutoRevivalModVariables {
 		public double earth = 0;
 		public double lightning = 0;
 		public double water = 0;
+		//Land
+		public double land = 0;
+		public double land_of_earth = 1;
+		public double land_of_fire = 2;
+		public double land_of_iron = 3;
+		public double land_of_lightning = 4;
+		public double land_of_sky = 5;
+		public double land_of_snow = 6;
+		public double land_of_sound = 7;
+		public double land_of_water = 8;
+		public double land_of_wind = 9;
+
 
 
 		public static MapVariables load(CompoundTag tag) {
@@ -211,6 +263,26 @@ public class NarutoRevivalModVariables {
 			uchiha = nbt.getDouble("uchiha");
 			hyuga = nbt.getDouble("hyuga");
 			uzumaki = nbt.getDouble("uzumaki");
+			aburame = nbt.getDouble("aburame");
+			akimichi = nbt.getDouble("akimichi");
+			hatake = nbt.getDouble("hatake");
+			hozuki = nbt.getDouble("hozuki");
+			iburi = nbt.getDouble("iburi");
+			inuzuka = nbt.getDouble("inuzuka");
+			jugo = nbt.getDouble("jugo");
+			kaguya = nbt.getDouble("kaguya");
+			kurama = nbt.getDouble("kurama");
+			tsuchigumo = nbt.getDouble("tsuchigumo");
+			nara = nbt.getDouble("nara");
+			sarutobi = nbt.getDouble("sarutobi");
+			fuma = nbt.getDouble("fuma");
+			senju = nbt.getDouble("senju");
+			yuki = nbt.getDouble("yuki");
+			yamanaka = nbt.getDouble("yamanaka");
+			lee = nbt.getDouble("lee");
+			chinoike = nbt.getDouble("chinoike");
+			shirogane = nbt.getDouble("shirogane");
+
 			//villages
 			village = nbt.getDouble("village");
 			konohagakure = nbt.getDouble("konohagakure");
@@ -218,6 +290,26 @@ public class NarutoRevivalModVariables {
 			kirigakure = nbt.getDouble("kirigakure");
 			kumogakure = nbt.getDouble("kumogakure");
 			iwagakure = nbt.getDouble("iwagakure");
+			akatsuki = nbt.getDouble("akatsuki");
+			amegakure = nbt.getDouble("amegakure");
+			getsugakure = nbt.getDouble("getsugakure");
+			hoshigakure = nbt.getDouble("hoshigakure");
+			ishigakure = nbt.getDouble("ishigakure");
+			jomae = nbt.getDouble("jomae");
+			kirigakure = nbt.getDouble("kirigakure");
+			kusagakure = nbt.getDouble("kusagakure");
+			nadeshiko = nbt.getDouble("nadeshiko");
+			otagakure = nbt.getDouble("otagakure");
+			ryuchi_cave = nbt.getDouble("ryuchi_cave");
+			shimogakure = nbt.getDouble("shimogakure");
+			takigaure = nbt.getDouble("takigaure");
+			takumi = nbt.getDouble("takumi");
+			tanigakure = nbt.getDouble("tanigakure");
+			mount_myoboku = nbt.getDouble("mount_myoboku");
+			yugagakure = nbt.getDouble("yugagakure");
+			yukigakure = nbt.getDouble("yukigakure");
+			yumegakure = nbt.getDouble("yumegakure");
+			shikotsu = nbt.getDouble("shikotsu");
 			//Rank
 			academy_student = nbt.getDouble("academy_student");
 			genin = nbt.getDouble("genin");
@@ -230,6 +322,17 @@ public class NarutoRevivalModVariables {
 			earth = nbt.getDouble("earth");
 			lightning = nbt.getDouble("lightning");
 			water = nbt.getDouble("water");
+			//Land
+			land_of_earth = nbt.getDouble("land_of_earth");
+			land_of_fire = nbt.getDouble("land_of_fire");
+			land_of_iron = nbt.getDouble("land_of_iron");
+			land_of_lightning = nbt.getDouble("land_of_lightning");
+			land_of_sky = nbt.getDouble("land_of_sky");
+			land_of_snow = nbt.getDouble("land_of_snow");
+			land_of_sound = nbt.getDouble("land_of_sound");
+			land_of_water = nbt.getDouble("land_of_water");
+			land_of_wind = nbt.getDouble("land_of_wind");
+
 
 
 		}
@@ -283,6 +386,25 @@ public class NarutoRevivalModVariables {
 			nbt.putDouble("uchiha",uchiha);
 			nbt.putDouble("hyuga",hyuga);
 			nbt.putDouble("uzumaki",uzumaki);
+			nbt.putDouble("aburame",aburame);
+			nbt.putDouble("akimichi",akimichi);
+			nbt.putDouble("hatake",hatake);
+			nbt.putDouble("hozuki",hozuki);
+			nbt.putDouble("iburi",iburi);
+			nbt.putDouble("inuzuka",inuzuka);
+			nbt.putDouble("jugo",jugo);
+			nbt.putDouble("kaguya",kaguya);
+			nbt.putDouble("kurama",kurama);
+			nbt.putDouble("tsuchigumo",tsuchigumo);
+			nbt.putDouble("nara",nara);
+			nbt.putDouble("sarutobi",sarutobi);
+			nbt.putDouble("fuma",fuma);
+			nbt.putDouble("senju",senju);
+			nbt.putDouble("yuki",yuki);
+			nbt.putDouble("yamanaka",yamanaka);
+			nbt.putDouble("lee",lee);
+			nbt.putDouble("chinoike",chinoike);
+			nbt.putDouble("shirogane",shirogane);
 
 			//Village
 			nbt.putDouble("village",village);
@@ -291,14 +413,42 @@ public class NarutoRevivalModVariables {
 			nbt.putDouble("kirigakure",kirigakure);
 			nbt.putDouble("kumogakure",kumogakure);
 			nbt.putDouble("iwagakure",iwagakure);
-
+			nbt.putDouble("akatsuki",akatsuki);
+			nbt.putDouble("amegakure",amegakure);
+			nbt.putDouble("getsugakure",getsugakure);
+			nbt.putDouble("hoshigakure",hoshigakure);
+			nbt.putDouble("ishigakure",ishigakure);
+			nbt.putDouble("jomae",jomae);
+			nbt.putDouble("kirigakure",kirigakure);
+			nbt.putDouble("kusagakure",kusagakure);
+			nbt.putDouble("nadeshiko",nadeshiko);
+			nbt.putDouble("otagakure",otagakure);
+			nbt.putDouble("ryuchi_cave",ryuchi_cave);
+			nbt.putDouble("shimogakure",shimogakure);
+			nbt.putDouble("takigaure",takigaure);
+			nbt.putDouble("takumi",takumi);
+			nbt.putDouble("tanigakure",tanigakure);
+			nbt.putDouble("mount_myoboku",mount_myoboku);
+			nbt.putDouble("yugagakure",yugagakure);
+			nbt.putDouble("yukigakure",yukigakure);
+			nbt.putDouble("yumegakure",yumegakure);
+			nbt.putDouble("shikotsu",shikotsu);
 			//Rank
 			nbt.putDouble("academy_student",academy_student);
 			nbt.putDouble("genin",genin);
 			nbt.putDouble("chunin",chunin);
 			nbt.putDouble("jonin",jonin);
-
-
+			//Land
+			nbt.putDouble("land",land);
+			nbt.putDouble("land_of_earth",land_of_earth);
+			nbt.putDouble("land_of_fire",land_of_fire);
+			nbt.putDouble("land_of_iron",land_of_iron);
+			nbt.putDouble("land_of_lightning",land_of_lightning);
+			nbt.putDouble("land_of_sky",land_of_sky);
+			nbt.putDouble("land_of_snow",land_of_snow);
+			nbt.putDouble("land_of_sound",land_of_sound);
+			nbt.putDouble("land_of_water",land_of_water);
+			nbt.putDouble("land_of_wind",land_of_wind);
 
 			return nbt;
 		}
