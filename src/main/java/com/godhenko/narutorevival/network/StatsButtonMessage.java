@@ -66,7 +66,7 @@ public class StatsButtonMessage {
 			return;
 		if (buttonID == 0) {
 
-			MoreninjutsuProcedure.execute(world);
+			MoreninjutsuProcedure.execute(world, entity);
 		}
 		if (buttonID == 1) {
 
@@ -79,7 +79,7 @@ public class StatsButtonMessage {
 
 		if (buttonID == 3) {
 
-			MoretaijutsuProcedure.execute(world);
+			MoretaijutsuProcedure.execute(world, entity);
 		}
 		if (buttonID == 4) {
 
@@ -91,7 +91,7 @@ public class StatsButtonMessage {
 		}
 		if (buttonID == 6) {
 
-			MoregenjutsuProcedure.execute(world);
+			MoregenjutsuProcedure.execute(world, entity);
 		}
 		if (buttonID == 7) {
 
@@ -103,7 +103,7 @@ public class StatsButtonMessage {
 		}
 		if (buttonID == 9) {
 
-			MorekenjutsuProcedure.execute(world);
+			MorekenjutsuProcedure.execute(world, entity);
 		}
 		if (buttonID == 10) {
 
@@ -115,7 +115,7 @@ public class StatsButtonMessage {
 		}
 		if (buttonID == 12) {
 
-			MoreshurikenjutsuProcedure.execute(world);
+			MoreshurikenjutsuProcedure.execute(world, entity);
 		}
 		if (buttonID == 13) {
 
@@ -127,7 +127,7 @@ public class StatsButtonMessage {
 		}
 		if (buttonID == 15) {
 
-			MoresummoningProcedure.execute(world);
+			MoresummoningProcedure.execute(world, entity);
 		}
 		if (buttonID == 16) {
 
@@ -139,7 +139,7 @@ public class StatsButtonMessage {
 		}
 		if (buttonID == 18) {
 
-			MorekinjutsuProcedure.execute(world);
+			MorekinjutsuProcedure.execute(world, entity);
 		}
 		if (buttonID == 19) {
 
@@ -151,7 +151,7 @@ public class StatsButtonMessage {
 		}
 		if (buttonID == 21) {
 
-			MoresenjutsuProcedure.execute(world);
+			MoresenjutsuProcedure.execute(world, entity);
 		}
 		if (buttonID == 22) {
 
@@ -163,7 +163,7 @@ public class StatsButtonMessage {
 		}
 		if (buttonID == 24) {
 
-			MoremedicalProcedure.execute(world);
+			MoremedicalProcedure.execute(world, entity);
 		}
 		if (buttonID == 25) {
 
@@ -175,7 +175,7 @@ public class StatsButtonMessage {
 		}
 		if (buttonID == 27) {
 
-			MorespeedProcedure.execute(world);
+			MorespeedProcedure.execute(world, entity);
 		}
 		if (buttonID == 28) {
 
