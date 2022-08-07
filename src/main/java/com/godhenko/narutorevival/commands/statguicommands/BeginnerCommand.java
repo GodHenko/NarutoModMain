@@ -45,7 +45,7 @@ public class BeginnerCommand {
 			index[0]++;
 		});
 
-		BeginnerCommandExecutedProcedure.execute(world, entity);
+		BeginnerCommandExecutedProcedure.execute(world, x, y, z, entity);
 		return 0;
 	}
 }

@@ -2,9 +2,8 @@
 package com.godhenko.narutorevival.network;
 
 import com.godhenko.narutorevival.NarutoRevival;
-import com.godhenko.narutorevival.procedures.guiprocedures.lessprocecdures.*;
 import com.godhenko.narutorevival.procedures.guiprocedures.moreprocedures.*;
-import com.godhenko.narutorevival.procedures.guiprocedures.okprocedures.*;
+import com.godhenko.narutorevival.procedures.guiprocedures.otherprocedures.MoreHPProcedure;
 import com.godhenko.narutorevival.world.inventory.StatsMenu;
 import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -70,121 +69,41 @@ public class StatsButtonMessage {
 		}
 		if (buttonID == 1) {
 
-			LessninjutsuProcedure.execute(world);
+			MoretaijutsuProcedure.execute(world, entity);
 		}
 		if (buttonID == 2) {
 
-			OkninjutsuProcedure.execute(world);
-		}
-
-		if (buttonID == 3) {
-
-			MoretaijutsuProcedure.execute(world, entity);
-		}
-		if (buttonID == 4) {
-
-			LesstaijutsuProcedure.execute(world);
-		}
-		if (buttonID == 5) {
-
-			OktaijutsuProcedure.execute(world);
-		}
-		if (buttonID == 6) {
-
 			MoregenjutsuProcedure.execute(world, entity);
 		}
-		if (buttonID == 7) {
-
-			LessgenjutsuProcedure.execute(world);
-		}
-		if (buttonID == 8) {
-
-			OkgenjutsuProcedure.execute(world);
-		}
-		if (buttonID == 9) {
+		if (buttonID == 3) {
 
 			MorekenjutsuProcedure.execute(world, entity);
 		}
-		if (buttonID == 10) {
-
-			LesskenjutsuProcedure.execute(world);
-		}
-		if (buttonID == 11) {
-
-			OkkenjutsuProcedure.execute(world);
-		}
-		if (buttonID == 12) {
+		if (buttonID == 4) {
 
 			MoreshurikenjutsuProcedure.execute(world, entity);
 		}
-		if (buttonID == 13) {
-
-			LessshurikenjutsuProcedure.execute(world);
-		}
-		if (buttonID == 14) {
-
-			OkshurikenjutsuProcedure.execute(world);
-		}
-		if (buttonID == 15) {
+		if (buttonID == 5) {
 
 			MoresummoningProcedure.execute(world, entity);
 		}
-		if (buttonID == 16) {
-
-			LesssummoningProcedure.execute(world);
-		}
-		if (buttonID == 17) {
-
-			OksummoningProcedure.execute(world);
-		}
-		if (buttonID == 18) {
+		if (buttonID == 6) {
 
 			MorekinjutsuProcedure.execute(world, entity);
 		}
-		if (buttonID == 19) {
-
-			LesskinjutsuProcedure.execute(world);
-		}
-		if (buttonID == 20) {
-
-			OkkinjutsuProcedure.execute(world);
-		}
-		if (buttonID == 21) {
+		if (buttonID == 7) {
 
 			MoresenjutsuProcedure.execute(world, entity);
 		}
-		if (buttonID == 22) {
+		if (buttonID == 8) {
 
-			LesssennjutsuProcedure.execute(world);
+			MoreHPProcedure.execute(world, x,y,z);
 		}
-		if (buttonID == 23) {
-
-			OksenjutsuProcedure.execute(world);
-		}
-		if (buttonID == 24) {
-
-			MoremedicalProcedure.execute(world, entity);
-		}
-		if (buttonID == 25) {
-
-			LessmedicalProcedure.execute(world);
-		}
-		if (buttonID == 26) {
-
-			OkmedicalProcedure.execute(world);
-		}
-		if (buttonID == 27) {
+		if (buttonID == 9) {
 
 			MorespeedProcedure.execute(world, entity);
 		}
-		if (buttonID == 28) {
 
-			LessspeedProcedure.execute(world);
-		}
-		if (buttonID == 29) {
-
-			OkspeedProcedure.execute(world);
-		}
 
 	}
 

@@ -7,7 +7,6 @@ import net.minecraft.world.level.LevelAccessor;
 
 public class MoreintelligenceProcedure {
 	public static void execute(LevelAccessor world, Player player) {
-		if (player.isShiftKeyDown()) {
 			if (NarutoRevivalModVariables.MapVariables.get(world).skillPoints > 0) {
 				NarutoRevivalModVariables.MapVariables.get(world).addintelligence = NarutoRevivalModVariables.MapVariables.get(world).addintelligence + 1;
 				NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
@@ -16,4 +15,4 @@ public class MoreintelligenceProcedure {
 			}
 		}
 	}
-}
+

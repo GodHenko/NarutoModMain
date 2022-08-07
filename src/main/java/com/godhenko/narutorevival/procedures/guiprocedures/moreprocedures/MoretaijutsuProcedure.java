@@ -7,9 +7,8 @@ import net.minecraft.world.level.LevelAccessor;
 
 public class MoretaijutsuProcedure {
 	public static void execute(LevelAccessor world, Player player) {
-		if (player.isShiftKeyDown()) {
 			if (NarutoRevivalModVariables.MapVariables.get(world).skillPoints > 0) {
-				NarutoRevivalModVariables.MapVariables.get(world).addtaijutsu = NarutoRevivalModVariables.MapVariables.get(world).addtaijutsu + 1;
+				NarutoRevivalModVariables.MapVariables.get(world).taijutsu = NarutoRevivalModVariables.MapVariables.get(world).taijutsu + 1;
 				NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
 				NarutoRevivalModVariables.MapVariables.get(world).skillPoints = NarutoRevivalModVariables.MapVariables.get(world).skillPoints - 1;
 				NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
@@ -18,4 +17,4 @@ public class MoretaijutsuProcedure {
 			}
 		}
 	}
-}
+

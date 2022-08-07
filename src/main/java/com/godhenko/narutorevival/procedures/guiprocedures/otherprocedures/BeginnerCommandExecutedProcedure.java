@@ -2,15 +2,23 @@ package com.godhenko.narutorevival.procedures.guiprocedures.otherprocedures;
 
 import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
 import com.godhenko.narutorevival.procedures.guiprocedures.LevelProgressionProcedure;
+import net.minecraft.commands.CommandSource;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.TextComponent;
-
+import net.minecraft.world.phys.Vec2;
+import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 
 public class BeginnerCommandExecutedProcedure {
-	public static void execute(LevelAccessor world, Entity entity) {
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
 		NarutoRevivalModVariables.MapVariables.get(world).XP = 0;
@@ -79,5 +87,37 @@ public class BeginnerCommandExecutedProcedure {
 		if (entity instanceof Player _player && !_player.level.isClientSide())
 			_player.displayClientMessage(new TextComponent("Back to LVL 1!"), (false));
 		LevelProgressionProcedure.execute(world);
+		if (entity == null)
+			return;
+		if (world instanceof ServerLevel _level)
+			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
+					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "attribute @p minecraft:generic.max_health base set 20");
+		new Object() {
+			private int ticks = 0;
+			private float waitTicks;
+			private LevelAccessor world;
+
+			public void start(LevelAccessor world, int waitTicks) {
+				this.waitTicks = waitTicks;
+				MinecraftForge.EVENT_BUS.register(this);
+				this.world = world;
+			}
+
+			@SubscribeEvent
+			public void tick(TickEvent.ServerTickEvent event) {
+				if (event.phase == TickEvent.Phase.END) {
+					this.ticks += 1;
+					if (this.ticks >= this.waitTicks)
+						run();
+				}
+			}
+
+			private void run() {
+				entity.hurt(DamageSource.GENERIC, 1);
+				MinecraftForge.EVENT_BUS.unregister(this);
+			}
+		}.start(world, 5);
 	}
-}
+	}
+
+
