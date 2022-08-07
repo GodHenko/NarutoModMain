@@ -80,6 +80,13 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(ItemInit.LEE.get());
 		oneLayerItem(ItemInit.CHINIOKE.get());
 		oneLayerItem(ItemInit.SHIROGANE.get());
+
+		oneLayerItem(ItemInit.FIRE_RELEASE.get());
+		oneLayerItem(ItemInit.WATER_RELEASE.get());
+		oneLayerItem(ItemInit.WIND_RELEASE.get());
+		oneLayerItem(ItemInit.EARTH_RELEASE.get());
+		oneLayerItem(ItemInit.LIGHTNING_RELEASE.get());
+		oneLayerItem(ItemInit.CHAKRA_PAPER.get());
 		// Simple Items
 		oneLayerItem(ItemInit.RAMEN.get());
 		oneLayerItem(ItemInit.BRONZE_RYO.get());

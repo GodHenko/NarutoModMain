@@ -60,6 +60,22 @@ public class BeginnerCommandExecutedProcedure {
 		NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
 		NarutoRevivalModVariables.MapVariables.get(world).maxChakra = 100;
 		NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+		NarutoRevivalModVariables.MapVariables.get(world).fire = 0;
+		NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+		NarutoRevivalModVariables.MapVariables.get(world).water = 0;
+		NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+		NarutoRevivalModVariables.MapVariables.get(world).wind = 0;
+		NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+		NarutoRevivalModVariables.MapVariables.get(world).earth = 0;
+		NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+		NarutoRevivalModVariables.MapVariables.get(world).lightning = 0;
+		NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+		NarutoRevivalModVariables.MapVariables.get(world).clan = 0;
+		NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+		NarutoRevivalModVariables.MapVariables.get(world).village = 0;
+		NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+		NarutoRevivalModVariables.MapVariables.get(world).land = 0;
+		NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
 		if (entity instanceof Player _player && !_player.level.isClientSide())
 			_player.displayClientMessage(new TextComponent("Back to LVL 1!"), (false));
 		LevelProgressionProcedure.execute(world);

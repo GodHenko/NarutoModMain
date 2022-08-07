@@ -23,14 +23,11 @@ public class ClanRoll extends Item {
     public ClanRoll(Properties pProperties) {
         super(pProperties);
     }
-
-
     @Override
     public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
         if (!world.isClientSide()) {
             ItemStack itemstack = player.getItemInHand(hand);
             Random rand = new Random();
-            player.getCooldowns().addCooldown(this, 60);
             ItemStack _setstack;
             //int clans = 0;
             int uchiha=0;

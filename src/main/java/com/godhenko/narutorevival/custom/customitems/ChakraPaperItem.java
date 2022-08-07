@@ -3,6 +3,7 @@ package com.godhenko.narutorevival.custom.customitems;
 import com.godhenko.narutorevival.inits.ItemInit;
 import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -51,52 +52,52 @@ public class ChakraPaperItem extends Item {
 
             //Afil
              //double village = 0;
-             double konohagakure = 0;
-             double sunagakure = 1;
-             double kumogakure = 2;
-             double iwagakure = 3;
-             double akatsuki = 4;
-             double amegakure = 5;
-             double getsugakure = 6;
-             double hoshigakure = 7;
-             double ishigakure = 8;
-             double jomae = 9;
-             double kirigakure = 10;
-             double kusagakure = 11;
-             double nadeshiko = 12;
-             double otagakure = 13;
-             double ryuchi_cave = 14;
-             double shimogakure = 15;
-             double takigaure = 16;
-             double takumi = 17;
-             double tanigakure = 18;
-             double mount_myoboku = 19;
-             double yugagakure = 20;
-             double yukigakure = 21;
-             double yumegakure = 22;
-             double shikotsu = 23;
+             int konohagakure = 0;
+             int sunagakure = 1;
+             int kumogakure = 2;
+             int iwagakure = 3;
+             int akatsuki = 4;
+             int amegakure = 5;
+             int getsugakure = 6;
+             int hoshigakure = 7;
+             int ishigakure = 8;
+             int jomae = 9;
+             int kirigakure = 10;
+             int kusagakure = 11;
+             int nadeshiko = 12;
+             int otagakure = 13;
+             int ryuchi_cave = 14;
+             int shimogakure = 15;
+             int takigaure = 16;
+             int takumi = 17;
+             int tanigakure = 18;
+             int mount_myoboku = 19;
+             int yugagakure = 20;
+             int yukigakure = 21;
+             int yumegakure = 22;
+             int shikotsu = 23;
 
              //natures
-            long fire = 0;
-            long wind = 1;
-            long earth = 2;
-            long lightning = 3;
-            long water = 4;
+            int fire = 0;
+            int wind = 1;
+            int earth = 2;
+            int lightning = 3;
+            int water = 4;
             //Land
-            float land_of_earth = 0f;
-            float land_of_fire = 1f;
-            float land_of_iron = 2f;
-            float land_of_lightning = 3f;
-            float land_of_sky = 4f;
-            float land_of_snow = 5f;
-            float land_of_sound = 6f;
-            float land_of_water = 7f;
-            float land_of_wind = 8f;
+            int land_of_earth = 0;
+            int land_of_fire = 1;
+            int land_of_iron = 2;
+            int land_of_lightning = 3;
+            int land_of_sky = 4;
+            int land_of_snow = 5;
+            int land_of_sound = 6;
+            int land_of_water = 7;
+            int land_of_wind = 8;
 
             int clan = rand.nextInt(22);
-            double affiliation = rand.nextDouble(24);
-            long nature = rand.nextLong(4);
-            float land = rand.nextFloat(8);
+            int affiliation = rand.nextInt(24);
+            int nature = rand.nextInt(5);
+            int land = rand.nextInt(9);
 
             if (clan == uchiha) {
                 NarutoRevivalModVariables.MapVariables.get(world).clan = 1;
@@ -282,7 +283,7 @@ public class ChakraPaperItem extends Item {
                 ItemHandlerHelper.giveItemToPlayer(player, _setstack);
 
             }
-            else {
+            else if (clan == shirogane){
                 NarutoRevivalModVariables.MapVariables.get(world).clan = 22;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
                 player.sendMessage(new TranslatableComponent("You are now part of the Shirogane Clan"), player.getUUID());
@@ -293,122 +294,122 @@ public class ChakraPaperItem extends Item {
             }
 
             if (affiliation == konohagakure){
-                NarutoRevivalModVariables.MapVariables.get(world).village = NarutoRevivalModVariables.MapVariables.get(world).konohagakure;
+                NarutoRevivalModVariables.MapVariables.get(world).village = 1;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
 
             } else if (affiliation == sunagakure) {
-                NarutoRevivalModVariables.MapVariables.get(world).village = NarutoRevivalModVariables.MapVariables.get(world).sunagakure;
+                NarutoRevivalModVariables.MapVariables.get(world).village = 2;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
             }
             else if (affiliation == kumogakure) {
-                NarutoRevivalModVariables.MapVariables.get(world).village = NarutoRevivalModVariables.MapVariables.get(world).kumogakure;
+                NarutoRevivalModVariables.MapVariables.get(world).village = 3;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
             }
             else if (affiliation == iwagakure) {
-                NarutoRevivalModVariables.MapVariables.get(world).village = NarutoRevivalModVariables.MapVariables.get(world).iwagakure;
+                NarutoRevivalModVariables.MapVariables.get(world).village =4;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
             }
             else if (affiliation == amegakure) {
-                NarutoRevivalModVariables.MapVariables.get(world).village = NarutoRevivalModVariables.MapVariables.get(world).amegakure;
+                NarutoRevivalModVariables.MapVariables.get(world).village = 6;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
             }
             else if (affiliation == getsugakure) {
-                NarutoRevivalModVariables.MapVariables.get(world).village = NarutoRevivalModVariables.MapVariables.get(world).getsugakure;
+                NarutoRevivalModVariables.MapVariables.get(world).village = 7;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
             }
             else if (affiliation == hoshigakure) {
-                NarutoRevivalModVariables.MapVariables.get(world).village = NarutoRevivalModVariables.MapVariables.get(world).hoshigakure;
+                NarutoRevivalModVariables.MapVariables.get(world).village = 8;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
             }
             else if (affiliation == ishigakure) {
-                NarutoRevivalModVariables.MapVariables.get(world).village = NarutoRevivalModVariables.MapVariables.get(world).ishigakure;
+                NarutoRevivalModVariables.MapVariables.get(world).village = 9;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
             }
             else if (affiliation == jomae) {
-                NarutoRevivalModVariables.MapVariables.get(world).village = NarutoRevivalModVariables.MapVariables.get(world).jomae;
+                NarutoRevivalModVariables.MapVariables.get(world).village = 10;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
             }
             else if (affiliation == kirigakure) {
-                NarutoRevivalModVariables.MapVariables.get(world).village = NarutoRevivalModVariables.MapVariables.get(world).kirigakure;
+                NarutoRevivalModVariables.MapVariables.get(world).village = 11;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
             }
             else if (affiliation == kusagakure) {
-                NarutoRevivalModVariables.MapVariables.get(world).village = NarutoRevivalModVariables.MapVariables.get(world).kusagakure;
+                NarutoRevivalModVariables.MapVariables.get(world).village = 12;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
             }
             else if (affiliation == nadeshiko) {
-                NarutoRevivalModVariables.MapVariables.get(world).village = NarutoRevivalModVariables.MapVariables.get(world).nadeshiko;
+                NarutoRevivalModVariables.MapVariables.get(world).village = 13;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
             }
             else if (affiliation == otagakure) {
-                NarutoRevivalModVariables.MapVariables.get(world).village = NarutoRevivalModVariables.MapVariables.get(world).otagakure;
+                NarutoRevivalModVariables.MapVariables.get(world).village = 14;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
             }
             else if (affiliation == shimogakure) {
-                NarutoRevivalModVariables.MapVariables.get(world).village = NarutoRevivalModVariables.MapVariables.get(world).shimogakure;
+                NarutoRevivalModVariables.MapVariables.get(world).village =16;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
             }
             else if (affiliation == takigaure) {
-                NarutoRevivalModVariables.MapVariables.get(world).village = NarutoRevivalModVariables.MapVariables.get(world).takigaure;
+                NarutoRevivalModVariables.MapVariables.get(world).village = 17;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
             }
             else if (affiliation == takumi) {
-                NarutoRevivalModVariables.MapVariables.get(world).village = NarutoRevivalModVariables.MapVariables.get(world).takumi;
+                NarutoRevivalModVariables.MapVariables.get(world).village = 18;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
             }
             else if (affiliation == tanigakure) {
-                NarutoRevivalModVariables.MapVariables.get(world).village = NarutoRevivalModVariables.MapVariables.get(world).tanigakure;
+                NarutoRevivalModVariables.MapVariables.get(world).village = 19;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
             }
             else if (affiliation == yugagakure) {
-                NarutoRevivalModVariables.MapVariables.get(world).village = NarutoRevivalModVariables.MapVariables.get(world).yugagakure;
+                NarutoRevivalModVariables.MapVariables.get(world).village = 21;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
             }
             else if (affiliation == yukigakure) {
-                NarutoRevivalModVariables.MapVariables.get(world).village = NarutoRevivalModVariables.MapVariables.get(world).yukigakure;
+                NarutoRevivalModVariables.MapVariables.get(world).village = 22;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
             }
             else if (affiliation == yumegakure) {
-                NarutoRevivalModVariables.MapVariables.get(world).village = NarutoRevivalModVariables.MapVariables.get(world).yumegakure;
+                NarutoRevivalModVariables.MapVariables.get(world).village = 23;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
             }
-            else  {
-                NarutoRevivalModVariables.MapVariables.get(world).village = NarutoRevivalModVariables.MapVariables.get(world).shikotsu;
+            else if (affiliation == shikotsu) {
+                NarutoRevivalModVariables.MapVariables.get(world).village = 24;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
             }
 
             if (nature == fire){
                 NarutoRevivalModVariables.MapVariables.get(world).fire = 1;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
-                _setstack = new ItemStack(ItemInit.FIRE_NATURE.get());
+                _setstack = new ItemStack(ItemInit.FIRE_RELEASE.get());
                 _setstack.setCount(1);
                 ItemHandlerHelper.giveItemToPlayer(player, _setstack);
             }
             else if (nature == earth){
                 NarutoRevivalModVariables.MapVariables.get(world).earth = 1;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
-                _setstack = new ItemStack(ItemInit.EARTH_NATURE.get());
+                _setstack = new ItemStack(ItemInit.EARTH_RELEASE.get());
                 _setstack.setCount(1);
                 ItemHandlerHelper.giveItemToPlayer(player, _setstack);
             }
             else if (nature == wind){
                 NarutoRevivalModVariables.MapVariables.get(world).wind = 1;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
-                _setstack = new ItemStack(ItemInit.WIND_NATURE.get());
+                _setstack = new ItemStack(ItemInit.WIND_RELEASE.get());
                 _setstack.setCount(1);
                 ItemHandlerHelper.giveItemToPlayer(player, _setstack);
             }
             else if (nature == lightning){
                 NarutoRevivalModVariables.MapVariables.get(world).lightning = 1;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
-                _setstack = new ItemStack(ItemInit.LIGHTNING_NATURE.get());
+                _setstack = new ItemStack(ItemInit.LIGHTNING_RELEASE.get());
                 _setstack.setCount(1);
                 ItemHandlerHelper.giveItemToPlayer(player, _setstack);
             }
             else if (nature == water){
                 NarutoRevivalModVariables.MapVariables.get(world).water = 1;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
-                _setstack = new ItemStack(ItemInit.WATER_NATURE.get());
+                _setstack = new ItemStack(ItemInit.WATER_RELEASE.get());
                 _setstack.setCount(1);
                 ItemHandlerHelper.giveItemToPlayer(player, _setstack);
             }
@@ -444,11 +445,15 @@ public class ChakraPaperItem extends Item {
                 NarutoRevivalModVariables.MapVariables.get(world).land = NarutoRevivalModVariables.MapVariables.get(world).land_of_water;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
             }
-            else {
+            else if (land == land_of_wind){
                 NarutoRevivalModVariables.MapVariables.get(world).land = NarutoRevivalModVariables.MapVariables.get(world).land_of_wind;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
             }
 
+            player.awardStat(Stats.ITEM_USED.get(this));
+            if (!player.getAbilities().instabuild) {
+                itemstack.shrink(1);
+            }
 
 
         }

@@ -76,7 +76,7 @@ public class NarutoRevival
         @Override
         @OnlyIn(Dist.CLIENT)
         public ItemStack makeIcon() {
-            return new ItemStack(ItemInit.FIRE_NATURE.get());
+            return new ItemStack(ItemInit.FIRE_RELEASE.get());
         }
     };
     public static final CreativeModeTab MISC_TAB = new CreativeModeTab("misc") {

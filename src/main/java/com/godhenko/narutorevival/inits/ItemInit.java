@@ -2,9 +2,8 @@ package com.godhenko.narutorevival.inits;
 
 import com.godhenko.narutorevival.NarutoRevival;
 import com.godhenko.narutorevival.custom.armor.ModArmorMaterials;
-import com.godhenko.narutorevival.custom.customitems.ClanRoll;
-import com.godhenko.narutorevival.custom.customitems.IntelligenceScroll;
-import com.godhenko.narutorevival.custom.customitems.xp10000;
+import com.godhenko.narutorevival.custom.customitems.*;
+import com.godhenko.narutorevival.custom.customitems.natureitems.FireReleaseLearnerItem;
 import com.godhenko.narutorevival.entity.ModEntityTypes;
 import com.google.common.base.Supplier;
 import net.minecraft.client.Minecraft;
@@ -83,15 +82,15 @@ public class ItemInit {
     public static final RegistryObject<Item> SHIROGANE = register("shirogane",() -> new Item(new Item.Properties()
             .tab(NarutoRevival.CLAN_TAB)));
     //Natures
-    public static final RegistryObject<Item> FIRE_NATURE = register("fire_nature",() -> new Item(new Item.Properties()
+    public static final RegistryObject<Item> FIRE_RELEASE = register("fire_release",() -> new FireReleaseLearnerItem(new Item.Properties()
             .tab(NarutoRevival.NATURES_TAB)));
-    public static final RegistryObject<Item> WATER_NATURE = register("water_nature",() -> new Item(new Item.Properties()
+    public static final RegistryObject<Item> WATER_RELEASE = register("water_release",() -> new Item(new Item.Properties()
             .tab(NarutoRevival.NATURES_TAB)));
-    public static final RegistryObject<Item> WIND_NATURE = register("wind_nature",() -> new Item(new Item.Properties()
+    public static final RegistryObject<Item> WIND_RELEASE = register("wind_release",() -> new Item(new Item.Properties()
             .tab(NarutoRevival.NATURES_TAB)));
-    public static final RegistryObject<Item> EARTH_NATURE = register("earth_nature",() -> new Item(new Item.Properties()
+    public static final RegistryObject<Item> EARTH_RELEASE = register("earth_release",() -> new Item(new Item.Properties()
             .tab(NarutoRevival.NATURES_TAB)));
-    public static final RegistryObject<Item> LIGHTNING_NATURE = register("lightning_nature",() -> new Item(new Item.Properties()
+    public static final RegistryObject<Item> LIGHTNING_RELEASE = register("lightning_release",() -> new Item(new Item.Properties()
             .tab(NarutoRevival.NATURES_TAB)));
 
 
@@ -112,6 +111,13 @@ public class ItemInit {
             .tab(NarutoRevival.MISC_TAB)));
 
     public static final RegistryObject<Item> CLAN_ROLL = register("clan_roll",() -> new ClanRoll(new Item.Properties()
+            .tab(NarutoRevival.MISC_TAB)));
+
+    public static final RegistryObject<Item> RANDOM_NATURE = register("random_nature",() -> new RandomNatureItem(new Item.Properties()
+            .tab(NarutoRevival.MISC_TAB)));
+
+
+    public static final RegistryObject<Item> CHAKRA_PAPER = register("chakra_paper",() -> new ChakraPaperItem(new Item.Properties()
             .tab(NarutoRevival.MISC_TAB)));
 
     public static final RegistryObject<Item> NINJA_FABRIC = register("ninja_fabric",() -> new Item(new Item.Properties()

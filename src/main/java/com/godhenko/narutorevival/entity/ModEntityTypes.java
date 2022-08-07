@@ -5,6 +5,7 @@ import com.godhenko.narutorevival.entity.ninjaentities.chunin.ChuninEntity;
 import com.godhenko.narutorevival.entity.ninjaentities.genin.GeninEntity;
 import com.godhenko.narutorevival.entity.ninjaentities.jonin.JoninEntity;
 import com.godhenko.narutorevival.entity.ramenman.RamenTraderEntity;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -15,6 +16,9 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModEntityTypes {
 
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPE = DeferredRegister.create(ForgeRegistries.ENTITIES, NarutoRevival.MOD_ID);
+    private static <T extends Entity> RegistryObject<EntityType<T>> register(String key, EntityType.Builder<T> builder) {
+        return ENTITY_TYPE.register(key, () -> builder.build(key));
+    }
 
 
     public static final RegistryObject<EntityType<RamenTraderEntity>> RAMEN_TRADER = ENTITY_TYPE.register("ramen_trader",
@@ -36,7 +40,9 @@ public class ModEntityTypes {
             .of(JoninEntity::new, MobCategory.CREATURE).sized(0.6f,1.95f).clientTrackingRange(8)
             .build("jonin"));
 
+
     public static void register(IEventBus eventBus){
         ENTITY_TYPE.register(eventBus);
     }
+
 }

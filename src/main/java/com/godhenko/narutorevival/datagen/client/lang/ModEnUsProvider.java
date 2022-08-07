@@ -45,6 +45,14 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.GENIN_BOOTS.get(),"Genin Boots");
 		add(ItemInit.XP_10000.get(),"10,000 XP Scroll");
 		add(ItemInit.KATANA.get(),"Iron Katana");
+		add(ItemInit.CHAKRA_PAPER.get(),"Chakra Paper");
+		add(ItemInit.RANDOM_NATURE.get(),"Random Nature");
+		add(ItemInit.FIRE_RELEASE.get(),"Fire Release");
+		add(ItemInit.WATER_RELEASE.get(),"Water Release");
+		add(ItemInit.WIND_RELEASE.get(),"Wind Release");
+		add(ItemInit.LIGHTNING_RELEASE.get(),"Lightning Release");
+		add(ItemInit.EARTH_RELEASE.get(),"Earth Release");
+
 
 		//Clans
 		add(ItemInit.UCHIHA.get(),"Uchiha Clan Learner");

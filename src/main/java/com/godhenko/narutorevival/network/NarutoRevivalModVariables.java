@@ -406,6 +406,14 @@ public class NarutoRevivalModVariables {
 			nbt.putDouble("chinoike",chinoike);
 			nbt.putDouble("shirogane",shirogane);
 
+			//Natures
+			nbt.putDouble("fire",fire);
+			nbt.putDouble("water",water);
+			nbt.putDouble("wind",wind);
+			nbt.putDouble("earth",earth);
+			nbt.putDouble("lightning",lightning);
+
+
 			//Village
 			nbt.putDouble("village",village);
 			nbt.putDouble("konohagakure",konohagakure);
