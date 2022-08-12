@@ -52,6 +52,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.WIND_RELEASE.get(),"Wind Release");
 		add(ItemInit.LIGHTNING_RELEASE.get(),"Lightning Release");
 		add(ItemInit.EARTH_RELEASE.get(),"Earth Release");
+		add(ItemInit.GUNBAI.get(),"Gunbai");
 
 
 		//Clans

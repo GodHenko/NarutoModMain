@@ -84,6 +84,8 @@ public class BeginnerCommandExecutedProcedure {
 		NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
 		NarutoRevivalModVariables.MapVariables.get(world).land = 0;
 		NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+		NarutoRevivalModVariables.MapVariables.get(world).rank = 0;
+		NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
 		if (entity instanceof Player _player && !_player.level.isClientSide())
 			_player.displayClientMessage(new TextComponent("Back to LVL 1!"), (false));
 		LevelProgressionProcedure.execute(world);

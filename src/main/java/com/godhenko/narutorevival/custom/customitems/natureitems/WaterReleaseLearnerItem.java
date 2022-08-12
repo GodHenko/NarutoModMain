@@ -1,6 +1,5 @@
 package com.godhenko.narutorevival.custom.customitems.natureitems;
 
-import com.godhenko.narutorevival.NarutoRevival;
 import com.godhenko.narutorevival.inits.ItemInit;
 import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
 import net.minecraft.network.chat.Component;
@@ -17,21 +16,24 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class FireReleaseLearnerItem extends Item {
-    public FireReleaseLearnerItem(Properties pProperties) {
+public class WaterReleaseLearnerItem extends Item {
+    public WaterReleaseLearnerItem(Properties pProperties) {
         super(pProperties);
     }
-
     int learner = 0;
+    // int move2 = 1;
+    // int move3 = 2;
+    
     @Override
     public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
+        if (!world.isClientSide()){
             ItemStack itemstack = player.getItemInHand(hand);
             ItemStack _setstack;
+
             if (learner == 0){
-            if (NarutoRevivalModVariables.MapVariables.get(world).jutsuPoints > 10){
+            if (NarutoRevivalModVariables.MapVariables.get(world).skillPoints > 10){
                 learner = 1;
-                NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
-                NarutoRevivalModVariables.MapVariables.get(world).jutsuPoints = NarutoRevivalModVariables.MapVariables.get(world).jutsuPoints - 10;
+                NarutoRevivalModVariables.MapVariables.get(world).skillPoints = NarutoRevivalModVariables.MapVariables.get(world).skillPoints - 10;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
                 _setstack = new ItemStack(ItemInit.RAMEN.get());
                 _setstack.setCount(1);
@@ -40,8 +42,8 @@ public class FireReleaseLearnerItem extends Item {
             }
            else {
                if (learner == 1){
-                   if (NarutoRevivalModVariables.MapVariables.get(world).jutsuPoints > 20){
-                       NarutoRevivalModVariables.MapVariables.get(world).jutsuPoints = NarutoRevivalModVariables.MapVariables.get(world).jutsuPoints - 20;
+                   if (NarutoRevivalModVariables.MapVariables.get(world).skillPoints > 20){
+                       NarutoRevivalModVariables.MapVariables.get(world).skillPoints = NarutoRevivalModVariables.MapVariables.get(world).skillPoints - 20;
                        NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
                        _setstack = new ItemStack(ItemInit.RANDOM_NATURE.get());
                        _setstack.setCount(1);
@@ -50,11 +52,15 @@ public class FireReleaseLearnerItem extends Item {
                }
             }
 
+
+        }
+
+
         return super.use(world, player, hand);
     }
 
     @Override
-    public void appendHoverText(ItemStack pStack, @Nullable Level world, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if (learner == 0){
             pTooltipComponents.add(new TextComponent("Fireball Jutsu:10 SkillPoints"));
         }
@@ -64,6 +70,6 @@ public class FireReleaseLearnerItem extends Item {
         }
 
 
-        super.appendHoverText(pStack, world, pTooltipComponents, pIsAdvanced);
+        super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
     }
 }

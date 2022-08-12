@@ -185,16 +185,21 @@ public class NarutoRevivalModVariables {
 		public double shikotsu = 24;
 
 		//Rank
-		public double academy_student = 0;
-		public double genin = 1;
-		public double chunin = 2;
-		public double jonin = 3;
+		public double rank = 0;
+		public double academy_student = 1;
+		public double genin = 2;
+		public double chunin = 3;
+		public double jonin = 4;
+		public double anbu = 5;
+		public double kazekage = 6;
 		//Natures
 		public double fire = 0;
 		public double wind = 0;
 		public double earth = 0;
 		public double lightning = 0;
 		public double water = 0;
+		//nature learners
+		public double fire_learner = 0;
 		//Land
 		public double land = 0;
 		public double land_of_earth = 1;
@@ -282,7 +287,6 @@ public class NarutoRevivalModVariables {
 			lee = nbt.getDouble("lee");
 			chinoike = nbt.getDouble("chinoike");
 			shirogane = nbt.getDouble("shirogane");
-
 			//villages
 			village = nbt.getDouble("village");
 			konohagakure = nbt.getDouble("konohagakure");
@@ -311,10 +315,12 @@ public class NarutoRevivalModVariables {
 			yumegakure = nbt.getDouble("yumegakure");
 			shikotsu = nbt.getDouble("shikotsu");
 			//Rank
+			rank = nbt.getDouble("rank");
 			academy_student = nbt.getDouble("academy_student");
 			genin = nbt.getDouble("genin");
 			chunin = nbt.getDouble("chunin");
 			jonin = nbt.getDouble("jonin");
+			kazekage = nbt.getDouble("kazekage");
 
 			//Natures
 			fire = nbt.getDouble("fire");
@@ -322,6 +328,8 @@ public class NarutoRevivalModVariables {
 			earth = nbt.getDouble("earth");
 			lightning = nbt.getDouble("lightning");
 			water = nbt.getDouble("water");
+			//Nature Learners
+			fire_learner = nbt.getDouble("fire_learner");
 			//Land
 			land_of_earth = nbt.getDouble("land_of_earth");
 			land_of_fire = nbt.getDouble("land_of_fire");
@@ -412,8 +420,8 @@ public class NarutoRevivalModVariables {
 			nbt.putDouble("wind",wind);
 			nbt.putDouble("earth",earth);
 			nbt.putDouble("lightning",lightning);
-
-
+			//Nature learners
+			nbt.putDouble("fire_learner",fire_learner);
 			//Village
 			nbt.putDouble("village",village);
 			nbt.putDouble("konohagakure",konohagakure);
@@ -442,10 +450,12 @@ public class NarutoRevivalModVariables {
 			nbt.putDouble("yumegakure",yumegakure);
 			nbt.putDouble("shikotsu",shikotsu);
 			//Rank
+			nbt.putDouble("rank",rank);
 			nbt.putDouble("academy_student",academy_student);
 			nbt.putDouble("genin",genin);
 			nbt.putDouble("chunin",chunin);
 			nbt.putDouble("jonin",jonin);
+			nbt.putDouble("kazekage",kazekage);
 			//Land
 			nbt.putDouble("land",land);
 			nbt.putDouble("land_of_earth",land_of_earth);

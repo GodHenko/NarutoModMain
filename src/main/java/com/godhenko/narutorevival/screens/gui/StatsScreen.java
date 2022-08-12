@@ -5,7 +5,6 @@ import com.godhenko.narutorevival.NarutoRevival;
 import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
 import com.godhenko.narutorevival.network.StatsButtonMessage;
 import com.godhenko.narutorevival.procedures.guiprocedures.barprocedures.*;
-import com.godhenko.narutorevival.procedures.guiprocedures.showprocedures.*;
 import com.godhenko.narutorevival.world.inventory.StatsMenu;
 import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.world.level.Level;
@@ -483,14 +482,18 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 			this.font.draw(poseStack, "Affiliation:    "  + "Shikotsu", 167, 70, Color.black.getRGB());
 		}
 		//Rank
-		if (NarutoRevivalModVariables.MapVariables.get(world).academy_student == NarutoRevivalModVariables.MapVariables.get(world).academy_student){
+		if (NarutoRevivalModVariables.MapVariables.get(world).rank == 0){
+			this.font.draw(poseStack, "Rank:"  + "", 167, 85, Color.black.getRGB());
+		}else if (NarutoRevivalModVariables.MapVariables.get(world).rank == 1){
 			this.font.draw(poseStack, "Rank:"  + "Academy Student", 167, 85, Color.black.getRGB());
-		} else if (NarutoRevivalModVariables.MapVariables.get(world).academy_student == NarutoRevivalModVariables.MapVariables.get(world).genin) {
+		} else if (NarutoRevivalModVariables.MapVariables.get(world).rank == 2) {
 			this.font.draw(poseStack, "Rank:"  + "Genin", 167, 85, Color.black.getRGB());
-		}else if (NarutoRevivalModVariables.MapVariables.get(world).academy_student == NarutoRevivalModVariables.MapVariables.get(world).chunin) {
+		}else if (NarutoRevivalModVariables.MapVariables.get(world).rank == 3) {
 			this.font.draw(poseStack, "Rank:"  + "Chunin", 167, 85, Color.black.getRGB());
-		}else if (NarutoRevivalModVariables.MapVariables.get(world).academy_student == NarutoRevivalModVariables.MapVariables.get(world).jonin) {
+		}else if (NarutoRevivalModVariables.MapVariables.get(world).rank == 4) {
 			this.font.draw(poseStack, "Rank:"  + "Jonin", 167, 85, Color.black.getRGB());
+		}else if (NarutoRevivalModVariables.MapVariables.get(world).rank == 6) {
+			this.font.draw(poseStack, "Rank:" + "Kazekage", 167, 85, Color.black.getRGB());
 		}
 
 		this.font.draw(poseStack, "Nature Release" , 167, 100, Color.black.getRGB());

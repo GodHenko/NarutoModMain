@@ -1,0 +1,38 @@
+{
+  "display": {
+    "icon": {
+      "item": "narutorevival:genin_helment"
+    },
+    "title": {
+      "translate": "advancements.narutorevival.kill_genin.title"
+    },
+    "description": {
+      "translate": "advancements.narutorevival.kill_genin.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "killed_genin": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "narutorevival:genin"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "killed_genin"
+    ]
+  ]
+}

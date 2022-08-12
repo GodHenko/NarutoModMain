@@ -3,7 +3,7 @@ package com.godhenko.narutorevival.network;
 
 import com.godhenko.narutorevival.NarutoRevival;
 import com.godhenko.narutorevival.procedures.guiprocedures.moreprocedures.*;
-import com.godhenko.narutorevival.procedures.guiprocedures.otherprocedures.MoreHPProcedure;
+import com.godhenko.narutorevival.procedures.guiprocedures.moreprocedures.MoreHPProcedure;
 import com.godhenko.narutorevival.world.inventory.StatsMenu;
 import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;

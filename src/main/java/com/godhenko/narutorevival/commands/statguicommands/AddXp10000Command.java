@@ -24,7 +24,6 @@ public class AddXp10000Command {
 	@SubscribeEvent
 	public static void registerCommand(RegisterCommandsEvent event) {
 		event.getDispatcher().register(Commands.literal("addxp10000")
-
 				.then(Commands.argument("arguments", StringArgumentType.greedyString()).executes(AddXp10000Command::execute))
 				.executes(AddXp10000Command::execute));
 	}

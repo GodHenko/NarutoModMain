@@ -106,6 +106,8 @@ public class ShowprogressbarOverlay {
 						(NarutoRevivalModVariables.MapVariables.get(world).maxChakra) + "", 96, 100, Color.black.getRGB());
 
 			}
+
+
 			RenderSystem.depthMask(true);
 			RenderSystem.defaultBlendFunc();
 			RenderSystem.enableDepthTest();

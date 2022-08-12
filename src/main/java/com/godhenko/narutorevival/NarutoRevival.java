@@ -6,7 +6,9 @@ import com.godhenko.narutorevival.inits.BlockInit;
 import com.godhenko.narutorevival.inits.ItemInit;
 import com.godhenko.narutorevival.inits.KeyMappingsInit;
 import com.godhenko.narutorevival.sounds.ModSounds;
+import com.godhenko.narutorevival.world.dimension.ModDimensions;
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
@@ -98,7 +100,7 @@ public class NarutoRevival
         ModEntityTypes.register(bus);
         ModSounds.register(bus);
         ModVillagers.register(bus);
-
+        ModDimensions.register();
 
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -114,9 +116,10 @@ public class NarutoRevival
     });
 
     }
-    
+    public class KeyboardHelper {
+        public static final long WINDOW = Minecraft.getInstance().getWindow().getWindow();
 
-
+    }
 
     public static <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder,
                                              BiConsumer<T, Supplier<NetworkEvent.Context>> messageConsumer) {

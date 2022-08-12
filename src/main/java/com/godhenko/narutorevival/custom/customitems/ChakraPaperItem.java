@@ -83,6 +83,24 @@ public class ChakraPaperItem extends Item {
             int earth = 2;
             int lightning = 3;
             int water = 4;
+            //Dual Fires
+            int fireAndWind = 0;
+            int fireAndEarth = 0;
+            int fireAndLightning = 0;
+            int fireAndWater = 0;
+            //Dual Winds
+            int windAndEarth = 0;
+            int windAndLightning = 0;
+            int windAndWater = 0;
+            //dual Earth
+            int earthAndLighting = 0;
+            int earthAndWater = 0;
+            //dual water
+            int waterAndLightning = 0;
+
+
+
+
             //Land
             int land_of_earth = 0;
             int land_of_fire = 1;
@@ -96,14 +114,23 @@ public class ChakraPaperItem extends Item {
 
             int clan = rand.nextInt(22);
             int affiliation = rand.nextInt(24);
-            int nature = rand.nextInt(5);
+            int nature = rand.nextInt(150);
             int land = rand.nextInt(9);
+
+            NarutoRevivalModVariables.MapVariables.get(world).rank = NarutoRevivalModVariables.MapVariables.get(world).rank;
+            NarutoRevivalModVariables.MapVariables.get(world).rank = 1;
+            NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
 
             if (clan == uchiha) {
                 NarutoRevivalModVariables.MapVariables.get(world).clan = 1;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
                 player.sendMessage(new TranslatableComponent("You are now part of the Uchiha Clan"), player.getUUID());
                 _setstack = new ItemStack(ItemInit.UCHIHA.get());
+                _setstack.setCount(1);
+                ItemHandlerHelper.giveItemToPlayer(player, _setstack);
+                NarutoRevivalModVariables.MapVariables.get(world).fire = 1;
+                NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+                _setstack = new ItemStack(ItemInit.FIRE_RELEASE.get());
                 _setstack.setCount(1);
                 ItemHandlerHelper.giveItemToPlayer(player, _setstack);
             } else if (clan == hyuga) {
@@ -378,38 +405,158 @@ public class ChakraPaperItem extends Item {
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
             }
 
-            if (nature == fire){
+            if (nature < 20){
                 NarutoRevivalModVariables.MapVariables.get(world).fire = 1;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
                 _setstack = new ItemStack(ItemInit.FIRE_RELEASE.get());
                 _setstack.setCount(1);
                 ItemHandlerHelper.giveItemToPlayer(player, _setstack);
             }
-            else if (nature == earth){
+            else if (nature < 40){
                 NarutoRevivalModVariables.MapVariables.get(world).earth = 1;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
                 _setstack = new ItemStack(ItemInit.EARTH_RELEASE.get());
                 _setstack.setCount(1);
                 ItemHandlerHelper.giveItemToPlayer(player, _setstack);
             }
-            else if (nature == wind){
+            else if (nature < 60){
                 NarutoRevivalModVariables.MapVariables.get(world).wind = 1;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
                 _setstack = new ItemStack(ItemInit.WIND_RELEASE.get());
                 _setstack.setCount(1);
                 ItemHandlerHelper.giveItemToPlayer(player, _setstack);
             }
-            else if (nature == lightning){
+            else if (nature < 80){
                 NarutoRevivalModVariables.MapVariables.get(world).lightning = 1;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
                 _setstack = new ItemStack(ItemInit.LIGHTNING_RELEASE.get());
                 _setstack.setCount(1);
                 ItemHandlerHelper.giveItemToPlayer(player, _setstack);
             }
-            else if (nature == water){
+            else if (nature < 100){
                 NarutoRevivalModVariables.MapVariables.get(world).water = 1;
                 NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
                 _setstack = new ItemStack(ItemInit.WATER_RELEASE.get());
+                _setstack.setCount(1);
+                ItemHandlerHelper.giveItemToPlayer(player, _setstack);
+            }
+            else if (nature < 105){
+                NarutoRevivalModVariables.MapVariables.get(world).fire = 1;
+                NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+                NarutoRevivalModVariables.MapVariables.get(world).wind = 1;
+                NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+                _setstack = new ItemStack(ItemInit.WIND_RELEASE.get());
+                _setstack.setCount(1);
+                ItemHandlerHelper.giveItemToPlayer(player, _setstack);
+                _setstack = new ItemStack(ItemInit.FIRE_RELEASE.get());
+                _setstack.setCount(1);
+                ItemHandlerHelper.giveItemToPlayer(player, _setstack);
+            }
+            else if (nature < 110){
+                NarutoRevivalModVariables.MapVariables.get(world).fire = 1;
+                NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+                NarutoRevivalModVariables.MapVariables.get(world).earth = 1;
+                NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+                _setstack = new ItemStack(ItemInit.EARTH_RELEASE.get());
+                _setstack.setCount(1);
+                ItemHandlerHelper.giveItemToPlayer(player, _setstack);
+                _setstack = new ItemStack(ItemInit.FIRE_RELEASE.get());
+                _setstack.setCount(1);
+                ItemHandlerHelper.giveItemToPlayer(player, _setstack);
+            }
+            else if (nature < 115){
+                NarutoRevivalModVariables.MapVariables.get(world).fire = 1;
+                NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+                NarutoRevivalModVariables.MapVariables.get(world).lightning = 1;
+                NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+                _setstack = new ItemStack(ItemInit.LIGHTNING_RELEASE.get());
+                _setstack.setCount(1);
+                ItemHandlerHelper.giveItemToPlayer(player, _setstack);
+                _setstack = new ItemStack(ItemInit.FIRE_RELEASE.get());
+                _setstack.setCount(1);
+                ItemHandlerHelper.giveItemToPlayer(player, _setstack);
+            }
+            else if (nature < 120){
+                NarutoRevivalModVariables.MapVariables.get(world).fire = 1;
+                NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+                NarutoRevivalModVariables.MapVariables.get(world).water = 1;
+                NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+                _setstack = new ItemStack(ItemInit.WATER_RELEASE.get());
+                _setstack.setCount(1);
+                ItemHandlerHelper.giveItemToPlayer(player, _setstack);
+                _setstack = new ItemStack(ItemInit.FIRE_RELEASE.get());
+                _setstack.setCount(1);
+                ItemHandlerHelper.giveItemToPlayer(player, _setstack);
+            }
+            else if (nature < 125){
+                NarutoRevivalModVariables.MapVariables.get(world).earth = 1;
+                NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+                NarutoRevivalModVariables.MapVariables.get(world).wind = 1;
+                NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+                _setstack = new ItemStack(ItemInit.WIND_RELEASE.get());
+                _setstack.setCount(1);
+                ItemHandlerHelper.giveItemToPlayer(player, _setstack);
+                _setstack = new ItemStack(ItemInit.EARTH_RELEASE.get());
+                _setstack.setCount(1);
+                ItemHandlerHelper.giveItemToPlayer(player, _setstack);
+            }
+            else if (nature < 130){
+                NarutoRevivalModVariables.MapVariables.get(world).lightning = 1;
+                NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+                NarutoRevivalModVariables.MapVariables.get(world).wind = 1;
+                NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+                _setstack = new ItemStack(ItemInit.WIND_RELEASE.get());
+                _setstack.setCount(1);
+                ItemHandlerHelper.giveItemToPlayer(player, _setstack);
+                _setstack = new ItemStack(ItemInit.LIGHTNING_RELEASE.get());
+                _setstack.setCount(1);
+                ItemHandlerHelper.giveItemToPlayer(player, _setstack);
+            }
+            else if (nature < 135){
+                NarutoRevivalModVariables.MapVariables.get(world).water = 1;
+                NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+                NarutoRevivalModVariables.MapVariables.get(world).wind = 1;
+                NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+                _setstack = new ItemStack(ItemInit.WIND_RELEASE.get());
+                _setstack.setCount(1);
+                ItemHandlerHelper.giveItemToPlayer(player, _setstack);
+                _setstack = new ItemStack(ItemInit.WATER_RELEASE.get());
+                _setstack.setCount(1);
+                ItemHandlerHelper.giveItemToPlayer(player, _setstack);
+            }
+            else if (nature < 140){
+                NarutoRevivalModVariables.MapVariables.get(world).earth = 1;
+                NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+                NarutoRevivalModVariables.MapVariables.get(world).lightning = 1;
+                NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+                _setstack = new ItemStack(ItemInit.EARTH_RELEASE.get());
+                _setstack.setCount(1);
+                ItemHandlerHelper.giveItemToPlayer(player, _setstack);
+                _setstack = new ItemStack(ItemInit.LIGHTNING_RELEASE.get());
+                _setstack.setCount(1);
+                ItemHandlerHelper.giveItemToPlayer(player, _setstack);
+            }
+            else if (nature < 145){
+                NarutoRevivalModVariables.MapVariables.get(world).earth = 1;
+                NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+                NarutoRevivalModVariables.MapVariables.get(world).water = 1;
+                NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+                _setstack = new ItemStack(ItemInit.EARTH_RELEASE.get());
+                _setstack.setCount(1);
+                ItemHandlerHelper.giveItemToPlayer(player, _setstack);
+                _setstack = new ItemStack(ItemInit.WATER_RELEASE.get());
+                _setstack.setCount(1);
+                ItemHandlerHelper.giveItemToPlayer(player, _setstack);
+            }
+            else if (nature < 150){
+                NarutoRevivalModVariables.MapVariables.get(world).water = 1;
+                NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+                NarutoRevivalModVariables.MapVariables.get(world).lightning = 1;
+                NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+                _setstack = new ItemStack(ItemInit.WATER_RELEASE.get());
+                _setstack.setCount(1);
+                ItemHandlerHelper.giveItemToPlayer(player, _setstack);
+                _setstack = new ItemStack(ItemInit.LIGHTNING_RELEASE.get());
                 _setstack.setCount(1);
                 ItemHandlerHelper.giveItemToPlayer(player, _setstack);
             }
