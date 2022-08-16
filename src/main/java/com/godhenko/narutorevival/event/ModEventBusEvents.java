@@ -14,7 +14,11 @@ import com.godhenko.narutorevival.entity.ninjaentities.jonin.JoninRenderer;
 import com.godhenko.narutorevival.entity.ramenman.RamenTraderEntity;
 import com.godhenko.narutorevival.entity.ramenman.RamenTraderModel;
 import com.godhenko.narutorevival.entity.ramenman.RamenTraderRenderer;
+import com.mojang.datafixers.util.Either;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RenderTooltipEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -56,5 +60,4 @@ public class ModEventBusEvents {
         event.registerEntityRenderer(ModEntityTypes.RAMEN_TRADER.get(), RamenTraderRenderer::new);
 
     }
-
 }

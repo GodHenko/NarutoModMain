@@ -84,7 +84,7 @@ public class ItemInit {
             .tab(NarutoRevival.CLAN_TAB).stacksTo(1)));
     //Natures
     public static final RegistryObject<Item> FIRE_RELEASE = register("fire_release",() -> new FireReleaseLearnerItem(new Item.Properties()
-            .tab(NarutoRevival.NATURES_TAB).stacksTo(1)));
+            .tab(NarutoRevival.NATURES_TAB).stacksTo(1).durability(50)));
     public static final RegistryObject<Item> WATER_RELEASE = register("water_release",() -> new Item(new Item.Properties()
             .tab(NarutoRevival.NATURES_TAB).stacksTo(1)));
     public static final RegistryObject<Item> WIND_RELEASE = register("wind_release",() -> new Item(new Item.Properties()
