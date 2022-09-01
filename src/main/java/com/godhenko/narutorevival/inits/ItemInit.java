@@ -3,18 +3,30 @@ package com.godhenko.narutorevival.inits;
 import com.godhenko.narutorevival.NarutoRevival;
 import com.godhenko.narutorevival.custom.armor.ModArmorMaterials;
 import com.godhenko.narutorevival.custom.customitems.*;
+import com.godhenko.narutorevival.custom.customitems.jutsuitems.JutsuItem;
+import com.godhenko.narutorevival.custom.customitems.jutsuitems.JutsuType;
 import com.godhenko.narutorevival.custom.customitems.natureitems.FireReleaseLearnerItem;
+import com.godhenko.narutorevival.custom.customitems.natureitems.earthrelease.EarthOneJutsu;
+import com.godhenko.narutorevival.custom.customitems.natureitems.earthrelease.EarthTwoJutsu;
+import com.godhenko.narutorevival.custom.customitems.natureitems.firereleasemoves.FireBulletJutsu;
+import com.godhenko.narutorevival.custom.customitems.natureitems.firereleasemoves.FireOneJutsu;
+import com.godhenko.narutorevival.custom.customitems.natureitems.firereleasemoves.FireTwoJutsu;
+import com.godhenko.narutorevival.custom.customitems.natureitems.firereleasemoves.GreatFireballJutsu;
+import com.godhenko.narutorevival.custom.customitems.natureitems.lightningrelease.LightningOneJutsu;
+import com.godhenko.narutorevival.custom.customitems.natureitems.lightningrelease.LightningTwoJutsu;
+import com.godhenko.narutorevival.custom.customitems.natureitems.waterreleasemoves.WaterOneJutsu;
+import com.godhenko.narutorevival.custom.customitems.natureitems.waterreleasemoves.WaterTwoJutsu;
+import com.godhenko.narutorevival.custom.customitems.natureitems.windrelease.WindOneJutsu;
+import com.godhenko.narutorevival.custom.customitems.natureitems.windrelease.WindTwoJutsu;
 import com.godhenko.narutorevival.custom.customitems.weapons.Gunbai;
 import com.godhenko.narutorevival.entity.ModEntityTypes;
 import com.google.common.base.Supplier;
-import net.minecraft.client.Minecraft;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
-import net.minecraftforge.common.ForgeTier;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -27,6 +39,10 @@ public class ItemInit {
     public static final RegistryObject<Item> RAMEN = register("ramen",
             () -> new Item(new Item.Properties().tab(NarutoRevival.Food_TAB).food(new FoodProperties.Builder().nutrition(50)
                     .saturationMod(10.0f).build())));
+    public static final RegistryObject<Item> SPECIAL_RAMEN = register("special_ramen",
+            () -> new Item(new Item.Properties().tab(NarutoRevival.Food_TAB).food(new FoodProperties.Builder().nutrition(50)
+                    .saturationMod(10.0f).effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 200), 0.1f).build())));
+
 
     public static final RegistryObject<Item> BRONZE_RYO = register("bronze_ryo",() -> new Item(new Item.Properties()
             .tab(NarutoRevival.MISC_TAB)));
@@ -142,7 +158,27 @@ public class ItemInit {
     public static final RegistryObject<Item> KATANA = ITEMS.register("katana",
             () -> new SwordItem(TiersInit.GENIN,2,3f,new Item.Properties().tab(NarutoRevival.MISC_TAB)));
 
+    public static final RegistryObject<Item> WOODEN_KATANA = ITEMS.register("wooden_katana",
+            () -> new SwordItem(TiersInit.GENIN,2,3f,new Item.Properties().tab(NarutoRevival.MISC_TAB)));
 
+    public static final RegistryObject<Item> POUCH = ITEMS.register("pouch", () -> new PouchItem());
+    public static final RegistryObject<Item> RYO_POUCH = ITEMS.register("ryo_pouch", () -> new RyobagItem());
+
+    //JUTSU
+    //Fire
+    public static final RegistryObject<Item> JUTSU_FIRE_BALL = ITEMS.register("jutsu_fire_ball", () -> new JutsuItem(JutsuType.FIRE, 1, new FireOneJutsu().init(), new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).stacksTo(1).rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> JUTSU_GREAT_FIREBALL = ITEMS.register("jutsu_great_fireball", () -> new JutsuItem(JutsuType.FIRE, 1, new GreatFireballJutsu().init(), new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).stacksTo(1).rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> JUTSU_FIRE_BULLET = ITEMS.register("jutsu_fire_bullet", () -> new JutsuItem(JutsuType.FIRE, 1, new FireBulletJutsu().init(), new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).stacksTo(1).rarity(Rarity.EPIC)));
+
+    public static final RegistryObject<Item> JUTSU_RUNNING_FIRE = ITEMS.register("jutsu_running_fire", () -> new JutsuItem(JutsuType.FIRE, 2, new FireTwoJutsu().init(), new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).stacksTo(1).rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> JUTSU_EARTH_WALL = ITEMS.register("jutsu_earth_wall", () -> new JutsuItem(JutsuType.EARTH, 1, new EarthOneJutsu().init(), new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).stacksTo(1).rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> JUTSU_SAND_TRAP = ITEMS.register("jutsu_sand_trap", () -> new JutsuItem(JutsuType.EARTH, 2, new EarthTwoJutsu().init(), new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).stacksTo(1).rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> JUTSU_WATER_WALL = ITEMS.register("jutsu_water_wall", () -> new JutsuItem(JutsuType.WATER, 1, new WaterOneJutsu().init(), new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).stacksTo(1).rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> JUTSU_SHARK_BULLET = ITEMS.register("jutsu_shark_bullet", () -> new JutsuItem(JutsuType.WATER, 2, new WaterTwoJutsu().init(), new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).stacksTo(1).rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> JUTSU_WIND_MODE = ITEMS.register("jutsu_wind_mode", () -> new JutsuItem(JutsuType.WIND, 1, new WindOneJutsu().init(), new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).stacksTo(1).rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> JUTSU_GALE_STRIKE = ITEMS.register("jutsu_gale_strike", () -> new JutsuItem(JutsuType.WIND, 2, new WindTwoJutsu().init(), new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).stacksTo(1).rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> JUTSU_STATIC_FORCE = ITEMS.register("jutsu_static_force", () -> new JutsuItem(JutsuType.LIGHTNING, 1, new LightningOneJutsu().init(), new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).stacksTo(1).rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> JUTSU_LIGHTNING_BALL = ITEMS.register("jutsu_lightning_ball", () -> new JutsuItem(JutsuType.LIGHTNING, 2, new LightningTwoJutsu().init(), new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).stacksTo(1).rarity(Rarity.EPIC)));
 
     private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item) {
         return ITEMS.register(name, item);

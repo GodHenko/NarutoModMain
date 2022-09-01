@@ -87,6 +87,19 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(ItemInit.EARTH_RELEASE.get());
 		oneLayerItem(ItemInit.LIGHTNING_RELEASE.get());
 		oneLayerItem(ItemInit.CHAKRA_PAPER.get());
+		//Jutsu
+		oneLayerItem(ItemInit.JUTSU_FIRE_BALL.get());
+		oneLayerItem(ItemInit.JUTSU_RUNNING_FIRE.get());
+		oneLayerItem(ItemInit.JUTSU_EARTH_WALL.get());
+		oneLayerItem(ItemInit.JUTSU_SAND_TRAP.get());
+		oneLayerItem(ItemInit.JUTSU_WATER_WALL.get());
+		oneLayerItem(ItemInit.JUTSU_SHARK_BULLET.get());
+		oneLayerItem(ItemInit.JUTSU_WIND_MODE.get());
+		oneLayerItem(ItemInit.JUTSU_GALE_STRIKE.get());
+		oneLayerItem(ItemInit.JUTSU_STATIC_FORCE.get());
+		oneLayerItem(ItemInit.JUTSU_LIGHTNING_BALL.get());
+
+
 		// Simple Items
 		oneLayerItem(ItemInit.RAMEN.get());
 		oneLayerItem(ItemInit.BRONZE_RYO.get());

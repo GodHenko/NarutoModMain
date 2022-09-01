@@ -35,5 +35,7 @@ public class PlayerRespawnsProcedure {
 							null).withSuppressedOutput(),
 					("attribute @p minecraft:generic.max_health base set "
 							+ new java.text.DecimalFormat("##").format(NarutoRevivalModVariables.MapVariables.get(world).medical + 20)));
+
 	}
+
 }

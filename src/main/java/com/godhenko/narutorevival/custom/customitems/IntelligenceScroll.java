@@ -23,29 +23,32 @@ public class IntelligenceScroll extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
-        ItemStack itemstack = player.getItemInHand(hand);
-        if (NarutoRevivalModVariables.MapVariables.get(world).intelligence > NarutoRevivalModVariables.MapVariables.get(world).maxIntelligence) {
-            NarutoRevivalModVariables.MapVariables.get(world).intelligence = NarutoRevivalModVariables.MapVariables.get(world).intelligence + 0;
-            NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
-            player.awardStat(Stats.ITEM_USED.get(this));
-            if (!player.getAbilities().instabuild) {
-                itemstack.shrink(0);
-            }
+        if (world.isClientSide) {
+            ItemStack itemstack = player.getItemInHand(hand);
+            if (NarutoRevivalModVariables.MapVariables.get(world).intelligence > NarutoRevivalModVariables.MapVariables.get(world).maxIntelligence) {
+                NarutoRevivalModVariables.MapVariables.get(world).intelligence = NarutoRevivalModVariables.MapVariables.get(world).intelligence + 0;
+                NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+                player.awardStat(Stats.ITEM_USED.get(this));
+                if (!player.getAbilities().instabuild) {
+                    itemstack.shrink(0);
+                }
 
-        } else if
-        (NarutoRevivalModVariables.MapVariables.get(world).intelligence >= 0) {
-            NarutoRevivalModVariables.MapVariables.get(world).intelligence = NarutoRevivalModVariables.MapVariables.get(world).intelligence + 5;
-            NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
+            } else if
+            (NarutoRevivalModVariables.MapVariables.get(world).intelligence >= 0) {
+                NarutoRevivalModVariables.MapVariables.get(world).intelligence = NarutoRevivalModVariables.MapVariables.get(world).intelligence + 5;
+                NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
 
-            player.awardStat(Stats.ITEM_USED.get(this));
-            if (!player.getAbilities().instabuild) {
-                itemstack.shrink(1);
-            }
+                player.awardStat(Stats.ITEM_USED.get(this));
+                if (!player.getAbilities().instabuild) {
+                    itemstack.shrink(1);
+                }
 
             }
+        }
 
             return super.use(world, player, hand);
         }
+
 
 
         @Override

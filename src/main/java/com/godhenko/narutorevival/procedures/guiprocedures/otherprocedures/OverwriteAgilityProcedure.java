@@ -30,7 +30,7 @@ public class OverwriteAgilityProcedure {
 			return;
 		if (entity instanceof Player) {
 			entity.setDeltaMovement(new Vec3((entity.getDeltaMovement().x()),
-					(entity.getDeltaMovement().y() + NarutoRevivalModVariables.MapVariables.get(world).speed / 250), (entity.getDeltaMovement().z())));
+					(entity.getDeltaMovement().y() + NarutoRevivalModVariables.MapVariables.get(world).speed / 150), (entity.getDeltaMovement().z())));
 		}
 	}
 }

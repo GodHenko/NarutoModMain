@@ -4,6 +4,7 @@ package com.godhenko.narutorevival.network;
 import com.godhenko.narutorevival.NarutoRevival;
 import com.godhenko.narutorevival.procedures.guiprocedures.moreprocedures.*;
 import com.godhenko.narutorevival.procedures.guiprocedures.moreprocedures.MoreHPProcedure;
+import com.godhenko.narutorevival.procedures.guiprocedures.moreprocedures.plus10.*;
 import com.godhenko.narutorevival.world.inventory.StatsMenu;
 import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -61,51 +62,92 @@ public class StatsButtonMessage {
 		Level world = entity.level;
 		HashMap guistate = StatsMenu.guistate;
 		// security measure to prevent arbitrary chunk generation
-		if (!world.hasChunkAt(new BlockPos(x, y, z)))
-			return;
-		if (buttonID == 0) {
+			if (!world.hasChunkAt(new BlockPos(x, y, z)))
+				return;
+			if (buttonID == 0) {
 
-			MoreninjutsuProcedure.execute(world, entity);
+				MoreninjutsuProcedure.execute(world);
+			}
+			if (buttonID == 1) {
+
+				MoretaijutsuProcedure.execute(world);
+			}
+			if (buttonID == 2) {
+
+				MoregenjutsuProcedure.execute(world);
+			}
+			if (buttonID == 3) {
+
+				MorekenjutsuProcedure.execute(world);
+			}
+			if (buttonID == 4) {
+
+				MoreshurikenjutsuProcedure.execute(world);
+			}
+			if (buttonID == 5) {
+
+				MoresummoningProcedure.execute(world);
+			}
+			if (buttonID == 6) {
+
+				MorekinjutsuProcedure.execute(world);
+			}
+			if (buttonID == 7) {
+
+				MoresenjutsuProcedure.execute(world);
+			}
+			if (buttonID == 8) {
+
+				MoreHPProcedure.execute(world, x, y, z);
+			}
+			if (buttonID == 9) {
+
+				MorespeedProcedure.execute(world);
+			}
+		if (buttonID == 10) {
+
+			TenMoreninjutsuProcedure.execute(world);
 		}
-		if (buttonID == 1) {
+		if (buttonID == 11) {
 
-			MoretaijutsuProcedure.execute(world, entity);
+			TenMoretaijutsuProcedure.execute(world);
 		}
-		if (buttonID == 2) {
+		if (buttonID == 12) {
 
-			MoregenjutsuProcedure.execute(world, entity);
+			TenMoregenjutsuProcedure.execute(world);
 		}
-		if (buttonID == 3) {
+		if (buttonID == 13) {
 
-			MorekenjutsuProcedure.execute(world, entity);
+			TenMorekenjutsuProcedure.execute(world);
 		}
-		if (buttonID == 4) {
+		if (buttonID == 14) {
 
-			MoreshurikenjutsuProcedure.execute(world, entity);
+			TenMoreshurikenjutsuProcedure.execute(world);
 		}
-		if (buttonID == 5) {
+		if (buttonID == 15) {
 
-			MoresummoningProcedure.execute(world, entity);
+			TenMoresummoningProcedure.execute(world);
 		}
-		if (buttonID == 6) {
+		if (buttonID == 16) {
 
-			MorekinjutsuProcedure.execute(world, entity);
+			TenMorekinjutsuProcedure.execute(world);
 		}
-		if (buttonID == 7) {
+		if (buttonID == 17) {
 
-			MoresenjutsuProcedure.execute(world, entity);
+			TenMoresenjutsuProcedure.execute(world);
 		}
-		if (buttonID == 8) {
+		if (buttonID == 18) {
 
-			MoreHPProcedure.execute(world, x,y,z);
+			TenMoreHPProcedure.execute(world, x, y, z);
 		}
-		if (buttonID == 9) {
+		if (buttonID == 19) {
 
-			MorespeedProcedure.execute(world, entity);
+			TenMorespeedProcedure.execute(world);
 		}
 
 
-	}
+
+		}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {

@@ -29,21 +29,6 @@ public class ModEvents {
     public static void onCommandsRegister(RegisterCommandsEvent event) {
 
     }
-
-    @SubscribeEvent
-    public static void addCustomTrades(VillagerTradesEvent event) {
-
-        if(event.getType() == ModVillagers.RAMENTRADER.get()) {
-            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-            ItemStack stack = new ItemStack(ItemInit.RAMEN.get(), 1);
-            int villagerLevel = 1;
-
-            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
-                    new ItemStack(ItemInit.BRONZE_RYO.get(), 1),
-                    stack,4,5,0.09F));
-
-        }
-    }
     @SubscribeEvent
     public static void renderToolTip(RenderTooltipEvent.GatherComponents event){
         if (NarutoCommonConfig.KENJUTSU_REQUIREMENT.get() == true){

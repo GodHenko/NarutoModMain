@@ -1,6 +1,7 @@
 package com.godhenko.narutorevival.inits;
 
 import com.godhenko.narutorevival.NarutoRevival;
+import com.godhenko.narutorevival.custom.customblocks.SwordForgeBlock;
 import com.google.common.base.Supplier;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -23,6 +24,12 @@ public class BlockInit {
     public static final RegistryObject<Block> UCHIHA_CLOTH = register("uchiha_cloth",() -> new Block
             (BlockBehaviour.Properties.copy(Blocks.BLUE_WOOL)),
                     object -> () -> new BlockItem(object.get(), new Item.Properties().tab(NarutoRevival.BLOCK_TAB)));
+
+    public static final RegistryObject<Block> SWORD_FORGE = register("sword_forge",() -> new SwordForgeBlock
+                    (BlockBehaviour.Properties.copy(Blocks.ANVIL).strength(3,10).requiresCorrectToolForDrops()),
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(NarutoRevival.BLOCK_TAB)));
+
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(final String name,
                                                                      final Supplier<? extends T> block) {

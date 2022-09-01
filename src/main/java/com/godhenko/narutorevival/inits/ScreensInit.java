@@ -1,5 +1,7 @@
 package com.godhenko.narutorevival.inits;
 
+import com.godhenko.narutorevival.screens.gui.BackpackScreen;
+import com.godhenko.narutorevival.screens.gui.RyoguiScreen;
 import com.godhenko.narutorevival.screens.gui.StatsScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
@@ -14,6 +16,12 @@ public class ScreensInit {
     public static void clientLoad(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             MenuScreens.register(MenusInit.STATS, StatsScreen::new);
+        });
+        event.enqueueWork(() -> {
+            MenuScreens.register(MenusInit.BACKPACK, BackpackScreen::new);
+        });
+        event.enqueueWork(() -> {
+        MenuScreens.register(MenusInit.RYOGUI, RyoguiScreen::new);
         });
     }
 }

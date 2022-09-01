@@ -1,18 +1,11 @@
 {
   "display": {
     "icon": {
-      "item": "narutorevival:genin_helment"
+      "item": "minecraft:stone"
     },
-    "title": {
-      "translate": "advancements.narutorevival.kill_genin.title"
-    },
-    "description": {
-      "translate": "advancements.narutorevival.kill_genin.description"
-    },
-    "frame": "task",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
+    "title": "Become A Ninja",
+    "description": "Defeat A Genin",
+    "background": "narutorevival:textures/block/uchiha_cloth.png"
   },
   "criteria": {
     "killed_genin": {

@@ -1,0 +1,65 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "narutorevival:customblocks/sword_forge",
+		"particle": "minecraft:block/anvil"
+	},
+	"elements": [
+		{
+			"from": [6, 2, 6],
+			"to": [10, 6, 10],
+			"faces": {
+				"north": {"uv": [0, 0, 4, 4], "texture": "#0"},
+				"east": {"uv": [0, 0, 4, 4], "texture": "#0"},
+				"south": {"uv": [0, 0, 4, 4], "texture": "#0"},
+				"west": {"uv": [0, 0, 4, 4], "texture": "#0"},
+				"up": {"uv": [0, 0, 4, 4], "texture": "#0"},
+				"down": {"uv": [0, 0, 4, 4], "texture": "#0"}
+			}
+		},
+		{
+			"from": [1, 0, 1],
+			"to": [15, 1, 15],
+			"faces": {
+				"north": {"uv": [0, 0, 14, 1], "texture": "#0"},
+				"east": {"uv": [0, 0, 14, 1], "texture": "#0"},
+				"south": {"uv": [0, 0, 14, 1], "texture": "#0"},
+				"west": {"uv": [0, 0, 14, 1], "texture": "#0"},
+				"up": {"uv": [0, 0, 14, 14], "texture": "#0"},
+				"down": {"uv": [0, 0, 14, 14], "texture": "#0"}
+			}
+		},
+		{
+			"from": [2, 1, 2],
+			"to": [14, 2, 14],
+			"faces": {
+				"north": {"uv": [0, 0, 12, 1], "texture": "#0"},
+				"east": {"uv": [0, 0, 12, 1], "texture": "#0"},
+				"south": {"uv": [0, 0, 12, 1], "texture": "#0"},
+				"west": {"uv": [0, 0, 12, 1], "texture": "#0"},
+				"up": {"uv": [0, 0, 12, 12], "texture": "#0"},
+				"down": {"uv": [0, 0, 12, 12], "texture": "#0"}
+			}
+		},
+		{
+			"from": [2, 6, 2],
+			"to": [14, 7, 14],
+			"faces": {
+				"north": {"uv": [0.25, 0.25, 0.75, 0.75], "texture": "#0"},
+				"east": {"uv": [1.25, 0.25, 1.75, 0.75], "texture": "#0"},
+				"south": {"uv": [2.25, 0.25, 2.75, 0.75], "texture": "#0"},
+				"west": {"uv": [3.25, 0.25, 3.75, 0.75], "texture": "#0"},
+				"up": {"uv": [4.25, 0.25, 4.75, 0.75], "texture": "#0"},
+				"down": {"uv": [5.25, 0.25, 5.75, 0.75], "texture": "#0"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "VoxelShapes",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [0, 1, 2, 3]
+		}
+	]
+}

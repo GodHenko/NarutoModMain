@@ -4,6 +4,8 @@ import com.godhenko.narutorevival.NarutoRevival;
 import com.godhenko.narutorevival.entity.ModEntityTypes;
 import com.godhenko.narutorevival.inits.BlockInit;
 import com.godhenko.narutorevival.inits.ItemInit;
+import com.godhenko.narutorevival.inits.ItemInit;
+import com.godhenko.narutorevival.inits.ModRegistry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -20,7 +22,8 @@ public class ModEnUsProvider extends LanguageProvider {
 		add( "key.narutorevival.category","Naruto Revival");
 		//Keybindings//
 		add("key.narutorevival.open_stats_menu", "Player Card");
-		add("key.gatherChakra", "Charge Chakra");
+		add("key.narutorevival.charge_chakra", "Charge Chakra");
+		add("key.narutorevival.chakra_control_key","Chakra Control");
 
 		// Item Groups
 		add("itemGroup.food", "Food Tab");
@@ -53,6 +56,47 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.LIGHTNING_RELEASE.get(),"Lightning Release");
 		add(ItemInit.EARTH_RELEASE.get(),"Earth Release");
 		add(ItemInit.GUNBAI.get(),"Gunbai");
+
+		//Jutsus
+		add(ItemInit.JUTSU_FIRE_BALL.get(),"Fire Ball Jutsu");
+		add(ItemInit.JUTSU_RUNNING_FIRE.get(),"Running Fire Jutsu");
+		add(ItemInit.JUTSU_EARTH_WALL.get(),"Earth Wall Jutsu");
+		add(ItemInit.JUTSU_SAND_TRAP.get(),"Sand Trap Jutsu");
+		add(ItemInit.JUTSU_WATER_WALL.get(),"Water Wall Jutsu");
+		add(ItemInit.JUTSU_SHARK_BULLET.get(),"Shark Bullet Jutsu");
+		add(ItemInit.JUTSU_WIND_MODE.get(),"Wind Mode Jutsu");
+		add(ItemInit.JUTSU_GALE_STRIKE.get(),"Gale Strike Jutsu");
+		add(ItemInit.JUTSU_STATIC_FORCE.get(),"Static Force Jutsu");
+		add(ItemInit.JUTSU_LIGHTNING_BALL.get(),"Lighting Ball Jutsu");
+
+		//Jutsu Desc
+		add("item.narutorevival.jutsu_fire_ball.desc","Shoots a fireball causing an explosion on impact.");
+		//Natures
+		add("jutsu.narutorevival.fire","Fire");
+		add("jutsu.narutorevival.water","Water");
+		add("jutsu.narutorevival.wind","Wind");
+		add("jutsu.narutorevival.lightning","Lightning");
+		add("jutsu.narutorevival.earth","Earth");
+		//Item Text
+		add("other.narutorevival.owner", "Owner: ");
+		add("other.narutorevival.type", "Type: ");
+		add("other.narutorevival.level", "Level: ");
+		//Entities
+		add(ModRegistry.AIR_BURST_PROJECTILE.get(),"Air Burst");
+		add(ModRegistry.EARTH_TRAP_PROJECTILE.get(),"Sand Trap");
+		add(ModRegistry.FIREBALL_PROJECTILE.get(),"Fire Ball");
+		add(ModRegistry.LIGHTNING_BALL_PROJECTILE.get(),"Lightning Ball");
+		add(ModRegistry.SHARK_PROJECTILE.get(),"Shark");
+		//Deaths
+		add("death.attack.stun_jutsu","%1$s was stunned by %2$s");
+		add( "death.attack.shark_jutsu","%1$s got eaten by %2$s's shark");
+		add("death.attack.fire_jutsu","%1$s got fried by %2$s");
+		add("death.attack.stun_jutsu.item","%1$s was stunned by %2$s");
+		add("death.attack.shark_jutsu.item","%1$s got eaten by %2$s's shark");
+		add("death.attack.fire_jutsu.item","%1$s got fried by %2$s");
+		//Jutsu Calls
+		add("jutsu.narutorevival.earth_wall","Earth Wall No Jutsu!");
+
 
 
 		//Clans

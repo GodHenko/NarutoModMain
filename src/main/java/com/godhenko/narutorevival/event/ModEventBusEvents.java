@@ -58,6 +58,8 @@ public class ModEventBusEvents {
 
 
         event.registerEntityRenderer(ModEntityTypes.RAMEN_TRADER.get(), RamenTraderRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.RAMEN_TRADER.get(), RamenTraderRenderer::new);
+
 
     }
 }

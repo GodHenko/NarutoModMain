@@ -44,6 +44,7 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 
 	private static final ResourceLocation texture = new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/stats.png");
 	private static final ResourceLocation addbutton = new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/addbutton.png");
+	private static final ResourceLocation addtenbutton = new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/addtenbutton.png");
 
 
 
@@ -602,6 +603,97 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 				StatsButtonMessage.handleButtonAction(entity, 9, x, y, z);
 			}
 			((ImageButton)e).setPosition(this.leftPos + -20, this.topPos + 186);
+
+		}));
+		///tens
+		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
+		this.addRenderableWidget(new ImageButton(this.leftPos-40,this.topPos + 51, 20, 15, 256,256,addtenbutton, e -> {
+			if (true) {
+				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(10, x, y, z));
+				StatsButtonMessage.handleButtonAction(entity, 10, x, y, z);
+			}
+			((ImageButton)e).setPosition(this.leftPos + -40, this.topPos + 51);
+		}));
+		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
+		this.addRenderableWidget(new ImageButton(this.leftPos + -40, this.topPos + 66, 20, 15, 256,256,addtenbutton, e -> {
+			if (true) {
+				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(11, x, y, z));
+				StatsButtonMessage.handleButtonAction(entity, 11, x, y, z);
+			}
+			((ImageButton)e).setPosition(this.leftPos + -40, this.topPos + 66);
+
+		}));
+		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
+		this.addRenderableWidget(new ImageButton(this.leftPos + -40, this.topPos + 81, 20, 15, 256,256,addtenbutton, e -> {
+			if (true) {
+				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(12, x, y, z));
+				StatsButtonMessage.handleButtonAction(entity, 12, x, y, z);
+			}
+			((ImageButton)e).setPosition(this.leftPos + -40, this.topPos + 81);
+
+		}));
+		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
+		this.addRenderableWidget(new ImageButton(this.leftPos + -40, this.topPos + 96, 20, 15, 256,256,addtenbutton, e -> {
+			if (true) {
+				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(13, x, y, z));
+				StatsButtonMessage.handleButtonAction(entity, 13, x, y, z);
+			}
+			((ImageButton)e).setPosition(this.leftPos + -40, this.topPos + 96);
+
+		}));
+		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
+		this.addRenderableWidget(new ImageButton(this.leftPos + -40, this.topPos + 111, 20, 15, 256,256,addtenbutton, e -> {
+			if (true) {
+				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(14, x, y, z));
+				StatsButtonMessage.handleButtonAction(entity, 14, x, y, z);
+			}
+			((ImageButton)e).setPosition(this.leftPos + -40, this.topPos + 111);
+
+		}));
+		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
+		this.addRenderableWidget(new ImageButton(this.leftPos + -40, this.topPos + 126, 20, 15, 256,256,addtenbutton, e -> {
+			if (true) {
+				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(15, x, y, z));
+				StatsButtonMessage.handleButtonAction(entity, 15, x, y, z);
+			}
+			((ImageButton)e).setPosition(this.leftPos + -40, this.topPos + 126);
+
+		}));
+		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
+		this.addRenderableWidget(new ImageButton(this.leftPos + -40, this.topPos + 141, 20, 15, 256,256,addtenbutton, e -> {
+			if (true) {
+				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(16, x, y, z));
+				StatsButtonMessage.handleButtonAction(entity, 16, x, y, z);
+			}
+			((ImageButton)e).setPosition(this.leftPos + -40, this.topPos + 141);
+
+		}));
+		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
+		this.addRenderableWidget(new ImageButton(this.leftPos + -40, this.topPos + 156, 20, 15, 256,256,addtenbutton, e -> {
+			if (true) {
+				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(17, x, y, z));
+				StatsButtonMessage.handleButtonAction(entity, 17, x, y, z);
+			}
+			((ImageButton)e).setPosition(this.leftPos + -40, this.topPos + 156);
+
+		}));
+		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
+		this.addRenderableWidget(new ImageButton(this.leftPos + -40, this.topPos + 171, 20, 15, 256,256,addtenbutton, e -> {
+			if (true) {
+				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(18, x, y, z));
+				StatsButtonMessage.handleButtonAction(entity, 18, x, y, z);
+			}
+			((ImageButton)e).setPosition(this.leftPos + -40, this.topPos + 171);
+
+		}));
+
+		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
+		this.addRenderableWidget(new ImageButton(this.leftPos + -40, this.topPos + 186, 20, 15, 256,256,addtenbutton, e -> {
+			if (true) {
+				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(19, x, y, z));
+				StatsButtonMessage.handleButtonAction(entity, 19, x, y, z);
+			}
+			((ImageButton)e).setPosition(this.leftPos + -40, this.topPos + 186);
 
 		}));
 	}

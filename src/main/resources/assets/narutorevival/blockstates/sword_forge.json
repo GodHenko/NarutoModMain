@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "narutorevival:block/sword_forge" },
+    "facing=east": { "model": "narutorevival:block/sword_forge", "y": 90 },
+    "facing=south": { "model": "narutorevival:block/sword_forge", "y": 180 },
+    "facing=west": { "model": "narutorevival:block/sword_forge", "y": 270 }
+  }
+}

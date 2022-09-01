@@ -2,6 +2,7 @@
 package com.godhenko.narutorevival.commands.statguicommands;
 
 import com.godhenko.narutorevival.procedures.guiprocedures.addxpprocedures.AddXp10000CommandExecutedProcedure;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
@@ -33,9 +34,10 @@ public class AddXp10000Command {
 		double x = ctx.getSource().getPosition().x();
 		double y = ctx.getSource().getPosition().y();
 		double z = ctx.getSource().getPosition().z();
-		Entity entity = ctx.getSource().getEntity();
+		Entity entity = (Entity) ctx.getSource().getEntity();
 		if (entity == null)
 			entity = FakePlayerFactory.getMinecraft(world);
+		ServerPlayer player = (ServerPlayer) ctx.getSource().getEntity();
 		HashMap<String, String> cmdparams = new HashMap<>();
 		int[] index = {-1};
 		Arrays.stream(ctx.getInput().split("\\s+")).forEach(param -> {
