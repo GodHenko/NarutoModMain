@@ -3,8 +3,6 @@ package com.godhenko.narutorevival.projectile;
 import com.godhenko.narutorevival.inits.ModRegistry;
 import com.godhenko.narutorevival.jutsus.jutsus.JutsuHelper;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -12,25 +10,24 @@ import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.event.ForgeEventFactory;
 
 import java.util.List;
 
-public class FireBulletProjectile extends JutsuProjectile {
+public class PhoenixFireProjectile extends JutsuProjectile {
     private Float circleXrot = null;
     private Float circleYrot = null;
 
-    public FireBulletProjectile(EntityType<FireBulletProjectile> entityType, Level world) {
+    public PhoenixFireProjectile(EntityType<PhoenixFireProjectile> entityType, Level world) {
         super(entityType, world);
     }
 
-    public FireBulletProjectile(double x, double y, double z, double xPower, double yPower, double zPower, Level world) {
+    public PhoenixFireProjectile(double x, double y, double z, double xPower, double yPower, double zPower, Level world) {
         super((EntityType<? extends JutsuProjectile>) ModRegistry.AIR_BURST_PROJECTILE.get(), x, y, z, xPower, yPower, zPower, world);
     }
 
-    public FireBulletProjectile(LivingEntity owner, double xPower, double yPower, double zPower, Level world) {
+    public PhoenixFireProjectile(LivingEntity owner, double xPower, double yPower, double zPower, Level world) {
         this(owner.getX()+owner.getLookAngle().x, owner.getY()+owner.getEyeHeight()/2+owner.getLookAngle().y, owner.getZ()+owner.getLookAngle().z, xPower, yPower, zPower, world);
         this.setOwner(owner);
         circleXrot = owner.getXRot();
@@ -38,7 +35,7 @@ public class FireBulletProjectile extends JutsuProjectile {
         this.setRot(circleXrot, circleYrot);
     }
 
-    public FireBulletProjectile(LivingEntity owner, double power, Level world) {
+    public PhoenixFireProjectile(LivingEntity owner, double power, Level world) {
         this(owner, owner.getLookAngle().scale(power).x, owner.getLookAngle().scale(power).y, owner.getLookAngle().scale(power).z, world);
     }
 
@@ -70,7 +67,7 @@ public class FireBulletProjectile extends JutsuProjectile {
     public void tick() {
         super.tick();
 
-        JutsuHelper.spawnCircleParticles(level, ParticleTypes.FLAME, getCircleXrot(), getCircleYrot(), getX(), getY()+getBbHeight()/2, getZ(), 0, 0, 0, 0, 0.25, 0, 16);
+        JutsuHelper.spawnCircleParticles(level, ParticleTypes.FLAME, getCircleXrot(), getCircleYrot(), getX(), getY()+getBbHeight()/2, getZ(), 0, 0, 0, 0, 0.5, 0, 16);
 
         decreaseSpeed(100000);
     }

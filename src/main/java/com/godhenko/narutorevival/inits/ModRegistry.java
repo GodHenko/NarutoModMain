@@ -41,6 +41,12 @@ public class ModRegistry {
                     .setTrackingRange(10)
                     .build("fire_bullet")
     );
+    public static final RegistryObject<EntityType<?>> PHOENIX_FIRE_PROJECTILE = ENTITIES.register("phoenix_fire", () ->
+            EntityType.Builder.<PhoenixFireProjectile>of(PhoenixFireProjectile::new, MobCategory.MISC)
+                    .sized(2f, 2f)
+                    .setTrackingRange(10)
+                    .build("phoenix_fire")
+    );
 
     public static final RegistryObject<EntityType<?>> EARTH_TRAP_PROJECTILE = ENTITIES.register("earth_trap", () ->
             EntityType.Builder.<EarthTrapProjectile>of(EarthTrapProjectile::new, MobCategory.MISC)

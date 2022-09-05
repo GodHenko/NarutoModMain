@@ -90,6 +90,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 		//Jutsu
 		oneLayerItem(ItemInit.JUTSU_FIRE_BALL.get());
 		oneLayerItem(ItemInit.JUTSU_RUNNING_FIRE.get());
+		oneLayerItem(ItemInit.JUTSU_FIRE_BULLET.get());
+		oneLayerItem(ItemInit.JUTSU_GREAT_FIREBALL.get());
 		oneLayerItem(ItemInit.JUTSU_EARTH_WALL.get());
 		oneLayerItem(ItemInit.JUTSU_SAND_TRAP.get());
 		oneLayerItem(ItemInit.JUTSU_WATER_WALL.get());

@@ -66,7 +66,7 @@ public class StatsButtonMessage {
 				return;
 			if (buttonID == 0) {
 
-				MoreninjutsuProcedure.execute(world);
+				MoreninjutsuProcedure.execute(entity);
 			}
 			if (buttonID == 1) {
 

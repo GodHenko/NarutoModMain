@@ -105,6 +105,7 @@ public class OneTimeModVariables {
     public static class PlayerVariables {
         public boolean giveonce = false;
 
+
         public void syncPlayerVariables(Entity entity) {
             if (entity instanceof ServerPlayer serverPlayer)
                 NarutoRevival.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> serverPlayer), new PlayerVariablesSyncMessage(this));

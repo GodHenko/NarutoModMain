@@ -2,6 +2,7 @@
 package com.godhenko.narutorevival.screens.gui;
 
 import com.godhenko.narutorevival.NarutoRevival;
+import com.godhenko.narutorevival.network.NarutoModVariables;
 import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
 import com.godhenko.narutorevival.network.StatsButtonMessage;
 import com.godhenko.narutorevival.procedures.guiprocedures.barprocedures.*;
@@ -66,43 +67,43 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 		RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/emptybar.png"));
 		this.blit(ms, this.leftPos +16, this.topPos + 280, 0, 0, 102, 6, 102, 6);
 
-		if (Bar10showProcedure.execute(world)) {
+		if (Bar10showProcedure.execute(world,entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/1_10bar.png"));
 			this.blit(ms, this.leftPos + 16, this.topPos + 280, 0, 0, 102, 6, 102, 6);
 		}
-		if (Bar20showProcedure.execute(world)) {
+		if (Bar20showProcedure.execute(world,entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/2_10bar.png"));
 			this.blit(ms, this.leftPos + 16, this.topPos + 280, 0, 0, 102, 6, 102, 6);
 		}
-		if (Bar30showProcedure.execute(world)) {
+		if (Bar30showProcedure.execute(world,entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/3_10bar.png"));
 			this.blit(ms, this.leftPos + 16, this.topPos + 280, 0, 0, 102, 6, 102, 6);
 		}
-		if (Bar40showProcedure.execute(world)) {
+		if (Bar40showProcedure.execute(world,entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/4_10bar.png"));
 			this.blit(ms, this.leftPos + 16, this.topPos + 280, 0, 0, 102, 6, 102, 6);
 		}
-		if (Bar50ShowProcedure.execute(world)) {
+		if (Bar50ShowProcedure.execute(world,entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/5_10bar.png"));
 			this.blit(ms, this.leftPos + 16, this.topPos + 280, 0, 0, 102, 6, 102, 6);
 		}
-		if (Bar60ShowProcedure.execute(world)) {
+		if (Bar60ShowProcedure.execute(world,entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/6_10bar.png"));
 			this.blit(ms, this.leftPos + 16, this.topPos + 280, 0, 0, 102, 6, 102, 6);
 		}
-		if (Bar70showProcedure.execute(world)) {
+		if (Bar70showProcedure.execute(world,entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/7_10bar.png"));
 			this.blit(ms, this.leftPos + 16, this.topPos + 280, 0, 0, 102, 6, 102, 6);
 		}
-		if (Bar80showProcedure.execute(world)) {
+		if (Bar80showProcedure.execute(world,entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/8_10bar.png"));
 			this.blit(ms, this.leftPos + 16, this.topPos + 280, 0, 0, 102, 6, 102, 6);
 		}
-		if (Bar90showProcedure.execute(world)) {
+		if (Bar90showProcedure.execute(world,entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/9_10bar.png"));
 			this.blit(ms, this.leftPos + 16, this.topPos + 280, 0, 0, 102, 6, 102, 6);
 		}
-		if (FullbarshowProcedure.execute(world)) {
+		if (FullbarshowProcedure.execute(world,entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/fullbar.png"));
 			this.blit(ms, this.leftPos + 16, this.topPos + 280, 0, 0, 102, 6, 102, 6);
 		}
@@ -341,15 +342,18 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 		this.font.draw(poseStack, "Lvl: " + (int) (NarutoRevivalModVariables.MapVariables.get(world).Lvl) + "", 92, 272, Color.black.getRGB());
 		this.font.draw(poseStack, "Ninjutsu", 10, 55, Color.black.getRGB());
 		this.font.draw(poseStack, ":", 90, 55, Color.black.getRGB());
-		this.font.draw(poseStack, "" + (int) (NarutoRevivalModVariables.MapVariables.get(world).ninjutsu) + "", 92, 55, Color.black.getRGB());
+		this.font.draw(poseStack, "" + (int) ((entity.getCapability(NarutoModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new NarutoModVariables.PlayerVariables())).ninjutsu) + "", 92, 55, Color.black.getRGB());
 
 		this.font.draw(poseStack, "Taijutsu", 10, 70, Color.black.getRGB());
 		this.font.draw(poseStack, ":", 90, 70, Color.black.getRGB());
-		this.font.draw(poseStack, "" + (int) (NarutoRevivalModVariables.MapVariables.get(world).taijutsu) + "", 92, 70, Color.black.getRGB());
+		this.font.draw(poseStack, "" + (int) ((entity.getCapability(NarutoModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new NarutoModVariables.PlayerVariables())).taijutsu) + "", 92, 70, Color.black.getRGB());
 
 		this.font.draw(poseStack, "Genjutsu", 10, 85, Color.black.getRGB());
 		this.font.draw(poseStack, ":", 90, 85, Color.black.getRGB());
-		this.font.draw(poseStack, "" + (int) (NarutoRevivalModVariables.MapVariables.get(world).genjutsu) + "", 92, 85, Color.black.getRGB());
+		this.font.draw(poseStack, "" + (int) ((entity.getCapability(NarutoModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new NarutoModVariables.PlayerVariables())).taijutsu) + "", 92, 85, Color.black.getRGB());
 
 		this.font.draw(poseStack, "Kenjutsu", 10, 100, Color.black.getRGB());
 		this.font.draw(poseStack, ":", 90, 100, Color.black.getRGB());
@@ -499,7 +503,8 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 
 		this.font.draw(poseStack, "Nature Release" , 167, 100, Color.black.getRGB());
 
-		this.font.draw(poseStack, "Skill Points: " + (int) (NarutoRevivalModVariables.MapVariables.get(world).skillPoints) + "", 200, 280, Color.black.getRGB());
+		this.font.draw(poseStack, "Skill Points: " + (int) ((entity.getCapability(NarutoModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new NarutoModVariables.PlayerVariables())).skillPoints) + "", 200, 280, Color.black.getRGB());
 		this.font.draw(poseStack, "Jutsu Points: " + (int) (NarutoRevivalModVariables.MapVariables.get(world).jutsuPoints) + "", 200, 272, Color.black.getRGB());
 		this.font.draw(poseStack, "" + (int) (NarutoRevivalModVariables.MapVariables.get(world).progresspercent) + " %", 127, 279, Color.black.getRGB());
 		this.font.draw(poseStack, "Battlepower:"+ (NarutoRevivalModVariables.MapVariables.get(world).battlepower), 16, 240, Color.black.getRGB());

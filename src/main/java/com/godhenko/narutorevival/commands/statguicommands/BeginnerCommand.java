@@ -1,7 +1,7 @@
 
 package com.godhenko.narutorevival.commands.statguicommands;
 
-import com.godhenko.narutorevival.procedures.guiprocedures.otherprocedures.BeginnerCommandExecutedProcedure;
+import com.godhenko.narutorevival.procedures.guiprocedures.addxpprocedures.BeginnerCommandExecutedProcedure;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;

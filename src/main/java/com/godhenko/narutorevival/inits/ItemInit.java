@@ -8,10 +8,7 @@ import com.godhenko.narutorevival.custom.customitems.jutsuitems.JutsuType;
 import com.godhenko.narutorevival.custom.customitems.natureitems.FireReleaseLearnerItem;
 import com.godhenko.narutorevival.custom.customitems.natureitems.earthrelease.EarthOneJutsu;
 import com.godhenko.narutorevival.custom.customitems.natureitems.earthrelease.EarthTwoJutsu;
-import com.godhenko.narutorevival.custom.customitems.natureitems.firereleasemoves.FireBulletJutsu;
-import com.godhenko.narutorevival.custom.customitems.natureitems.firereleasemoves.FireOneJutsu;
-import com.godhenko.narutorevival.custom.customitems.natureitems.firereleasemoves.FireTwoJutsu;
-import com.godhenko.narutorevival.custom.customitems.natureitems.firereleasemoves.GreatFireballJutsu;
+import com.godhenko.narutorevival.custom.customitems.natureitems.firereleasemoves.*;
 import com.godhenko.narutorevival.custom.customitems.natureitems.lightningrelease.LightningOneJutsu;
 import com.godhenko.narutorevival.custom.customitems.natureitems.lightningrelease.LightningTwoJutsu;
 import com.godhenko.narutorevival.custom.customitems.natureitems.waterreleasemoves.WaterOneJutsu;
@@ -19,6 +16,7 @@ import com.godhenko.narutorevival.custom.customitems.natureitems.waterreleasemov
 import com.godhenko.narutorevival.custom.customitems.natureitems.windrelease.WindOneJutsu;
 import com.godhenko.narutorevival.custom.customitems.natureitems.windrelease.WindTwoJutsu;
 import com.godhenko.narutorevival.custom.customitems.weapons.Gunbai;
+import com.godhenko.narutorevival.custom.customitems.weapons.Scythe;
 import com.godhenko.narutorevival.entity.ModEntityTypes;
 import com.google.common.base.Supplier;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -111,6 +109,7 @@ public class ItemInit {
             .tab(NarutoRevival.NATURES_TAB).stacksTo(1)));
 
     public static final RegistryObject<Item> GUNBAI = register("gunbai",() -> new Gunbai());
+    public static final RegistryObject<Item> SCYTHE = register("scythe",() -> new Scythe());
     public static final RegistryObject<Item> RAMEN_TRADER_SPAWN_EGG = register("ramen_trader_spawn_egg",() -> new
             ForgeSpawnEggItem(ModEntityTypes.RAMEN_TRADER,0xff0000, 0x00ff00, new Item.Properties().tab(NarutoRevival.MISC_TAB)));
 
@@ -169,6 +168,8 @@ public class ItemInit {
     public static final RegistryObject<Item> JUTSU_FIRE_BALL = ITEMS.register("jutsu_fire_ball", () -> new JutsuItem(JutsuType.FIRE, 1, new FireOneJutsu().init(), new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).stacksTo(1).rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> JUTSU_GREAT_FIREBALL = ITEMS.register("jutsu_great_fireball", () -> new JutsuItem(JutsuType.FIRE, 1, new GreatFireballJutsu().init(), new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).stacksTo(1).rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> JUTSU_FIRE_BULLET = ITEMS.register("jutsu_fire_bullet", () -> new JutsuItem(JutsuType.FIRE, 1, new FireBulletJutsu().init(), new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).stacksTo(1).rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> JUTSU_PHOENIX_FIRE = ITEMS.register("jutsu_phoenix_fire", () -> new JutsuItem(JutsuType.FIRE, 1, new PhoenixFireJutsu().init(), new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).stacksTo(1).rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> JUTSU_FIRE_WALL = ITEMS.register("jutsu_fire_wall", () -> new JutsuItem(JutsuType.FIRE, 1, new FireWallJutsu().init(), new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).stacksTo(1).rarity(Rarity.EPIC)));
 
     public static final RegistryObject<Item> JUTSU_RUNNING_FIRE = ITEMS.register("jutsu_running_fire", () -> new JutsuItem(JutsuType.FIRE, 2, new FireTwoJutsu().init(), new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).stacksTo(1).rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> JUTSU_EARTH_WALL = ITEMS.register("jutsu_earth_wall", () -> new JutsuItem(JutsuType.EARTH, 1, new EarthOneJutsu().init(), new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).stacksTo(1).rarity(Rarity.EPIC)));
