@@ -107,13 +107,11 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(ItemInit.BRONZE_RYO.get());
 		oneLayerItem(ItemInit.SILVER_RYO.get());
 		oneLayerItem(ItemInit.GOLD_RYO.get());
-		oneLayerItem(ItemInit.SCROLL.get());
 		oneLayerItem(ItemInit.CLAN_ROLL.get());
 		oneLayerItem(ItemInit.GENIN_HELMET.get());
 		oneLayerItem(ItemInit.GENIN_CHESTPLATE.get());
 		oneLayerItem(ItemInit.GENIN_LEGGINGS.get());
 		oneLayerItem(ItemInit.GENIN_BOOTS.get());
-		oneLayerItem(ItemInit.XP_10000.get());
 
 
 		//layer

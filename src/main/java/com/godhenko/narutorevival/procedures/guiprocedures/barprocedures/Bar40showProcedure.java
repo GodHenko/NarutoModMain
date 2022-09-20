@@ -1,16 +1,14 @@
 package com.godhenko.narutorevival.procedures.guiprocedures.barprocedures;
 
-import com.godhenko.narutorevival.network.NarutoModVariables;
 import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.level.LevelAccessor;
-
-
 
 public class Bar40showProcedure {
-	public static boolean execute(LevelAccessor world, Entity entity) {
-		if ((entity.getCapability(NarutoModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new NarutoModVariables.PlayerVariables())).progress == 4) {
+	public static boolean execute(Entity entity) {
+		if (entity == null)
+			return false;
+		if ((entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new NarutoRevivalModVariables.PlayerVariables())).progress == 4) {
 			return true;
 		}
 		return false;

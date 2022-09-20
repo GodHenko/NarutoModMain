@@ -32,9 +32,8 @@ public class OverwriteStrengthProcedure {
 		if (entity == null || sourceentity == null)
 			return;
 		if (sourceentity instanceof Player) {
-			entity.hurt(DamageSource.GENERIC, (float) (NarutoRevivalModVariables.MapVariables.get(world).taijutsu / 100));
-			NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
-
+			entity.hurt(DamageSource.GENERIC, (float) ((sourceentity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new NarutoRevivalModVariables.PlayerVariables())).taijutsu / 100));
 		}
 	}
 }

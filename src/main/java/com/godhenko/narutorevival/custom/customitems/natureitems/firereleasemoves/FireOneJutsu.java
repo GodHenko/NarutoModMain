@@ -1,6 +1,5 @@
 package com.godhenko.narutorevival.custom.customitems.natureitems.firereleasemoves;
 
-import com.godhenko.narutorevival.inits.ModRegistry;
 import com.godhenko.narutorevival.jutsus.jutsus.Jutsu;
 import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
 import com.godhenko.narutorevival.projectile.FireballProjectile;
@@ -12,7 +11,8 @@ public class FireOneJutsu implements Jutsu {
     public void cast(Player player, Level world) {
         if (world.isClientSide()) return;
 
-        world.addFreshEntity(new FireballProjectile(player, 3.5 + NarutoRevivalModVariables.MapVariables.get(world).ninjutsu/10, world));
+        world.addFreshEntity(new FireballProjectile(player, 3.5 + ((player.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+                .orElse(new NarutoRevivalModVariables.PlayerVariables())).ninjutsu)/10, world));
 
 
     }

@@ -5,7 +5,6 @@ import com.godhenko.narutorevival.custom.armor.ModArmorMaterials;
 import com.godhenko.narutorevival.custom.customitems.*;
 import com.godhenko.narutorevival.custom.customitems.jutsuitems.JutsuItem;
 import com.godhenko.narutorevival.custom.customitems.jutsuitems.JutsuType;
-import com.godhenko.narutorevival.custom.customitems.natureitems.FireReleaseLearnerItem;
 import com.godhenko.narutorevival.custom.customitems.natureitems.earthrelease.EarthOneJutsu;
 import com.godhenko.narutorevival.custom.customitems.natureitems.earthrelease.EarthTwoJutsu;
 import com.godhenko.narutorevival.custom.customitems.natureitems.firereleasemoves.*;
@@ -97,7 +96,7 @@ public class ItemInit {
     public static final RegistryObject<Item> SHIROGANE = register("shirogane",() -> new Item(new Item.Properties()
             .tab(NarutoRevival.CLAN_TAB).stacksTo(1)));
     //Natures
-    public static final RegistryObject<Item> FIRE_RELEASE = register("fire_release",() -> new FireReleaseLearnerItem(new Item.Properties()
+    public static final RegistryObject<Item> FIRE_RELEASE = register("fire_release",() -> new Item(new Item.Properties()
             .tab(NarutoRevival.NATURES_TAB).stacksTo(1).durability(50)));
     public static final RegistryObject<Item> WATER_RELEASE = register("water_release",() -> new Item(new Item.Properties()
             .tab(NarutoRevival.NATURES_TAB).stacksTo(1)));
@@ -122,14 +121,10 @@ public class ItemInit {
     public static final RegistryObject<Item> JONIN_SPAWN_EGG = register("jonin_spawn_egg",() -> new
             ForgeSpawnEggItem(ModEntityTypes.JONIN,0x808080, 0xFFFF00, new Item.Properties().tab(NarutoRevival.MISC_TAB)));
 
-    public static final RegistryObject<Item> SCROLL = register("scroll",() -> new IntelligenceScroll(new Item.Properties()
-            .tab(NarutoRevival.MISC_TAB)));
 
     public static final RegistryObject<Item> CLAN_ROLL = register("clan_roll",() -> new ClanRoll(new Item.Properties()
             .tab(NarutoRevival.MISC_TAB)));
 
-    public static final RegistryObject<Item> RANDOM_NATURE = register("random_nature",() -> new RandomNatureItem(new Item.Properties()
-            .tab(NarutoRevival.MISC_TAB)));
 
 
     public static final RegistryObject<Item> CHAKRA_PAPER = register("chakra_paper",() -> new ChakraPaperItem(new Item.Properties()
@@ -151,8 +146,6 @@ public class ItemInit {
             () -> new ArmorItem(ModArmorMaterials.GENIN, EquipmentSlot.FEET,
                     new Item.Properties().tab(NarutoRevival.ARMOR_TAB)));
 
-    public static final RegistryObject<Item> XP_10000 = ITEMS.register("xp_10000",
-            () -> new xp10000(new Item.Properties().tab(NarutoRevival.MISC_TAB)));
 
     public static final RegistryObject<Item> KATANA = ITEMS.register("katana",
             () -> new SwordItem(TiersInit.GENIN,2,3f,new Item.Properties().tab(NarutoRevival.MISC_TAB)));

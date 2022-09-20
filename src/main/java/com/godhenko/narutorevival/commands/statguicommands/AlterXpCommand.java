@@ -31,7 +31,7 @@ public class AlterXpCommand {
 						entity = FakePlayerFactory.getMinecraft(world);
 					Direction direction = entity.getDirection();
 
-					XpSettingProcedure.execute(arguments, entity, world);
+					XpSettingProcedure.execute(arguments, entity);
 					return 0;
 				})));
 	}

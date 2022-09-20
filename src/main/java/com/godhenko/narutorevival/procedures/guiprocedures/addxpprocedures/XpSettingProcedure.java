@@ -10,16 +10,17 @@ import com.mojang.brigadier.arguments.DoubleArgumentType;
 import net.minecraft.world.level.LevelAccessor;
 
 public class XpSettingProcedure {
-	public static void execute(CommandContext<CommandSourceStack> arguments, Entity entity, LevelAccessor world) {
+	public static void execute(CommandContext<CommandSourceStack> arguments, Entity entity) {
 		if (entity == null)
 			return;
 		{
-			if (!world.isClientSide()) {
-				if (world instanceof ServerLevel _level) {
-					double _setval = DoubleArgumentType.getDouble(arguments, "value");
-					NarutoRevivalModVariables.MapVariables.get(world).XP = NarutoRevivalModVariables.MapVariables.get(world).XP + _setval;
-				}
-			}
+			double _setval = DoubleArgumentType.getDouble(arguments, "value") +
+					((entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new NarutoRevivalModVariables.PlayerVariables())).XP);
+			entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.XP = _setval;
+				capability.syncPlayerVariables(entity);
+			});
 		}
 	}
 }

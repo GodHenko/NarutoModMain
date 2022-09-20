@@ -9,7 +9,6 @@ import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
@@ -21,7 +20,8 @@ public class FireWallJutsu implements Jutsu {
     @Override
     public void cast(Player player, Level world) {
         if (world.isClientSide()) return;
-        player.getCooldowns().addCooldown(ItemInit.JUTSU_EARTH_WALL.get(),60 - (int)NarutoRevivalModVariables.MapVariables.get(world).ninjutsu);
+        player.getCooldowns().addCooldown(ItemInit.JUTSU_EARTH_WALL.get(),60 - (int) ((player.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+                .orElse(new NarutoRevivalModVariables.PlayerVariables())).ninjutsu));
         BlockHitResult hitResult = JutsuHelper.raycast(world, player, 16);
         if (hitResult.getType() == HitResult.Type.MISS) return;
 

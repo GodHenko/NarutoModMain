@@ -1,6 +1,5 @@
 package com.godhenko.narutorevival.custom.customitems.natureitems.earthrelease;
 
-import com.godhenko.narutorevival.NarutoRevival;
 import com.godhenko.narutorevival.inits.ItemInit;
 import com.godhenko.narutorevival.jutsus.jutsus.BlockTimer;
 import com.godhenko.narutorevival.jutsus.jutsus.Jutsu;
@@ -22,7 +21,6 @@ public class EarthOneJutsu implements Jutsu {
     @Override
     public void cast(Player player, Level world) {
         if (world.isClientSide()) return;
-        player.getCooldowns().addCooldown(ItemInit.JUTSU_EARTH_WALL.get(),60 - (int)NarutoRevivalModVariables.MapVariables.get(world).ninjutsu);
         player.sendMessage(new TranslatableComponent("jutsu.narutorevival.earth_wall"),player.getUUID());
         BlockHitResult hitResult = JutsuHelper.raycast(world, player, 16);
         if (hitResult.getType() == HitResult.Type.MISS) return;

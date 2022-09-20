@@ -4,7 +4,6 @@ package com.godhenko.narutorevival.network;
 import com.godhenko.narutorevival.NarutoRevival;
 import com.godhenko.narutorevival.procedures.guiprocedures.moreprocedures.*;
 import com.godhenko.narutorevival.procedures.guiprocedures.moreprocedures.MoreHPProcedure;
-import com.godhenko.narutorevival.procedures.guiprocedures.moreprocedures.plus10.*;
 import com.godhenko.narutorevival.world.inventory.StatsMenu;
 import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -70,80 +69,41 @@ public class StatsButtonMessage {
 			}
 			if (buttonID == 1) {
 
-				MoretaijutsuProcedure.execute(world);
+				MoretaijutsuProcedure.execute(entity);
 			}
 			if (buttonID == 2) {
 
-				MoregenjutsuProcedure.execute(world);
+				MoregenjutsuProcedure.execute(entity);
 			}
 			if (buttonID == 3) {
 
-				MorekenjutsuProcedure.execute(world);
+				MorekenjutsuProcedure.execute(entity);
 			}
 			if (buttonID == 4) {
 
-				MoreshurikenjutsuProcedure.execute(world);
+				MoreshurikenjutsuProcedure.execute(entity);
 			}
 			if (buttonID == 5) {
 
-				MoresummoningProcedure.execute(world);
+				MoresummoningProcedure.execute(entity);
 			}
 			if (buttonID == 6) {
 
-				MorekinjutsuProcedure.execute(world);
+				MorekinjutsuProcedure.execute(entity);
 			}
 			if (buttonID == 7) {
 
-				MoresenjutsuProcedure.execute(world);
+				MoresenjutsuProcedure.execute(entity);
 			}
 			if (buttonID == 8) {
 
-				MoreHPProcedure.execute(world, x, y, z);
+				MoreHPProcedure.execute(world, x, y, z,entity);
 			}
 			if (buttonID == 9) {
 
-				MorespeedProcedure.execute(world);
+				MorespeedProcedure.execute(entity);
 			}
-		if (buttonID == 10) {
 
-			TenMoreninjutsuProcedure.execute(world);
-		}
-		if (buttonID == 11) {
-
-			TenMoretaijutsuProcedure.execute(world);
-		}
-		if (buttonID == 12) {
-
-			TenMoregenjutsuProcedure.execute(world);
-		}
-		if (buttonID == 13) {
-
-			TenMorekenjutsuProcedure.execute(world);
-		}
-		if (buttonID == 14) {
-
-			TenMoreshurikenjutsuProcedure.execute(world);
-		}
-		if (buttonID == 15) {
-
-			TenMoresummoningProcedure.execute(world);
-		}
-		if (buttonID == 16) {
-
-			TenMorekinjutsuProcedure.execute(world);
-		}
-		if (buttonID == 17) {
-
-			TenMoresenjutsuProcedure.execute(world);
-		}
-		if (buttonID == 18) {
-
-			TenMoreHPProcedure.execute(world, x, y, z);
-		}
-		if (buttonID == 19) {
-
-			TenMorespeedProcedure.execute(world);
-		}
 
 
 

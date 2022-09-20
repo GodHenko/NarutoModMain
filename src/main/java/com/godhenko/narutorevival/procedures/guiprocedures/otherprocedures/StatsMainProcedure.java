@@ -35,9 +35,13 @@ public class StatsMainProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		NarutoRevivalModVariables.MapVariables.get(world).medical = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) -20;
-		NarutoRevivalModVariables.MapVariables.get(world).syncData(world);
-		if (NarutoRevivalModVariables.MapVariables.get(world).medical > 500 ) {
+		double medical = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) -20;
+		entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+			capability.medical = medical;
+			capability.syncPlayerVariables(entity);
+		});
+		if ((entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new NarutoRevivalModVariables.PlayerVariables()).medical) > 500 ) {
 			if (world instanceof ServerLevel _level)
 				_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4,
 						"", new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),

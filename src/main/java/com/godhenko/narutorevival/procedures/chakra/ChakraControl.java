@@ -4,9 +4,7 @@ import com.godhenko.narutorevival.NarutoRevival;
 import com.godhenko.narutorevival.inits.KeyMappingsInit;
 import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
 import net.minecraft.client.Minecraft;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.player.Abilities;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
@@ -44,7 +42,8 @@ public class ChakraControl {
             //Wall Climbing (spider)
             if (player.horizontalCollision) {
                 Vec3 vel = player.getDeltaMovement();
-                player.setDeltaMovement(vel.x(), 0.2 + NarutoRevivalModVariables.MapVariables.get(world).speed/100, vel.z());
+                player.setDeltaMovement(vel.x(), 0.2 + ((player.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+                        .orElse(new NarutoRevivalModVariables.PlayerVariables())).speed)/100, vel.z());
             }
         }
     }
@@ -67,7 +66,8 @@ public class ChakraControl {
             if (e.getKey() == GLFW.GLFW_KEY_SPACE && e.getAction() == GLFW.GLFW_RELEASE && haveJumped == false && !player.isOnGround()) {
                 Vec3 vel = player.getDeltaMovement();
                 final double yPosition = vel.y();
-                player.setDeltaMovement(vel.x(), 0.4 + NarutoRevivalModVariables.MapVariables.get(world).speed/50, vel.z());
+                player.setDeltaMovement(vel.x(), 0.4 + ((player.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+                        .orElse(new NarutoRevivalModVariables.PlayerVariables())).speed)/50, vel.z());
                 haveJumped = true;
             } else if (player.isOnGround()) {
                 haveJumped = false;

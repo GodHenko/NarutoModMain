@@ -23,9 +23,15 @@
       }
     }
   },
+
   "requirements": [
     [
       "killed_genin"
     ]
-  ]
+  ],
+  "rewards": {
+    "loot": [
+      "narutorevival:block/sword_forge"
+    ]
+  }
 }

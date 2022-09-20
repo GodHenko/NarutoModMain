@@ -3,7 +3,6 @@ package com.godhenko.narutorevival.inits;
 
 import com.godhenko.narutorevival.NarutoRevival;
 import com.godhenko.narutorevival.network.OpenStatsMessage;
-import com.godhenko.narutorevival.network.PressedChargeChakraMessage;
 import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
@@ -45,12 +44,6 @@ public class KeyMappingsInit {
                         NarutoRevival.PACKET_HANDLER.sendToServer(new OpenStatsMessage(0, 0));
                         OpenStatsMessage.pressAction(Minecraft.getInstance().player, 0, 0);
                     }
-                }
-            }
-            if (event.getKey() == CHARGE_CHAKRA.getKey().getValue()){
-                if (KeyMappingsInit.CHARGE_CHAKRA.consumeClick()){
-                    NarutoRevival.PACKET_HANDLER.sendToServer(new PressedChargeChakraMessage(0,0));
-                    PressedChargeChakraMessage.pressAction(Minecraft.getInstance().player,0,0);
                 }
             }
             if(CHAKRA_CONTROL_KEY.isDown())

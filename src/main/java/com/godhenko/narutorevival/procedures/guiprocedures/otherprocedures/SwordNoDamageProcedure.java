@@ -39,45 +39,52 @@ public class SwordNoDamageProcedure {
 		if (sourceentity instanceof Player) {
 			if (NarutoCommonConfig.KENJUTSU_REQUIREMENT.get() == true) {
 				if (!world.isClientSide()) {
-					if (NarutoRevivalModVariables.MapVariables.get(world).kenjutsu < 20
+					if (((sourceentity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new NarutoRevivalModVariables.PlayerVariables())).kenjutsu) < 20
 							&& (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.WOODEN_SWORD) {
 						if (event != null && event.isCancelable()) {
 							event.setCanceled(true);
 							sourceentity.sendMessage(new TranslatableComponent("20 Kenjutsu Required"), sourceentity.getUUID());
 						}
-					} else if (NarutoRevivalModVariables.MapVariables.get(world).kenjutsu < 50
+					} else if (((sourceentity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new NarutoRevivalModVariables.PlayerVariables())).kenjutsu) < 50
 							&& (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.STONE_SWORD) {
 						if (event != null && event.isCancelable()) {
 							sourceentity.sendMessage(new TranslatableComponent("50 Kenjutsu Required"), sourceentity.getUUID());
 							event.setCanceled(true);
 						}
-					} else if (NarutoRevivalModVariables.MapVariables.get(world).kenjutsu < 80
+					} else if (((sourceentity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new NarutoRevivalModVariables.PlayerVariables())).kenjutsu) < 80
 							&& (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.IRON_SWORD) {
 						if (event != null && event.isCancelable()) {
 							sourceentity.sendMessage(new TranslatableComponent("80 Kenjutsu Required"), sourceentity.getUUID());
 							event.setCanceled(true);
 						}
-					} else if (NarutoRevivalModVariables.MapVariables.get(world).kenjutsu < 110
+					} else if (((sourceentity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new NarutoRevivalModVariables.PlayerVariables())).kenjutsu) < 110
 							&& (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.GOLDEN_SWORD) {
 						if (event != null && event.isCancelable()) {
 							sourceentity.sendMessage(new TranslatableComponent("110 Kenjutsu Required"), sourceentity.getUUID());
 							event.setCanceled(true);
 						}
-					} else if (NarutoRevivalModVariables.MapVariables.get(world).kenjutsu < 140
+					} else if (((sourceentity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new NarutoRevivalModVariables.PlayerVariables())).kenjutsu) < 140
 							&& (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
 							.getItem() == Items.DIAMOND_SWORD) {
 						if (event != null && event.isCancelable()) {
 							sourceentity.sendMessage(new TranslatableComponent("140 Kenjutsu Required"), sourceentity.getUUID());
 							event.setCanceled(true);
 						}
-					} else if (NarutoRevivalModVariables.MapVariables.get(world).kenjutsu < 170
+					} else if (((sourceentity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new NarutoRevivalModVariables.PlayerVariables())).kenjutsu) < 170
 							&& (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
 							.getItem() == Items.NETHERITE_SWORD) {
 						if (event != null && event.isCancelable()) {
 							sourceentity.sendMessage(new TranslatableComponent("170 Kenjutsu Required"), sourceentity.getUUID());
 							event.setCanceled(true);
 						}
-					} else if (NarutoRevivalModVariables.MapVariables.get(world).kenjutsu < 200
+					} else if (((sourceentity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new NarutoRevivalModVariables.PlayerVariables())).kenjutsu) < 200
 							&& (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == ItemInit.GUNBAI
 							.get()) {
 						if (event != null && event.isCancelable()) {

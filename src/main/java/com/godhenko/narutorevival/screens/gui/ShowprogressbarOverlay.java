@@ -58,53 +58,57 @@ public class ShowprogressbarOverlay {
 				RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/emptybar.png"));
 				Minecraft.getInstance().gui.blit(event.getMatrixStack(), posX + 102, posY + 106, 0, 0, 102, 6, 102, 6);
 
-				if (Bar10showProcedure.execute(world,entity)) {
+				if (Bar10showProcedure.execute(entity)) {
 					RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/1_10bar.png"));
 					Minecraft.getInstance().gui.blit(event.getMatrixStack(), posX + 102, posY + 106, 0, 0, 102, 6, 102, 6);
 				}
-				if (Bar20showProcedure.execute(world,entity)) {
+				if (Bar20showProcedure.execute(entity)) {
 					RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/2_10bar.png"));
 					Minecraft.getInstance().gui.blit(event.getMatrixStack(), posX + 102, posY + 106, 0, 0, 102, 6, 102, 6);
 				}
-				if (Bar30showProcedure.execute(world,entity)) {
+				if (Bar30showProcedure.execute(entity)) {
 					RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/3_10bar.png"));
 					Minecraft.getInstance().gui.blit(event.getMatrixStack(), posX + 102, posY + 106, 0, 0, 102, 6, 102, 6);
 				}
-				if (Bar40showProcedure.execute(world,entity)) {
+				if (Bar40showProcedure.execute(entity)) {
 					RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/4_10bar.png"));
 					Minecraft.getInstance().gui.blit(event.getMatrixStack(), posX + 102, posY + 106, 0, 0, 102, 6, 102, 6);
 				}
-				if (Bar50ShowProcedure.execute(world,entity)) {
+				if (Bar50ShowProcedure.execute(entity)) {
 					RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/5_10bar.png"));
 					Minecraft.getInstance().gui.blit(event.getMatrixStack(), posX + 102, posY + 106, 0, 0, 102, 6, 102, 6);
 				}
-				if (Bar60ShowProcedure.execute(world,entity)) {
+				if (Bar60ShowProcedure.execute(entity)) {
 					RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/6_10bar.png"));
 					Minecraft.getInstance().gui.blit(event.getMatrixStack(), posX + 102, posY + 106, 0, 0, 102, 6, 102, 6);
 				}
-				if (Bar70showProcedure.execute(world,entity)) {
+				if (Bar70showProcedure.execute(entity)) {
 					RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/7_10bar.png"));
 					Minecraft.getInstance().gui.blit(event.getMatrixStack(), posX + 102, posY + 106, 0, 0, 102, 6, 102, 6);
 				}
-				if (Bar80showProcedure.execute(world,entity)) {
+				if (Bar80showProcedure.execute(entity)) {
 					RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/8_10bar.png"));
 					Minecraft.getInstance().gui.blit(event.getMatrixStack(), posX + 102, posY + 106, 0, 0, 102, 6, 102, 6);
 				}
-				if (Bar90showProcedure.execute(world,entity)) {
+				if (Bar90showProcedure.execute(entity)) {
 					RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/9_10bar.png"));
 					Minecraft.getInstance().gui.blit(event.getMatrixStack(), posX + 102, posY + 106, 0, 0, 102, 6, 102, 6);
 				}
-				if (FullbarshowProcedure.execute(world,entity)) {
+				if (FullbarshowProcedure.execute(entity)) {
 					RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/fullbar.png"));
 					Minecraft.getInstance().gui.blit(event.getMatrixStack(), posX + 102, posY + 106, 0, 0, 102, 6, 102, 6);
 				}
-				Minecraft.getInstance().font.draw(event.getMatrixStack(), "Level: " + (int) (NarutoRevivalModVariables.MapVariables.get(world).Lvl) + "",
+				Minecraft.getInstance().font.draw(event.getMatrixStack(),
+						"Level: " + (int) ((entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+								.orElse(new NarutoRevivalModVariables.PlayerVariables())).Lvl) + "",
 						posX + 97, posY + 80, -1);
-				Minecraft.getInstance().font.draw(event.getMatrixStack(), "" + (int) (NarutoRevivalModVariables.MapVariables.get(world).XP) + " / "
-						+ (int) (NarutoRevivalModVariables.MapVariables.get(world).maxLvlXp) + "", posX + 96, posY + 92, -1);
-				Minecraft.getInstance().font.draw(event.getMatrixStack(), (NarutoRevivalModVariables.MapVariables.get(world).chakra) + "/" + (int)
-						(NarutoRevivalModVariables.MapVariables.get(world).maxChakra) + "", 96, 100, Color.black.getRGB());
-
+				Minecraft.getInstance().font.draw(event.getMatrixStack(),
+						"" + (int) ((entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+								.orElse(new NarutoRevivalModVariables.PlayerVariables())).XP) + " / "
+								+ (int) ((entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+								.orElse(new NarutoRevivalModVariables.PlayerVariables())).maxLvlXp)
+								+ "",
+						posX + 96, posY + 92, -1);
 			}
 
 
