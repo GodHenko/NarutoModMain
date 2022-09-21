@@ -1,6 +1,7 @@
 package com.godhenko.narutorevival.procedures.guiprocedures.otherprocedures;
 
 import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
+import com.godhenko.narutorevival.procedures.leveling.GainXPProcedure;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
@@ -33,7 +34,8 @@ public class OverwriteStrengthProcedure {
 			return;
 		if (sourceentity instanceof Player) {
 			entity.hurt(DamageSource.GENERIC, (float) ((sourceentity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new NarutoRevivalModVariables.PlayerVariables())).taijutsu / 100));
+					.orElse(new NarutoRevivalModVariables.PlayerVariables())).taijutsu / 50));
+			GainXPProcedure.execute(entity, sourceentity);
 		}
 	}
 }
