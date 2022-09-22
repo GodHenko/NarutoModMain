@@ -30,7 +30,7 @@ public class AlterMedicalCommand {
 						entity = FakePlayerFactory.getMinecraft(world);
 					Direction direction = entity.getDirection();
 
-					MedicalSettingProcedure.execute(arguments, entity);
+					MedicalSettingProcedure.execute(arguments, world,x,y,z, entity);
 					return 0;
 				})));
 	}

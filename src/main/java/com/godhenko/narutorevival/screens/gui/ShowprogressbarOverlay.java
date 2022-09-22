@@ -20,8 +20,6 @@ import net.minecraft.client.Minecraft;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.platform.GlStateManager;
 
-import java.awt.*;
-
 
 @Mod.EventBusSubscriber({Dist.CLIENT})
 public class ShowprogressbarOverlay {

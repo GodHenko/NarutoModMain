@@ -4,6 +4,7 @@ package com.godhenko.narutorevival.network;
 import com.godhenko.narutorevival.NarutoRevival;
 import com.godhenko.narutorevival.procedures.guiprocedures.moreprocedures.*;
 import com.godhenko.narutorevival.procedures.guiprocedures.moreprocedures.MoreHPProcedure;
+import com.godhenko.narutorevival.procedures.guiprocedures.moreprocedures.ten.*;
 import com.godhenko.narutorevival.world.inventory.StatsMenu;
 import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -103,6 +104,45 @@ public class StatsButtonMessage {
 
 				MorespeedProcedure.execute(entity);
 			}
+			if (buttonID == 10){
+				TenMoreninjutsuProcedure.execute(entity);
+			}
+		if (buttonID == 11) {
+
+			TenMoretaijutsuProcedure.execute(entity);
+		}
+		if (buttonID == 12) {
+
+			TenMoregenjutsuProcedure.execute(entity);
+		}
+		if (buttonID == 13) {
+
+			TenMorekenjutsuProcedure.execute(entity);
+		}
+		if (buttonID == 14) {
+
+			TenMoreshurikenjutsuProcedure.execute(entity);
+		}
+		if (buttonID == 15) {
+
+			TenMoresummoningProcedure.execute(entity);
+		}
+		if (buttonID == 16) {
+
+			TenMorekinjutsuProcedure.execute(entity);
+		}
+		if (buttonID == 17) {
+
+			TenMoresenjutsuProcedure.execute(entity);
+		}
+		if (buttonID ==18) {
+
+			TenMoreHPProcedure.execute(world, x, y, z,entity);
+		}
+		if (buttonID == 19) {
+
+			TenMorespeedProcedure.execute(entity);
+		}
 
 
 

@@ -29,7 +29,6 @@ import net.minecraft.client.Minecraft;
 import java.util.function.Supplier;
 
 
-
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class NarutoRevivalModVariables {
 	@SubscribeEvent
@@ -73,108 +72,107 @@ public class NarutoRevivalModVariables {
 					.orElse(new PlayerVariables()));
 			PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new PlayerVariables()));
+			clone.battlepower = original.battlepower;
+			clone.XP = original.XP;
+			clone.chakra = original.chakra;
+			clone.maxChakra = original.maxChakra;
+			clone.maxLvlXp = original.maxLvlXp;
+			clone.maxIntelligence = original.maxIntelligence;
+			clone.Lvl = original.Lvl;
+			clone.progress = original.progress;
+			clone.progresspercent = original.progresspercent;
+			clone.skillPoints = original.skillPoints;
+			clone.jutsuPoints = original.jutsuPoints;
+			//Stats
+			clone.ninjutsu = original.ninjutsu;
+			clone.taijutsu = original.taijutsu;
+			clone.genjutsu = original.genjutsu;
+			clone.kenjutsu = original.kenjutsu;
+			clone.shurikenjutsu = original.shurikenjutsu;
+			clone.summoning = original.summoning;
+			clone.kinjutsu = original.kinjutsu;
+			clone.senjutsu = original.senjutsu;
+			clone.medical = original.medical;
+			clone.intelligence = original.intelligence;
+			clone.speed = original.speed;
+			//Clans
+			clone.clan = original.clan;
+			clone.uchiha = original.uchiha;
+			clone.hyuga = original.hyuga;
+			clone.uzumaki = original.uzumaki;
+			clone.aburame = original.aburame;
+			clone.akimichi = original.akimichi;
+			clone.hatake = original.hatake;
+			clone.hozuki = original.hozuki;
+			clone.iburi = original.iburi;
+			clone.inuzuka = original.inuzuka;
+			clone.jugo = original.jugo;
+			clone.kaguya = original.kaguya;
+			clone.kurama = original.kurama;
+			clone.tsuchigumo = original.tsuchigumo;
+			clone.nara = original.nara;
+			clone.sarutobi = original.sarutobi;
+			clone.fuma = original.fuma;
+			clone.senju = original.senju;
+			clone.yuki = original.yuki;
+			clone.yamanaka = original.yamanaka;
+			clone.lee = original.lee;
+			clone.chinoike = original.chinoike;
+			clone.shirogane = original.shirogane;
+			//Villages
+			clone.village = original.village;
+			clone.  konohagakure = original.konohagakure;
+			clone.  sunagakure = original.sunagakure;
+			clone.  kumogakure =original.kumogakure;
+			clone.  iwagakure = original.iwagakure;
+			clone.  akatsuki = original.akatsuki;
+			clone.  amegakure = original.amegakure;
+			clone.  getsugakure = original.getsugakure;
+			clone.  hoshigakure =original.hoshigakure;
+			clone.  ishigakure = original.ishigakure;
+			clone.  jomae = original.jomae;
+			clone.  kirigakure = original.kirigakure;
+			clone.  kusagakure = original.kusagakure;
+			clone.  nadeshiko = original.nadeshiko;
+			clone.  otagakure = original.otagakure;
+			clone.  ryuchi_cave = original.ryuchi_cave;
+			clone.  shimogakure = original.shimogakure;
+			clone.  takigaure = original.takigaure;
+			clone.  takumi = original.takumi;
+			clone.  tanigakure = original.tanigakure;
+			clone.  mount_myoboku = original.mount_myoboku;
+			clone.  yugagakure = original.yugagakure;
+			clone.  yukigakure =original.yukigakure;
+			clone.  yumegakure = original.yumegakure;
+			clone.  shikotsu = original.shikotsu;
+			//Rank
+			clone. rank = original.rank;
+			clone. academy_student = original.academy_student;
+			clone. genin = original.genin;
+			clone. chunin = original.chunin;
+			clone. jonin = original.jonin;
+			clone. anbu = original.anbu;
+			clone. kazekage = original.kazekage;
+			//Natures
+			clone. fire = original.fire;
+			clone. wind = original.wind;
+			clone. earth = original.earth;
+			clone. lightning = original.lightning;
+			clone. water = original.water;
+			//nature learners
+			clone. fire_learner = original.fire_learner;
+			//Land
+			clone. land = original.land;
+			clone. land_of_earth = original.land_of_earth;
+			clone. land_of_fire = original.land_of_fire;
+			clone. land_of_iron = original.land_of_iron;
+			clone. land_of_lightning = original.land_of_lightning;
+			clone. land_of_sky = original.land_of_sky;
+			clone. land_of_snow = original.land_of_snow;
+			clone. land_of_sound = original.land_of_sound;
+			clone. land_of_water = original.land_of_water;
+			clone. land_of_wind = original.land_of_wind;
 			if (!event.isWasDeath()) {
-				clone.battlepower = original.battlepower;
-				clone.XP = original.XP;
-				clone.chakra = original.chakra;
-				clone.maxChakra = original.maxChakra;
-				clone.maxLvlXp = original.maxLvlXp;
-				clone.maxIntelligence = original.maxIntelligence;
-				clone.Lvl = original.Lvl;
-				clone.progress = original.progress;
-				clone.progresspercent = original.progresspercent;
-				clone.skillPoints = original.skillPoints;
-				clone.jutsuPoints = original.jutsuPoints;
-				//Stats
-				clone.ninjutsu = original.ninjutsu;
-				clone.taijutsu = original.taijutsu;
-				clone.genjutsu = original.genjutsu;
-				clone.kenjutsu = original.kenjutsu;
-				clone.shurikenjutsu = original.shurikenjutsu;
-				clone.summoning = original.summoning;
-				clone.kinjutsu = original.kinjutsu;
-				clone.senjutsu = original.senjutsu;
-				clone.medical = original.medical;
-				clone.intelligence = original.intelligence;
-				clone.speed = original.speed;
-				//Clans
-				clone.clan = original.clan;
-				clone.uchiha = original.uchiha;
-				clone.hyuga = original.hyuga;
-				clone.uzumaki = original.uzumaki;
-				clone.aburame = original.aburame;
-				clone.akimichi = original.akimichi;
-				clone.hatake = original.hatake;
-				clone.hozuki = original.hozuki;
-				clone.iburi = original.iburi;
-				clone.inuzuka = original.inuzuka;
-				clone.jugo = original.jugo;
-				clone.kaguya = original.kaguya;
-				clone.kurama = original.kurama;
-				clone.tsuchigumo = original.tsuchigumo;
-				clone.nara = original.nara;
-				clone.sarutobi = original.sarutobi;
-				clone.fuma = original.fuma;
-				clone.senju = original.senju;
-				clone.yuki = original.yuki;
-				clone.yamanaka = original.yamanaka;
-				clone.lee = original.lee;
-				clone.chinoike = original.chinoike;
-				clone.shirogane = original.shirogane;
-				//Villages
-				clone.village = original.village;
-				clone.  konohagakure = original.konohagakure;
-				clone.  sunagakure = original.sunagakure;
-				clone.  kumogakure =original.kumogakure;
-				clone.  iwagakure = original.iwagakure;
-				clone.  akatsuki = original.akatsuki;
-				clone.  amegakure = original.amegakure;
-				clone.  getsugakure = original.getsugakure;
-				clone.  hoshigakure =original.hoshigakure;
-				clone.  ishigakure = original.ishigakure;
-				clone.  jomae = original.jomae;
-				clone.  kirigakure = original.kirigakure;
-				clone.  kusagakure = original.kusagakure;
-				clone.  nadeshiko = original.nadeshiko;
-				clone.  otagakure = original.otagakure;
-				clone.  ryuchi_cave = original.ryuchi_cave;
-				clone.  shimogakure = original.shimogakure;
-				clone.  takigaure = original.takigaure;
-				clone.  takumi = original.takumi;
-				clone.  tanigakure = original.tanigakure;
-				clone.  mount_myoboku = original.mount_myoboku;
-				clone.  yugagakure = original.yugagakure;
-				clone.  yukigakure =original.yukigakure;
-				clone.  yumegakure = original.yumegakure;
-				clone.  shikotsu = original.shikotsu;
-				//Rank
-				clone. rank = original.rank;
-				clone. academy_student = original.academy_student;
-				clone. genin = original.genin;
-				clone. chunin = original.chunin;
-				clone. jonin = original.jonin;
-				clone. anbu = original.anbu;
-				clone. kazekage = original.kazekage;
-				//Natures
-				clone. fire = original.fire;
-				clone. wind = original.wind;
-				clone. earth = original.earth;
-				clone. lightning = original.lightning;
-				clone. water = original.water;
-				//nature learners
-				clone. fire_learner = original.fire_learner;
-				//Land
-				clone. land = original.land;
-				clone. land_of_earth = original.land_of_earth;
-				clone. land_of_fire = original.land_of_fire;
-				clone. land_of_iron = original.land_of_iron;
-				clone. land_of_lightning = original.land_of_lightning;
-				clone. land_of_sky = original.land_of_sky;
-				clone. land_of_snow = original.land_of_snow;
-				clone. land_of_sound = original.land_of_sound;
-				clone. land_of_water = original.land_of_water;
-				clone. land_of_wind = original.land_of_wind;
-
 			}
 		}
 	}
@@ -187,7 +185,7 @@ public class NarutoRevivalModVariables {
 		@SubscribeEvent
 		public static void onAttachCapabilities(AttachCapabilitiesEvent<Entity> event) {
 			if (event.getObject() instanceof Player && !(event.getObject() instanceof FakePlayer))
-				event.addCapability(new ResourceLocation("statsgui", "player_variables"), new PlayerVariablesProvider());
+				event.addCapability(new ResourceLocation("stats", "player_variables"), new PlayerVariablesProvider());
 		}
 
 		private final PlayerVariables playerVariables = new PlayerVariables();

@@ -1,11 +1,9 @@
 package com.godhenko.narutorevival.custom.customitems.natureitems.earthrelease;
 
-import com.godhenko.narutorevival.inits.ItemInit;
 import com.godhenko.narutorevival.jutsus.jutsus.BlockTimer;
 import com.godhenko.narutorevival.jutsus.jutsus.Jutsu;
 import com.godhenko.narutorevival.jutsus.jutsus.JutsuHelper;
 import com.godhenko.narutorevival.jutsus.jutsus.JutsuTicker;
-import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;

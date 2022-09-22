@@ -29,14 +29,17 @@ public class GainXPProcedure {
 		if (entity == null || sourceentity == null)
 			return;
 		if (sourceentity instanceof Player) {
-			{
-				double _setval = (sourceentity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new NarutoRevivalModVariables.PlayerVariables())).XP
-						+ Math.ceil((entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 5);
-				sourceentity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.XP = _setval;
-					capability.syncPlayerVariables(sourceentity);
-				});
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= 0) {
+				{
+					double _setval = (sourceentity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new NarutoRevivalModVariables.PlayerVariables())).XP
+							+ Math.round((entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 5) + 1;
+					sourceentity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.XP = _setval;
+						capability.syncPlayerVariables(sourceentity);
+					});
+				}
+				LevelProgressionProcedure.execute(entity);
 			}
 		}
 	}

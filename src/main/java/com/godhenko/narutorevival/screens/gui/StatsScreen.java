@@ -5,6 +5,7 @@ import com.godhenko.narutorevival.NarutoRevival;
 import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
 import com.godhenko.narutorevival.network.StatsButtonMessage;
 import com.godhenko.narutorevival.procedures.guiprocedures.barprocedures.*;
+import com.godhenko.narutorevival.util.KeyboardHelper;
 import com.godhenko.narutorevival.world.inventory.StatsMenu;
 import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.world.level.Level;
@@ -393,7 +394,7 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 						.orElse(new NarutoRevivalModVariables.PlayerVariables())).maxLvlXp)
 						+ "", 16, 272, Color.black.getRGB());
 		this.font.draw(poseStack, "Lvl: " + (int) ((entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new NarutoRevivalModVariables.PlayerVariables())).Lvl) + "", 92, 272, Color.black.getRGB());
+				.orElse(new NarutoRevivalModVariables.PlayerVariables())).Lvl) + "", 16, 265, Color.black.getRGB());
 		this.font.draw(poseStack, "Ninjutsu", 10, 55, Color.black.getRGB());
 		this.font.draw(poseStack, ":", 90, 55, Color.black.getRGB());
 		this.font.draw(poseStack, "" + (int) ((entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -639,17 +640,23 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 	@Override
 	public void init() {
 		super.init();
-		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(new ImageButton(this.leftPos-20,this.topPos + 51, 20, 15, 256,256,addbutton, e -> {
-			if (true) {
-				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(0, x, y, z));
-				StatsButtonMessage.handleButtonAction(entity, 0, x, y, z);
-			}
-			((ImageButton)e).setPosition(this.leftPos + -20, this.topPos + 51);
-		}));
+			this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
+			this.addRenderableWidget(new ImageButton(this.leftPos-20,this.topPos + 51, 20, 15, 256,256,addbutton, e -> {
+				if (KeyboardHelper.isHoldingShift()) {
+					NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(10, x, y, z));
+					StatsButtonMessage.handleButtonAction(entity, 10, x, y, z);
+				}else {
+					NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(0, x, y, z));
+					StatsButtonMessage.handleButtonAction(entity, 0, x, y, z);
+				}
+				((ImageButton)e).setPosition(this.leftPos + -20, this.topPos + 51);
+			}));
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
 		this.addRenderableWidget(new ImageButton(this.leftPos + -20, this.topPos + 66, 20, 15, 256,256,addbutton, e -> {
-			if (true) {
+			if (KeyboardHelper.isHoldingShift()) {
+				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(11, x, y, z));
+				StatsButtonMessage.handleButtonAction(entity, 11, x, y, z);
+			}else {
 				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(1, x, y, z));
 				StatsButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
@@ -658,7 +665,10 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 		}));
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
 		this.addRenderableWidget(new ImageButton(this.leftPos + -20, this.topPos + 81, 20, 15, 256,256,addbutton, e -> {
-			if (true) {
+			if (KeyboardHelper.isHoldingShift()) {
+				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(12, x, y, z));
+				StatsButtonMessage.handleButtonAction(entity, 12, x, y, z);
+			}else {
 				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(2, x, y, z));
 				StatsButtonMessage.handleButtonAction(entity, 2, x, y, z);
 			}
@@ -667,7 +677,10 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 		}));
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
 		this.addRenderableWidget(new ImageButton(this.leftPos + -20, this.topPos + 96, 20, 15, 256,256,addbutton, e -> {
-			if (true) {
+			if (KeyboardHelper.isHoldingShift()) {
+				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(13, x, y, z));
+				StatsButtonMessage.handleButtonAction(entity, 13, x, y, z);
+			}else {
 				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(3, x, y, z));
 				StatsButtonMessage.handleButtonAction(entity, 3, x, y, z);
 			}
@@ -676,7 +689,10 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 		}));
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
 		this.addRenderableWidget(new ImageButton(this.leftPos + -20, this.topPos + 111, 20, 15, 256,256,addbutton, e -> {
-			if (true) {
+			if (KeyboardHelper.isHoldingShift()) {
+				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(14, x, y, z));
+				StatsButtonMessage.handleButtonAction(entity, 14, x, y, z);
+			}else {
 				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(4, x, y, z));
 				StatsButtonMessage.handleButtonAction(entity, 4, x, y, z);
 			}
@@ -685,7 +701,10 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 		}));
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
 		this.addRenderableWidget(new ImageButton(this.leftPos + -20, this.topPos + 126, 20, 15, 256,256,addbutton, e -> {
-			if (true) {
+			if (KeyboardHelper.isHoldingShift()) {
+				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(15, x, y, z));
+				StatsButtonMessage.handleButtonAction(entity, 15, x, y, z);
+			}else {
 				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(5, x, y, z));
 				StatsButtonMessage.handleButtonAction(entity, 5, x, y, z);
 			}
@@ -694,7 +713,10 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 		}));
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
 		this.addRenderableWidget(new ImageButton(this.leftPos + -20, this.topPos + 141, 20, 15, 256,256,addbutton, e -> {
-			if (true) {
+			if (KeyboardHelper.isHoldingShift()) {
+				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(16, x, y, z));
+				StatsButtonMessage.handleButtonAction(entity, 16, x, y, z);
+			}else {
 				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(6, x, y, z));
 				StatsButtonMessage.handleButtonAction(entity, 6, x, y, z);
 			}
@@ -703,7 +725,10 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 		}));
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
 		this.addRenderableWidget(new ImageButton(this.leftPos + -20, this.topPos + 156, 20, 15, 256,256,addbutton, e -> {
-			if (true) {
+			if (KeyboardHelper.isHoldingShift()) {
+				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(17, x, y, z));
+				StatsButtonMessage.handleButtonAction(entity, 17, x, y, z);
+			}else {
 				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(7, x, y, z));
 				StatsButtonMessage.handleButtonAction(entity, 7, x, y, z);
 			}
@@ -712,7 +737,10 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 		}));
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
 		this.addRenderableWidget(new ImageButton(this.leftPos + -20, this.topPos + 171, 20, 15, 256,256,addbutton, e -> {
-			if (true) {
+			if (KeyboardHelper.isHoldingShift()) {
+				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(18, x, y, z));
+				StatsButtonMessage.handleButtonAction(entity, 18, x, y, z);
+			}else {
 				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(8, x, y, z));
 				StatsButtonMessage.handleButtonAction(entity, 8, x, y, z);
 			}
@@ -722,7 +750,10 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
 		this.addRenderableWidget(new ImageButton(this.leftPos + -20, this.topPos + 186, 20, 15, 256,256,addbutton, e -> {
-			if (true) {
+			if (KeyboardHelper.isHoldingShift()) {
+				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(19, x, y, z));
+				StatsButtonMessage.handleButtonAction(entity, 19, x, y, z);
+			}else {
 				NarutoRevival.PACKET_HANDLER.sendToServer(new StatsButtonMessage(9, x, y, z));
 				StatsButtonMessage.handleButtonAction(entity, 9, x, y, z);
 			}

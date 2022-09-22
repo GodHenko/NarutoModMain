@@ -1,13 +1,11 @@
 package com.godhenko.narutorevival.procedures.guiprocedures.addxpprocedures;
 
 import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.commands.CommandSourceStack;
 
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.arguments.DoubleArgumentType;
-import net.minecraft.world.level.LevelAccessor;
 
 public class XpSettingProcedure {
 	public static void execute(CommandContext<CommandSourceStack> arguments, Entity entity) {
