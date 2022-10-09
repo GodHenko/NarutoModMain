@@ -18,7 +18,7 @@ import net.minecraftforge.fml.common.Mod;
 public class AlterSpeedCommand {
 	@SubscribeEvent
 	public static void registerCommand(RegisterCommandsEvent event) {
-		event.getDispatcher().register(Commands.literal("setspeed")
+		event.getDispatcher().register(Commands.literal("setspeed").requires((commandSource) -> commandSource.hasPermission(1))
 
 				.then(Commands.argument("value", DoubleArgumentType.doubleArg()).executes(arguments -> {
 					ServerLevel world = arguments.getSource().getLevel();

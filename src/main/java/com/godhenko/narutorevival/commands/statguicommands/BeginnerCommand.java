@@ -23,7 +23,7 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 public class BeginnerCommand {
 	@SubscribeEvent
 	public static void registerCommand(RegisterCommandsEvent event) {
-		event.getDispatcher().register(Commands.literal("beginner")
+		event.getDispatcher().register(Commands.literal("beginner").requires((commandSource) -> commandSource.hasPermission(1))
 
 				.then(Commands.argument("arguments", StringArgumentType.greedyString()).executes(BeginnerCommand::execute))
 				.executes(BeginnerCommand::execute));

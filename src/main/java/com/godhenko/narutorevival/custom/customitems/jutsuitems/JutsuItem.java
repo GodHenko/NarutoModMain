@@ -1,5 +1,6 @@
 package com.godhenko.narutorevival.custom.customitems.jutsuitems;
 
+import com.godhenko.narutorevival.NarutoRevival;
 import com.godhenko.narutorevival.jutsus.jutsus.Jutsu;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
@@ -9,9 +10,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
@@ -21,13 +20,21 @@ import java.util.List;
 public class JutsuItem extends Item {
     private final JutsuType jutsuType;
     private final boolean isJutsuLevelTwo;
+    private final int jutsuLevel;
+
     private final Jutsu jutsu;
 
-    public JutsuItem(JutsuType jutsuType, int jutsuLevel, Jutsu jutsu, Properties properties) {
-        super(properties);
-        this.jutsuType = jutsuType;
-        this.isJutsuLevelTwo = jutsuLevel == 2;
+    public JutsuItem(Jutsu jutsu) {
+        super(new Item.Properties().tab(NarutoRevival.NATURES_TAB).stacksTo(1).rarity(Rarity.EPIC));
+
+        this.jutsuType = jutsu.jutsuType();
+        this.jutsuLevel = jutsu.jutsuLevel();
+        this.isJutsuLevelTwo = this.jutsuLevel == 2;
         this.jutsu = jutsu;
+    }
+
+    public Jutsu getJutsu() {
+        return jutsu;
     }
 
     @Override
@@ -40,25 +47,12 @@ public class JutsuItem extends Item {
         ItemStack stack = player.getItemInHand(hand);
         String owner = nbtGetOwner(stack);
 
-        if (owner != null && owner.equals(player.getName().getString()) && jutsu != null) {
-            jutsu.cast(player, world);
+        if (owner == null || !owner.equals(player.getName().getString()) || jutsu == null || world.isClientSide()) {
+            return InteractionResultHolder.pass(stack);
         }
 
-        return InteractionResultHolder.success(stack);
-    }
-
-    @Override
-    public InteractionResult useOn(UseOnContext context) {
-        Player player = context.getPlayer();
-        Level level = context.getLevel();
-        String owner = nbtGetOwner(context.getItemInHand());
-
-        if (owner != null && owner.equals(player.getName().getString()) && jutsu != null) {
-            jutsu.cast(player, level);
-            return InteractionResult.SUCCESS;
-        } else {
-            return InteractionResult.PASS;
-        }
+        InteractionResult result = jutsu.cast(player, world);
+        return new InteractionResultHolder<>(result, stack);
     }
 
     private static String nbtGetOwner(ItemStack stack) {
@@ -91,7 +85,7 @@ public class JutsuItem extends Item {
                     .append(owner));
         }
 
-        // Type: SpellType
+        // Type: jutsuType
         MutableComponent typeText = new TranslatableComponent("jutsu.narutorevival." + jutsuType.getName())
                 .setStyle(Style.EMPTY.withColor(jutsuType.getColor()));
         tooltip.add(new TranslatableComponent("other.narutorevival.type").append(typeText));
@@ -100,6 +94,21 @@ public class JutsuItem extends Item {
         MutableComponent levelText = new TextComponent(isJutsuLevelTwo ? "II" : "I")
                 .setStyle(Style.EMPTY.withColor(ChatFormatting.AQUA));
         tooltip.add(new TranslatableComponent("other.narutorevival.level").append(levelText));
+
+        // Damage:
+
+        int damage = jutsu.attackDamage();
+        if (damage > 0) {
+            MutableComponent damageText = new TextComponent(damage/2 + "❤")
+                    .setStyle(Style.EMPTY.withColor(ChatFormatting.RED));
+            tooltip.add(new TranslatableComponent("other.narutorevival.damage").append(damageText));
+        }
+
+        // Chakra:
+        int chakra = jutsu.chakraCost(null, world);
+        MutableComponent manaText = new TextComponent(String.valueOf(chakra))
+                .setStyle(Style.EMPTY.withColor(ChatFormatting.AQUA));
+        tooltip.add(new TranslatableComponent("other.narutorevival.chakra").append(manaText));
 
         // Description
         tooltip.add(new TranslatableComponent(this.getDescriptionId() + ".desc")

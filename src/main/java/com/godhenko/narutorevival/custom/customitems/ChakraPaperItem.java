@@ -1,6 +1,7 @@
 package com.godhenko.narutorevival.custom.customitems;
 
 import com.godhenko.narutorevival.inits.ItemInit;
+import com.godhenko.narutorevival.inits.ModRegistry;
 import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.stats.Stats;
@@ -112,10 +113,10 @@ public class ChakraPaperItem extends Item {
             int land_of_water = 7;
             int land_of_wind = 8;
 
-            int clan = rand.nextInt(22);
-            int affiliation = rand.nextInt(24);
+            int clan = rand.nextInt(0,21);
+            int affiliation = rand.nextInt(0,23);
             int nature = rand.nextInt(150);
-            int land = rand.nextInt(9);
+            int land = rand.nextInt(0,8);
 
             double ogrank = (player.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
                     .orElse(new NarutoRevivalModVariables.PlayerVariables())).rank = ((player.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -547,7 +548,7 @@ public class ChakraPaperItem extends Item {
                         capability.fire = fire1;
                         capability.syncPlayerVariables(player);
                     });
-                    _setstack = new ItemStack(ItemInit.FIRE_RELEASE.get());
+                    _setstack = new ItemStack(ModRegistry.SKILL_LEARNER_FIRE.get());
                     _setstack.setCount(1);
                     ItemHandlerHelper.giveItemToPlayer(player, _setstack);
                 } else if (nature < 40) {
@@ -557,7 +558,7 @@ public class ChakraPaperItem extends Item {
                         capability.earth = earth1;
                         capability.syncPlayerVariables(player);
                     });
-                    _setstack = new ItemStack(ItemInit.EARTH_RELEASE.get());
+                    _setstack = new ItemStack(ModRegistry.SKILL_LEARNER_EARTH.get());
                     _setstack.setCount(1);
                     ItemHandlerHelper.giveItemToPlayer(player, _setstack);
                 } else if (nature < 60) {
@@ -567,7 +568,7 @@ public class ChakraPaperItem extends Item {
                         capability.wind = wind1;
                         capability.syncPlayerVariables(player);
                     });
-                    _setstack = new ItemStack(ItemInit.WIND_RELEASE.get());
+                    _setstack = new ItemStack(ModRegistry.SKILL_LEARNER_WIND.get());
                     _setstack.setCount(1);
                     ItemHandlerHelper.giveItemToPlayer(player, _setstack);
                 } else if (nature < 80) {
@@ -577,7 +578,7 @@ public class ChakraPaperItem extends Item {
                         capability.fire = lightning1;
                         capability.syncPlayerVariables(player);
                     });
-                    _setstack = new ItemStack(ItemInit.LIGHTNING_RELEASE.get());
+                    _setstack = new ItemStack(ModRegistry.SKILL_LEARNER_LIGHTNING.get());
                     _setstack.setCount(1);
                     ItemHandlerHelper.giveItemToPlayer(player, _setstack);
                 } else if (nature < 100) {
@@ -587,7 +588,7 @@ public class ChakraPaperItem extends Item {
                         capability.fire = water1;
                         capability.syncPlayerVariables(player);
                     });
-                    _setstack = new ItemStack(ItemInit.WATER_RELEASE.get());
+                    _setstack = new ItemStack(ModRegistry.SKILL_LEARNER_WATER.get());
                     _setstack.setCount(1);
                     ItemHandlerHelper.giveItemToPlayer(player, _setstack);
                 } else if (nature < 105) {
@@ -603,10 +604,10 @@ public class ChakraPaperItem extends Item {
                         capability.wind = wind1;
                         capability.syncPlayerVariables(player);
                     });
-                    _setstack = new ItemStack(ItemInit.WIND_RELEASE.get());
+                    _setstack = new ItemStack(ModRegistry.SKILL_LEARNER_WIND.get());
                     _setstack.setCount(1);
                     ItemHandlerHelper.giveItemToPlayer(player, _setstack);
-                    _setstack = new ItemStack(ItemInit.FIRE_RELEASE.get());
+                    _setstack = new ItemStack(ModRegistry.SKILL_LEARNER_FIRE.get());
                     _setstack.setCount(1);
                     ItemHandlerHelper.giveItemToPlayer(player, _setstack);
                 } else if (nature < 110) {
@@ -622,10 +623,10 @@ public class ChakraPaperItem extends Item {
                         capability.earth = earth1;
                         capability.syncPlayerVariables(player);
                     });
-                    _setstack = new ItemStack(ItemInit.EARTH_RELEASE.get());
+                    _setstack = new ItemStack(ModRegistry.SKILL_LEARNER_EARTH.get());
                     _setstack.setCount(1);
                     ItemHandlerHelper.giveItemToPlayer(player, _setstack);
-                    _setstack = new ItemStack(ItemInit.FIRE_RELEASE.get());
+                    _setstack = new ItemStack(ModRegistry.SKILL_LEARNER_FIRE.get());
                     _setstack.setCount(1);
                     ItemHandlerHelper.giveItemToPlayer(player, _setstack);
                 } else if (nature < 115) {
@@ -641,10 +642,10 @@ public class ChakraPaperItem extends Item {
                         capability.lightning = lightning1;
                         capability.syncPlayerVariables(player);
                     });
-                    _setstack = new ItemStack(ItemInit.LIGHTNING_RELEASE.get());
+                    _setstack = new ItemStack(ModRegistry.SKILL_LEARNER_LIGHTNING.get());
                     _setstack.setCount(1);
                     ItemHandlerHelper.giveItemToPlayer(player, _setstack);
-                    _setstack = new ItemStack(ItemInit.FIRE_RELEASE.get());
+                    _setstack = new ItemStack(ModRegistry.SKILL_LEARNER_FIRE.get());
                     _setstack.setCount(1);
                     ItemHandlerHelper.giveItemToPlayer(player, _setstack);
                 } else if (nature < 120) {
@@ -660,10 +661,10 @@ public class ChakraPaperItem extends Item {
                         capability.water = water1;
                         capability.syncPlayerVariables(player);
                     });
-                    _setstack = new ItemStack(ItemInit.WATER_RELEASE.get());
+                    _setstack = new ItemStack(ModRegistry.SKILL_LEARNER_WATER.get());
                     _setstack.setCount(1);
                     ItemHandlerHelper.giveItemToPlayer(player, _setstack);
-                    _setstack = new ItemStack(ItemInit.FIRE_RELEASE.get());
+                    _setstack = new ItemStack(ModRegistry.SKILL_LEARNER_FIRE.get());
                     _setstack.setCount(1);
                     ItemHandlerHelper.giveItemToPlayer(player, _setstack);
                 } else if (nature < 125) {
@@ -679,10 +680,10 @@ public class ChakraPaperItem extends Item {
                         capability.wind = wind1;
                         capability.syncPlayerVariables(player);
                     });
-                    _setstack = new ItemStack(ItemInit.WIND_RELEASE.get());
+                    _setstack = new ItemStack(ModRegistry.SKILL_LEARNER_WIND.get());
                     _setstack.setCount(1);
                     ItemHandlerHelper.giveItemToPlayer(player, _setstack);
-                    _setstack = new ItemStack(ItemInit.EARTH_RELEASE.get());
+                    _setstack = new ItemStack(ModRegistry.SKILL_LEARNER_EARTH.get());
                     _setstack.setCount(1);
                     ItemHandlerHelper.giveItemToPlayer(player, _setstack);
                 } else if (nature < 130) {
@@ -698,10 +699,10 @@ public class ChakraPaperItem extends Item {
                         capability.wind = wind1;
                         capability.syncPlayerVariables(player);
                     });
-                    _setstack = new ItemStack(ItemInit.WIND_RELEASE.get());
+                    _setstack = new ItemStack(ModRegistry.SKILL_LEARNER_WIND.get());
                     _setstack.setCount(1);
                     ItemHandlerHelper.giveItemToPlayer(player, _setstack);
-                    _setstack = new ItemStack(ItemInit.LIGHTNING_RELEASE.get());
+                    _setstack = new ItemStack(ModRegistry.SKILL_LEARNER_LIGHTNING.get());
                     _setstack.setCount(1);
                     ItemHandlerHelper.giveItemToPlayer(player, _setstack);
                 } else if (nature < 135) {
@@ -717,10 +718,10 @@ public class ChakraPaperItem extends Item {
                         capability.wind = wind1;
                         capability.syncPlayerVariables(player);
                     });
-                    _setstack = new ItemStack(ItemInit.WIND_RELEASE.get());
+                    _setstack = new ItemStack(ModRegistry.SKILL_LEARNER_WIND.get());
                     _setstack.setCount(1);
                     ItemHandlerHelper.giveItemToPlayer(player, _setstack);
-                    _setstack = new ItemStack(ItemInit.WATER_RELEASE.get());
+                    _setstack = new ItemStack(ModRegistry.SKILL_LEARNER_WATER.get());
                     _setstack.setCount(1);
                     ItemHandlerHelper.giveItemToPlayer(player, _setstack);
                 } else if (nature < 140) {
@@ -736,10 +737,10 @@ public class ChakraPaperItem extends Item {
                         capability.lightning = lightning1;
                         capability.syncPlayerVariables(player);
                     });
-                    _setstack = new ItemStack(ItemInit.EARTH_RELEASE.get());
+                    _setstack = new ItemStack(ModRegistry.SKILL_LEARNER_EARTH.get());
                     _setstack.setCount(1);
                     ItemHandlerHelper.giveItemToPlayer(player, _setstack);
-                    _setstack = new ItemStack(ItemInit.LIGHTNING_RELEASE.get());
+                    _setstack = new ItemStack(ModRegistry.SKILL_LEARNER_LIGHTNING.get());
                     _setstack.setCount(1);
                     ItemHandlerHelper.giveItemToPlayer(player, _setstack);
                 } else if (nature < 145) {
@@ -755,10 +756,10 @@ public class ChakraPaperItem extends Item {
                         capability.water = water1;
                         capability.syncPlayerVariables(player);
                     });
-                    _setstack = new ItemStack(ItemInit.EARTH_RELEASE.get());
+                    _setstack = new ItemStack(ModRegistry.SKILL_LEARNER_EARTH.get());
                     _setstack.setCount(1);
                     ItemHandlerHelper.giveItemToPlayer(player, _setstack);
-                    _setstack = new ItemStack(ItemInit.WATER_RELEASE.get());
+                    _setstack = new ItemStack(ModRegistry.SKILL_LEARNER_WATER.get());
                     _setstack.setCount(1);
                     ItemHandlerHelper.giveItemToPlayer(player, _setstack);
                 } else if (nature < 150) {
@@ -774,10 +775,10 @@ public class ChakraPaperItem extends Item {
                         capability.lightning = lightning1;
                         capability.syncPlayerVariables(player);
                     });
-                    _setstack = new ItemStack(ItemInit.WATER_RELEASE.get());
+                    _setstack = new ItemStack(ModRegistry.SKILL_LEARNER_WATER.get());
                     _setstack.setCount(1);
                     ItemHandlerHelper.giveItemToPlayer(player, _setstack);
-                    _setstack = new ItemStack(ItemInit.LIGHTNING_RELEASE.get());
+                    _setstack = new ItemStack(ModRegistry.SKILL_LEARNER_LIGHTNING.get());
                     _setstack.setCount(1);
                     ItemHandlerHelper.giveItemToPlayer(player, _setstack);
                 }

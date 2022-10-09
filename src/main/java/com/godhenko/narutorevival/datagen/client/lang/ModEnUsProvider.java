@@ -45,27 +45,48 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.GENIN_LEGGINGS.get(),"Genin Leggings");
 		add(ItemInit.GENIN_BOOTS.get(),"Genin Boots");add(ItemInit.KATANA.get(),"Iron Katana");
 		add(ItemInit.CHAKRA_PAPER.get(),"Chakra Paper");
-		add(ItemInit.FIRE_RELEASE.get(),"Fire Release");
-		add(ItemInit.WATER_RELEASE.get(),"Water Release");
-		add(ItemInit.WIND_RELEASE.get(),"Wind Release");
-		add(ItemInit.LIGHTNING_RELEASE.get(),"Lightning Release");
-		add(ItemInit.EARTH_RELEASE.get(),"Earth Release");
 		add(ItemInit.GUNBAI.get(),"Gunbai");
+		//Learners
+		add(ModRegistry.SKILL_LEARNER_FIRE.get(),"Fire Release Learner");
+		add(ModRegistry.SKILL_LEARNER_WATER.get(),"Water Release Learner");
+		add(ModRegistry.SKILL_LEARNER_WIND.get(),"Wind Release Learner");
+		add(ModRegistry.SKILL_LEARNER_LIGHTNING.get(),"Lightning Release Learner");
+		add(ModRegistry.SKILL_LEARNER_EARTH.get(),"Earth Release Learner");
+
 
 		//Jutsus
-		add(ItemInit.JUTSU_FIRE_BALL.get(),"Fire Ball Jutsu");
-		add(ItemInit.JUTSU_RUNNING_FIRE.get(),"Running Fire Jutsu");
-		add(ItemInit.JUTSU_EARTH_WALL.get(),"Earth Wall Jutsu");
-		add(ItemInit.JUTSU_SAND_TRAP.get(),"Sand Trap Jutsu");
-		add(ItemInit.JUTSU_WATER_WALL.get(),"Water Wall Jutsu");
-		add(ItemInit.JUTSU_SHARK_BULLET.get(),"Shark Bullet Jutsu");
-		add(ItemInit.JUTSU_WIND_MODE.get(),"Wind Mode Jutsu");
-		add(ItemInit.JUTSU_GALE_STRIKE.get(),"Gale Strike Jutsu");
-		add(ItemInit.JUTSU_STATIC_FORCE.get(),"Static Force Jutsu");
-		add(ItemInit.JUTSU_LIGHTNING_BALL.get(),"Lighting Ball Jutsu");
+		//Earth
+		add(ModRegistry.EARTH_WALL_JUTSU.get(),"Earth Wall Jutsu");
+		add(ModRegistry.SAND_TRAP_JUTSU.get(),"Sand Trap Jutsu");
+		//Fire
+		add(ModRegistry.FIRE_BALL_JUTSU.get(),"Fire Ball Jutsu");
+		add(ModRegistry.RUNNING_FIRE_JUTSU.get(),"Running Fire Jutsu");
+		//Lightning
+		add(ModRegistry.LIGHTNING_BALL_JUTSU.get(),"Lighting Ball Jutsu");
+		add(ModRegistry.STATIC_FORCE_JUTSU.get(),"Static Force Jutsu");
+		//Water
+		add(ModRegistry.SHARK_BULLET_JUTSU.get(),"Shark Bullet Jutsu");
+		add(ModRegistry.WATER_WALL_JUTSU.get(),"Water Wall Jutsu");
+		//Wind
+		add(ModRegistry.GALE_STRIKE_JUTSU.get(),"Gale Burst Jutsu");
+		add(ModRegistry.WIND_FORCE_JUTSU.get(),"Wind Force Jutsu");
 
 		//Jutsu Desc
-		add("item.narutorevival.jutsu_fire_ball.desc","Shoots a fireball causing an explosion on impact.");
+		//Earth
+		add("item.narutorevival.earth_wall_jutsu.desc","Creates an earth wall in the direction you're looking at.");
+		add("item.narutorevival.sand_trap_jutsu.desc","Traps and damages the entity you're looking at.");
+		//Fire
+		add("item.narutorevival.fire_ball_jutsu.desc","Shoots a fireball causing an explosion on impact.");
+		add("item.narutorevival.running_fire_jutsu.desc","Spawns a fire around you, burning nearby enemies.");
+		//Lightning
+		add("item.narutorevival.lightning_ball_jutsu.desc","Shoots out a ball lightning that stuns and damages your enemies.");
+		add("item.narutorevival.static_force_jutsu.desc","Stuns nearby enemies.");
+		//Water
+		add("item.narutorevival.shark_bullet_jutsu.desc","Shoots out a shark that will eat through your enemies.");
+		add("item.narutorevival.water_wall_jutsu.desc","Spawns a waterfall in the direction you're looking to.");
+		//Wind
+		add("item.narutorevival.gale_strike_jutsu.desc","Shoots out an air burst, pushing away your enemies.");
+		add("item.narutorevival.wind_force_jutsu.desc","Gives you speed, jump boost, and resistance.");
 		//Natures
 		add("jutsu.narutorevival.fire","Fire");
 		add("jutsu.narutorevival.water","Water");
@@ -76,6 +97,10 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("other.narutorevival.owner", "Owner: ");
 		add("other.narutorevival.type", "Type: ");
 		add("other.narutorevival.level", "Level: ");
+		add("other.narutorevival.damage", "Damage: ");
+		add("other.narutorevival.uses", "Uses: ");
+		add("other.narutorevival.chakra", "Chakra: ");
+		add("other.narutorevival.nextjutsu", "Next Jutsu: ");
 		//Entities
 		add(ModRegistry.AIR_BURST_PROJECTILE.get(),"Air Burst");
 		add(ModRegistry.EARTH_TRAP_PROJECTILE.get(),"Sand Trap");

@@ -19,7 +19,7 @@ import com.mojang.brigadier.arguments.DoubleArgumentType;
 public class AlterXpCommand {
 	@SubscribeEvent
 	public static void registerCommand(RegisterCommandsEvent event) {
-		event.getDispatcher().register(Commands.literal("addxp")
+		event.getDispatcher().register(Commands.literal("addxp").requires((commandSource) -> commandSource.hasPermission(1))
 
 				.then(Commands.argument("value", DoubleArgumentType.doubleArg()).executes(arguments -> {
 					ServerLevel world = arguments.getSource().getLevel();

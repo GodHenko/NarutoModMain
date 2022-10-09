@@ -41,7 +41,7 @@ public class StatsMainProcedure {
 			capability.syncPlayerVariables(entity);
 		});
 		if ((entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new NarutoRevivalModVariables.PlayerVariables()).medical) > 500 ) {
+				.orElse(new NarutoRevivalModVariables.PlayerVariables()).medical) > 1004 ) {
 			if (world instanceof ServerLevel _level)
 				_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4,
 						"", new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),

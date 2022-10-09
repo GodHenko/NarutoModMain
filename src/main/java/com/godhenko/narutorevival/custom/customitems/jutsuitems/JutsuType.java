@@ -9,12 +9,13 @@ public enum JutsuType {
     WATER (ChatFormatting.BLUE),
     EARTH (ChatFormatting.GREEN),
     WIND (ChatFormatting.WHITE),
-    LIGHTNING (ChatFormatting.YELLOW);
-
+    LIGHTNING (ChatFormatting.YELLOW),
+    UCHIHA(ChatFormatting.DARK_RED);
     ChatFormatting color;
     JutsuType(ChatFormatting color) {
         this.color = color;
     }
+
 
     public String getName() {
         return super.toString().toLowerCase(Locale.ROOT);

@@ -211,7 +211,7 @@ public class NarutoRevivalModVariables {
 		public double battlepower = 0;
 		public double XP = 0;
 		public double chakra = 0;
-		public double maxChakra = 100;
+		public double maxChakra= 100;
 		public double maxLvlXp = 10.0;
 		public double maxIntelligence = 100;
 		public double Lvl = 1.0;

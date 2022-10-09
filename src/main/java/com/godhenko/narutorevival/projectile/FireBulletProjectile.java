@@ -27,7 +27,7 @@ public class FireBulletProjectile extends JutsuProjectile {
     }
 
     public FireBulletProjectile(double x, double y, double z, double xPower, double yPower, double zPower, Level world) {
-        super((EntityType<? extends JutsuProjectile>) ModRegistry.AIR_BURST_PROJECTILE.get(), x, y, z, xPower, yPower, zPower, world);
+        super((EntityType<? extends JutsuProjectile>) ModRegistry.FIRE_BULLET_PROJECTILE.get(), x, y, z, xPower, yPower, zPower, world);
     }
 
     public FireBulletProjectile(LivingEntity owner, double xPower, double yPower, double zPower, Level world) {
@@ -70,9 +70,9 @@ public class FireBulletProjectile extends JutsuProjectile {
     public void tick() {
         super.tick();
 
-        JutsuHelper.spawnCircleParticles(level, ParticleTypes.FLAME, getCircleXrot(), getCircleYrot(), getX(), getY()+getBbHeight()/2, getZ(), 0, 0, 0, 0, 0.25, 0, 16);
+        JutsuHelper.spawnCircleParticles(level, ParticleTypes.FLAME, getCircleXrot(), getCircleYrot(), getX(), getY()+getBbHeight()/2, getZ(), 0, 0, 0, 0.1, 0.25, 0, 30);
 
-        decreaseSpeed(100000);
+        decreaseSpeed(1000);
     }
 
     private float getCircleXrot() {

@@ -18,7 +18,7 @@ import net.minecraftforge.fml.common.Mod;
 public class AlterKinjutsuCommand {
 	@SubscribeEvent
 	public static void registerCommand(RegisterCommandsEvent event) {
-		event.getDispatcher().register(Commands.literal("setkinjutsu")
+		event.getDispatcher().register(Commands.literal("setkinjutsu").requires((commandSource) -> commandSource.hasPermission(1))
 
 				.then(Commands.argument("value", DoubleArgumentType.doubleArg()).executes(arguments -> {
 					ServerLevel world = arguments.getSource().getLevel();

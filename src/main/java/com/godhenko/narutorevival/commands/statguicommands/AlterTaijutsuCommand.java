@@ -18,7 +18,7 @@ import net.minecraftforge.fml.common.Mod;
 public class AlterTaijutsuCommand {
 	@SubscribeEvent
 	public static void registerCommand(RegisterCommandsEvent event) {
-		event.getDispatcher().register(Commands.literal("settaijutsu")
+		event.getDispatcher().register(Commands.literal("settaijutsu").requires((commandSource) -> commandSource.hasPermission(1))
 
 				.then(Commands.argument("value", DoubleArgumentType.doubleArg()).executes(arguments -> {
 					ServerLevel world = arguments.getSource().getLevel();

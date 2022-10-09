@@ -4,6 +4,7 @@ package com.godhenko.narutorevival.datagen.client;
 import com.godhenko.narutorevival.NarutoRevival;
 import com.godhenko.narutorevival.inits.BlockInit;
 import com.godhenko.narutorevival.inits.ItemInit;
+import com.godhenko.narutorevival.inits.ModRegistry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
@@ -81,25 +82,28 @@ public class ModItemModelProvider extends ItemModelProvider {
 		oneLayerItem(ItemInit.CHINIOKE.get());
 		oneLayerItem(ItemInit.SHIROGANE.get());
 
-		oneLayerItem(ItemInit.FIRE_RELEASE.get());
-		oneLayerItem(ItemInit.WATER_RELEASE.get());
-		oneLayerItem(ItemInit.WIND_RELEASE.get());
-		oneLayerItem(ItemInit.EARTH_RELEASE.get());
-		oneLayerItem(ItemInit.LIGHTNING_RELEASE.get());
+		oneLayerItem(ModRegistry.SKILL_LEARNER_FIRE.get());
+		oneLayerItem(ModRegistry.SKILL_LEARNER_WATER.get());
+		oneLayerItem(ModRegistry.SKILL_LEARNER_WIND.get());
+		oneLayerItem(ModRegistry.SKILL_LEARNER_EARTH.get());
+		oneLayerItem(ModRegistry.SKILL_LEARNER_LIGHTNING.get());
 		oneLayerItem(ItemInit.CHAKRA_PAPER.get());
 		//Jutsu
-		oneLayerItem(ItemInit.JUTSU_FIRE_BALL.get());
-		oneLayerItem(ItemInit.JUTSU_RUNNING_FIRE.get());
-		oneLayerItem(ItemInit.JUTSU_FIRE_BULLET.get());
-		oneLayerItem(ItemInit.JUTSU_GREAT_FIREBALL.get());
-		oneLayerItem(ItemInit.JUTSU_EARTH_WALL.get());
-		oneLayerItem(ItemInit.JUTSU_SAND_TRAP.get());
-		oneLayerItem(ItemInit.JUTSU_WATER_WALL.get());
-		oneLayerItem(ItemInit.JUTSU_SHARK_BULLET.get());
-		oneLayerItem(ItemInit.JUTSU_WIND_MODE.get());
-		oneLayerItem(ItemInit.JUTSU_GALE_STRIKE.get());
-		oneLayerItem(ItemInit.JUTSU_STATIC_FORCE.get());
-		oneLayerItem(ItemInit.JUTSU_LIGHTNING_BALL.get());
+		//Earth
+		oneLayerItem(ModRegistry.EARTH_WALL_JUTSU.get());
+		oneLayerItem(ModRegistry.SAND_TRAP_JUTSU.get());
+		//Fire
+		oneLayerItem(ModRegistry.FIRE_BALL_JUTSU.get());
+		oneLayerItem(ModRegistry.RUNNING_FIRE_JUTSU.get());
+		//Lightning
+		oneLayerItem(ModRegistry.LIGHTNING_BALL_JUTSU.get());
+		oneLayerItem(ModRegistry.STATIC_FORCE_JUTSU.get());
+		//Water
+		oneLayerItem(ModRegistry.WATER_WALL_JUTSU.get());
+		oneLayerItem(ModRegistry.SHARK_BULLET_JUTSU.get());
+		//Wind
+		oneLayerItem(ModRegistry.WIND_FORCE_JUTSU.get());
+		oneLayerItem(ModRegistry.GALE_STRIKE_JUTSU.get());
 
 
 		// Simple Items

@@ -56,6 +56,13 @@ public class BeginnerCommandExecutedProcedure {
 			});
 		}
 		{
+		double _setval = 0;
+		entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+			capability.maxChakra = _setval;
+			capability.syncPlayerVariables(entity);
+		});
+		}
+		{
 			double _setval = 0;
 			entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.ninjutsu = _setval;

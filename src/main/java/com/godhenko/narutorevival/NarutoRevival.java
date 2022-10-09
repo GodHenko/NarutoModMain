@@ -7,6 +7,7 @@ import com.godhenko.narutorevival.inits.BlockInit;
 import com.godhenko.narutorevival.inits.ItemInit;
 import com.godhenko.narutorevival.inits.KeyMappingsInit;
 import com.godhenko.narutorevival.inits.ModRegistry;
+import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
 import com.godhenko.narutorevival.sounds.ModSounds;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
@@ -14,6 +15,7 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
@@ -84,7 +86,7 @@ public class NarutoRevival
         @Override
         @OnlyIn(Dist.CLIENT)
         public ItemStack makeIcon() {
-            return new ItemStack(ItemInit.FIRE_RELEASE.get());
+            return new ItemStack(ModRegistry.SKILL_LEARNER_FIRE.get());
         }
     };
     public static final CreativeModeTab MISC_TAB = new CreativeModeTab("misc") {
@@ -97,6 +99,7 @@ public class NarutoRevival
 
     private static final Logger LOGGER = LogUtils.getLogger();
 
+
     public NarutoRevival()
     {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -107,6 +110,7 @@ public class NarutoRevival
         ModSounds.register(bus);
         ModVillagers.register(bus);
         ModRegistry.ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
+        ModRegistry.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 
         bus.addListener(this::setup);
         bus.addListener(this::clientSetup);
@@ -133,6 +137,4 @@ public class NarutoRevival
         PACKET_HANDLER.registerMessage(messageID, messageType, encoder, decoder, messageConsumer);
         messageID++;
     }
-
-
 }

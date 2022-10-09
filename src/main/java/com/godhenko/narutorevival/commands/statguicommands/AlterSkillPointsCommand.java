@@ -18,7 +18,7 @@ import net.minecraftforge.fml.common.Mod;
 public class AlterSkillPointsCommand {
 	@SubscribeEvent
 	public static void registerCommand(RegisterCommandsEvent event) {
-		event.getDispatcher().register(Commands.literal("setsp")
+		event.getDispatcher().register(Commands.literal("setsp").requires((commandSource) -> commandSource.hasPermission(1))
 
 				.then(Commands.argument("value", DoubleArgumentType.doubleArg()).executes(arguments -> {
 					ServerLevel world = arguments.getSource().getLevel();

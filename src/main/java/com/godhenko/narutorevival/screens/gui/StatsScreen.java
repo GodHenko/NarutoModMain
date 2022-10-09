@@ -394,7 +394,7 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 						.orElse(new NarutoRevivalModVariables.PlayerVariables())).maxLvlXp)
 						+ "", 16, 272, Color.black.getRGB());
 		this.font.draw(poseStack, "Lvl: " + (int) ((entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new NarutoRevivalModVariables.PlayerVariables())).Lvl) + "", 16, 265, Color.black.getRGB());
+				.orElse(new NarutoRevivalModVariables.PlayerVariables())).Lvl) + "", 16, 263, Color.black.getRGB());
 		this.font.draw(poseStack, "Ninjutsu", 10, 55, Color.black.getRGB());
 		this.font.draw(poseStack, ":", 90, 55, Color.black.getRGB());
 		this.font.draw(poseStack, "" + (int) ((entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)

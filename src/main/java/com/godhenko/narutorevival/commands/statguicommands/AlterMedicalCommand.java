@@ -18,7 +18,7 @@ import net.minecraftforge.fml.common.Mod;
 public class AlterMedicalCommand {
 	@SubscribeEvent
 	public static void registerCommand(RegisterCommandsEvent event) {
-		event.getDispatcher().register(Commands.literal("setmedical")
+		event.getDispatcher().register(Commands.literal("setmedical").requires((commandSource) -> commandSource.hasPermission(1))
 
 				.then(Commands.argument("value", DoubleArgumentType.doubleArg()).executes(arguments -> {
 					ServerLevel world = arguments.getSource().getLevel();
