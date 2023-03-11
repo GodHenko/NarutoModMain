@@ -8,6 +8,7 @@ import com.godhenko.narutorevival.inits.ItemInit;
 import com.godhenko.narutorevival.inits.KeyMappingsInit;
 import com.godhenko.narutorevival.inits.ModRegistry;
 import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
+import com.godhenko.narutorevival.network.extra.util.Range;
 import com.godhenko.narutorevival.sounds.ModSounds;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
@@ -34,6 +35,7 @@ import net.minecraftforge.network.simple.SimpleChannel;
 import org.apache.logging.log4j.LogManager;
 import org.slf4j.Logger;
 
+import java.util.ArrayList;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -43,7 +45,7 @@ import java.util.function.Supplier;
 public class NarutoRevival
 {
     public static final String NAMESPACE = "narutorevival";
-
+    public static final ArrayList<Range> JUTSU_LEVEL_RANGES = new ArrayList<>();
     public static final String MOD_ID = "narutorevival";
     private static final String PROTOCOL_VERSION = "1";
     public static final SimpleChannel PACKET_HANDLER = NetworkRegistry.newSimpleChannel(new ResourceLocation(MOD_ID, MOD_ID), () -> PROTOCOL_VERSION,
@@ -66,6 +68,14 @@ public class NarutoRevival
         }
     };
 
+    public static final CreativeModeTab JUTSU_TAB = new CreativeModeTab("jutsu") {
+        @Override
+        @OnlyIn(Dist.CLIENT)
+        public ItemStack makeIcon() {
+            return new ItemStack(ModRegistry.SKILL_LEARNER_FIRE.get());
+        }
+    };
+
     public static final CreativeModeTab ARMOR_TAB = new CreativeModeTab("armor") {
         @Override
         @OnlyIn(Dist.CLIENT)
@@ -82,13 +92,6 @@ public class NarutoRevival
         }
     };
 
-    public static final CreativeModeTab NATURES_TAB = new CreativeModeTab("natures") {
-        @Override
-        @OnlyIn(Dist.CLIENT)
-        public ItemStack makeIcon() {
-            return new ItemStack(ModRegistry.SKILL_LEARNER_FIRE.get());
-        }
-    };
     public static final CreativeModeTab MISC_TAB = new CreativeModeTab("misc") {
         @Override
         @OnlyIn(Dist.CLIENT)
@@ -120,6 +123,20 @@ public class NarutoRevival
 
         MinecraftForge.EVENT_BUS.register(this);
     }
+    static {
+        // Level ranges for books
+        // They have to be added in order
+        // 1st parameter is how much uses is needed to reach this level
+        // 2nd parameter is the 1st of the next level
+        // on the last level 2nd parameter should be Integer.MAX_VALUE
+        // on the first level 1st parameter should be 0
+
+        JUTSU_LEVEL_RANGES.add(new Range(0, 500));
+        JUTSU_LEVEL_RANGES.add(new Range(500, 1000));
+        JUTSU_LEVEL_RANGES.add(new Range(1000, 3000));
+        JUTSU_LEVEL_RANGES.add(new Range(3000, 6000));
+        JUTSU_LEVEL_RANGES.add(new Range(6000, Integer.MAX_VALUE));
+    }
     private void clientSetup(final FMLClientSetupEvent event) {
 
     }
@@ -131,6 +148,8 @@ public class NarutoRevival
     });
 
     }
+
+
 
     public static <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder,
                                              BiConsumer<T, Supplier<NetworkEvent.Context>> messageConsumer) {

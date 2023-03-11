@@ -1,14 +1,13 @@
 package com.godhenko.narutorevival.custom.customitems.natureitems.earthrelease;
 
-import com.godhenko.narutorevival.chakra.ChakraManager;
 import com.godhenko.narutorevival.custom.customitems.jutsuitems.JutsuType;
 import com.godhenko.narutorevival.jutsus.jutsus.Jutsu;
-import com.godhenko.narutorevival.projectile.EarthTrapProjectile;
 
+import com.godhenko.narutorevival.network.extra.Stats;
+import com.godhenko.narutorevival.projectile.EarthTrapProjectile;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.Nullable;
 
 public class SandTrapJutsu implements Jutsu {
 
@@ -23,21 +22,24 @@ public class SandTrapJutsu implements Jutsu {
     }
 
     @Override
-    public InteractionResult cast(Player player, Level world) {
+    public InteractionResult cast(Player player, Level world, int level) {
         if (world.isClientSide()) {
             return InteractionResult.PASS;
         }
 
-        if (!ChakraManager.decreaseChakraIfEnough(player, chakraCost(player, world))) {
+        if (!Stats.CHAKRA.get().getManager().decreaseIfEnough(player, chakraCost(player, world))) {
             return InteractionResult.PASS;
         }
 
-        world.addFreshEntity(new EarthTrapProjectile(player, 2, world));
+        world.addFreshEntity(new EarthTrapProjectile(player, level*0.8, world));
 
         return InteractionResult.SUCCESS;
     }
 
-
+    @Override
+    public int attackDamage(int level) {
+        return 6;
+    }
 
     @Override
     public void tick(Player player, Level world) {

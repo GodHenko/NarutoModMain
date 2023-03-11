@@ -1,6 +1,8 @@
 package com.godhenko.narutorevival.procedures.guiprocedures.otherprocedures;
 
 import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
+import com.godhenko.narutorevival.network.extra.Stats;
+import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
@@ -35,16 +37,16 @@ public class StatsMainProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		double medical = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) -20;
+		double medical = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) - 20;
 		entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 			capability.medical = medical;
 			capability.syncPlayerVariables(entity);
 		});
 		if ((entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new NarutoRevivalModVariables.PlayerVariables()).medical) > 1004 ) {
+				.orElse(new NarutoRevivalModVariables.PlayerVariables()).medical) > 1004) {
 			if (world instanceof ServerLevel _level)
 				_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4,
-						"", new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
+								"", new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
 						"attribute @p minecraft:generic.max_health base set 50");
 		}
 	}

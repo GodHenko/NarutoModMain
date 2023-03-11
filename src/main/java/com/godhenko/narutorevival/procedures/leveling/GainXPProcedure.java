@@ -40,6 +40,7 @@ public class GainXPProcedure {
 					});
 				}
 				LevelProgressionProcedure.execute(entity);
+				LevelUpProcedure.execute(entity);
 			}
 		}
 	}

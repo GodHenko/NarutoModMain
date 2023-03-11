@@ -1,20 +1,19 @@
 package com.godhenko.narutorevival.custom.customitems.natureitems.lightningrelease;
 
 
-import com.godhenko.narutorevival.chakra.ChakraManager;
 import com.godhenko.narutorevival.custom.customitems.jutsuitems.JutsuType;
 import com.godhenko.narutorevival.jutsus.jutsus.Jutsu;
+import com.godhenko.narutorevival.network.extra.Stats;
 import com.godhenko.narutorevival.projectile.LightningBallProjectile;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.Nullable;
 
 public class LightningBallJutsu implements Jutsu {
 
     @Override
     public int jutsuLevel() {
-        return 1;
+        return 2;
     }
 
     @Override
@@ -23,12 +22,12 @@ public class LightningBallJutsu implements Jutsu {
     }
 
     @Override
-    public InteractionResult cast(Player player, Level world) {
+    public InteractionResult cast(Player player, Level world, int level) {
         if (world.isClientSide()) {
             return InteractionResult.PASS;
         }
 
-        if (!ChakraManager.decreaseChakraIfEnough(player, chakraCost(player, world))) {
+        if (!Stats.CHAKRA.get().getManager().decreaseIfEnough(player, chakraCost(player, world))) {
             return InteractionResult.PASS;
         }
 
@@ -37,8 +36,9 @@ public class LightningBallJutsu implements Jutsu {
         return InteractionResult.SUCCESS;
     }
 
-    public int attackDamage() {
-        return 2 ;
+    @Override
+    public int attackDamage(int level) {
+        return 2;
     }
 
     @Override

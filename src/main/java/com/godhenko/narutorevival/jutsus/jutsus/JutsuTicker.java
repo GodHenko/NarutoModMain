@@ -35,6 +35,10 @@ public class JutsuTicker {
         playerTickers.get(jutsu).remove(player);
     }
 
+    public static boolean isTicking(Jutsu jutsu, Player player) {
+        return playerTickers.get(jutsu).contains(player);
+    }
+
     public static void addTimer(BlockTimer timer) {
         timers.add(timer);
     }
@@ -44,9 +48,16 @@ public class JutsuTicker {
     }
 
     public static void tick() {
-        playerTickers.forEach(((spell, players) -> {
+        // Clone player tickers to prevent concurrent modification
+        HashMap<Jutsu, ArrayList<Player>> playerTickersToTick = new HashMap<>();
+        playerTickers.forEach(((jutsu, players) -> {
+            ArrayList<Player> clonedPlayers = new ArrayList<>(players);
+            playerTickersToTick.put(jutsu, clonedPlayers);
+        }));
+
+        playerTickersToTick.forEach(((jutsu, players) -> {
             for (Player player : players) {
-                spell.tick(player, player.getLevel());
+                jutsu.tick(player, player.getLevel());
             }
         }));
         tickers.forEach((spell -> {
@@ -120,3 +131,4 @@ public class JutsuTicker {
         }
     }
 }
+

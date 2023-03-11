@@ -5,12 +5,19 @@ import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
 
+import java.util.HashMap;
+
 public class JutsuHelper {
+    private static final HashMap<String, Double> doOverTime = new HashMap<>();
+
     public static void spawnParticles(Level world, ParticleOptions particle, double x, double y, double z, double xd, double yd, double zd, double speed, int count) {
         if (world.isClientSide()) {
             return;
@@ -89,4 +96,33 @@ public class JutsuHelper {
         return world.clip(clipContext);
     }
 
+    public static EntityHitResult raycastEntity(Level world, Player player, int rayLength) {
+        Vec3 eyePos = new Vec3(player.getX(), player.getY()+player.getEyeHeight(), player.getZ());
+        Vec3 lookVec = player.getLookAngle();
+        Vec3 rayVec = eyePos.add(lookVec.scale(rayLength));
+
+        EntityHitResult result = ProjectileUtil.getEntityHitResult(world, player, eyePos, rayVec, new AABB(eyePos, rayVec), (entity) -> true);
+
+        return result;
+    }
+
+    public static boolean doOverTime(Player player, double seconds) {
+        String name = player.getName().getString();
+
+        if (!doOverTime.containsKey(name)) {
+            doOverTime.put(name, 0.0d);
+            return false;
+        }
+
+        double current = doOverTime.get(name);
+        current += 0.05d / seconds;
+
+        if (current >= 1d) {
+            doOverTime.put(name, 0.0d);
+            return true;
+        } else {
+            doOverTime.put(name, current);
+            return false;
+        }
+    }
 }

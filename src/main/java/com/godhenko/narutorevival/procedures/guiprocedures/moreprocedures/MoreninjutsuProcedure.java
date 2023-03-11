@@ -1,6 +1,5 @@
 package com.godhenko.narutorevival.procedures.guiprocedures.moreprocedures;
 
-import com.godhenko.narutorevival.chakra.PlayerChakra;
 import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
 import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.world.entity.Entity;
@@ -33,7 +32,7 @@ public class MoreninjutsuProcedure {
 			 {
 				 double _setval = (entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						 .orElse(new NarutoRevivalModVariables.PlayerVariables())).maxChakra + 5;
-				 new PlayerChakra().maxChakra = (float) _setval ;
+
 			 }
 			 {
 				 double _setval = (entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)

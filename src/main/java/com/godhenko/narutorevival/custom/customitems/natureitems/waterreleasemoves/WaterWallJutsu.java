@@ -1,11 +1,12 @@
 package com.godhenko.narutorevival.custom.customitems.natureitems.waterreleasemoves;
 
-import com.godhenko.narutorevival.chakra.ChakraManager;
+
 import com.godhenko.narutorevival.custom.customitems.jutsuitems.JutsuType;
 import com.godhenko.narutorevival.jutsus.jutsus.BlockTimer;
 import com.godhenko.narutorevival.jutsus.jutsus.Jutsu;
 import com.godhenko.narutorevival.jutsus.jutsus.JutsuHelper;
 import com.godhenko.narutorevival.jutsus.jutsus.JutsuTicker;
+import com.godhenko.narutorevival.network.extra.Stats;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -29,17 +30,17 @@ public class WaterWallJutsu implements Jutsu {
     }
 
     @Override
-    public InteractionResult cast(Player player, Level world) {
+    public InteractionResult cast(Player player, Level world, int level) {
         if (world.isClientSide()) {
             return InteractionResult.PASS;
         }
 
-        BlockHitResult hitResult = JutsuHelper.raycast(world, player, 16);
+        BlockHitResult hitResult = JutsuHelper.raycast(world, player, 8*level);
         if (hitResult.getType() == HitResult.Type.MISS) {
             return InteractionResult.PASS;
         }
 
-        if (!ChakraManager.decreaseChakraIfEnough(player, chakraCost(player, world))) {
+        if (!Stats.CHAKRA.get().getManager().decreaseIfEnough(player, chakraCost(player, world))) {
             return InteractionResult.PASS;
         }
 
@@ -50,7 +51,7 @@ public class WaterWallJutsu implements Jutsu {
         JutsuHelper.spawnCircleParticles(world, ParticleTypes.BUBBLE_POP, Direction.Axis.Y, player.getX(), player.getY(), player.getZ(), 0, 0.5, 0, 1, 3, 64);
         JutsuHelper.spawnCircleParticles(world, ParticleTypes.RAIN, Direction.Axis.Y, player.getX(), player.getY(), player.getZ(), -0.2, 0, -0.2, 1, 3.5, 64);
 
-        Iterable<BlockPos> poses = getPoses(playerDir, hitDir, blockPos);
+        Iterable<BlockPos> poses = getPoses(playerDir, hitDir, blockPos, level);
         for (BlockPos pos : poses) {
             if (world.getBlockState(pos).isAir() && world.isInWorldBounds(pos)) {
                 world.setBlockAndUpdate(pos, Blocks.WATER.defaultBlockState());
@@ -62,28 +63,28 @@ public class WaterWallJutsu implements Jutsu {
         return InteractionResult.SUCCESS;
     }
 
-    private static Iterable<BlockPos> getPoses(Direction playerDir, Direction hitDir, BlockPos blockPos) {
+    private static Iterable<BlockPos> getPoses(Direction playerDir, Direction hitDir, BlockPos blockPos, int level) {
         int x1 = blockPos.getX();
         int x2 = blockPos.getX();
         int y1 = blockPos.getY() - 1;
-        int y2 = blockPos.getY() + 3;
+        int y2 = blockPos.getY() + level;
         int z1 = blockPos.getZ();
         int z2 = blockPos.getZ();
 
         if (playerDir == Direction.NORTH || playerDir == Direction.SOUTH) {
-            x1 -= 3;
-            x2 += 3;
+            x1 -= level;
+            x2 += level;
         } else {
             z1 -= 3;
             z2 += 3;
         }
 
         if (hitDir == Direction.UP) {
-            y1 += 1;
-            y2 += 1;
+            y1 += level;
+            y2 += level;
         } else if (hitDir == Direction.DOWN) {
-            y1 -= 3;
-            y2 -= 3;
+            y1 -= level;
+            y2 -= level;
         }
 
         return BlockPos.betweenClosed(x1, y1, z1, x2, y2, z2);

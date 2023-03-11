@@ -4,7 +4,8 @@ package com.godhenko.narutorevival.screens.gui;
 import com.godhenko.narutorevival.NarutoRevival;
 import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
 import com.godhenko.narutorevival.network.StatsButtonMessage;
-import com.godhenko.narutorevival.procedures.guiprocedures.barprocedures.*;
+import com.godhenko.narutorevival.network.extra.Stats;
+import com.godhenko.narutorevival.network.extra.client.ClientPlayerStats;
 import com.godhenko.narutorevival.util.KeyboardHelper;
 import com.godhenko.narutorevival.world.inventory.StatsMenu;
 import net.minecraft.client.gui.components.ImageButton;
@@ -44,6 +45,7 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 	private static final ResourceLocation texture = new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/stats.png");
 	private static final ResourceLocation addbutton = new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/addbutton.png");
 	private static final ResourceLocation addtenbutton = new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/addtenbutton.png");
+	private static final ResourceLocation OVERLAY = new ResourceLocation(NarutoRevival.NAMESPACE, "textures/gui/overlays.png");
 
 
 
@@ -62,49 +64,18 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 		RenderSystem.setShaderTexture(0, texture);
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/emptybar.png"));
-		this.blit(ms, this.leftPos +16, this.topPos + 280, 0, 0, 102, 6, 102, 6);
+		int current = (int) ((entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new NarutoRevivalModVariables.PlayerVariables())).XP);;
+		int level = (int) ((entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new NarutoRevivalModVariables.PlayerVariables())).Lvl);
+		int xpLeft = (int) ((entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new NarutoRevivalModVariables.PlayerVariables())).maxLvlXp);
+		int progress = (int) Math.floor(((float) current / xpLeft) * 100f);
 
-		if (Bar10showProcedure.execute(entity)) {
-			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/1_10bar.png"));
-			this.blit(ms, this.leftPos + 16, this.topPos + 280, 0, 0, 102, 6, 102, 6);
-		}
-		if (Bar20showProcedure.execute(entity)) {
-			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/2_10bar.png"));
-			this.blit(ms, this.leftPos + 16, this.topPos + 280, 0, 0, 102, 6, 102, 6);
-		}
-		if (Bar30showProcedure.execute(entity)) {
-			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/3_10bar.png"));
-			this.blit(ms, this.leftPos + 16, this.topPos + 280, 0, 0, 102, 6, 102, 6);
-		}
-		if (Bar40showProcedure.execute(entity)) {
-			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/4_10bar.png"));
-			this.blit(ms, this.leftPos + 16, this.topPos + 280, 0, 0, 102, 6, 102, 6);
-		}
-		if (Bar50ShowProcedure.execute(entity)) {
-			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/5_10bar.png"));
-			this.blit(ms, this.leftPos + 16, this.topPos + 280, 0, 0, 102, 6, 102, 6);
-		}
-		if (Bar60ShowProcedure.execute(entity)) {
-			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/6_10bar.png"));
-			this.blit(ms, this.leftPos + 16, this.topPos + 280, 0, 0, 102, 6, 102, 6);
-		}
-		if (Bar70showProcedure.execute(entity)) {
-			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/7_10bar.png"));
-			this.blit(ms, this.leftPos + 16, this.topPos + 280, 0, 0, 102, 6, 102, 6);
-		}
-		if (Bar80showProcedure.execute(entity)) {
-			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/8_10bar.png"));
-			this.blit(ms, this.leftPos + 16, this.topPos + 280, 0, 0, 102, 6, 102, 6);
-		}
-		if (Bar90showProcedure.execute(entity)) {
-			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/9_10bar.png"));
-			this.blit(ms, this.leftPos + 16, this.topPos + 280, 0, 0, 102, 6, 102, 6);
-		}
-		if (FullbarshowProcedure.execute(entity)) {
-			RenderSystem.setShaderTexture(0, new ResourceLocation(NarutoRevival.MOD_ID, "textures/gui/fullbar.png"));
-			this.blit(ms, this.leftPos + 16, this.topPos + 280, 0, 0, 102, 6, 102, 6);
-		}
+		RenderSystem.setShaderTexture(0, OVERLAY);
+		this.blit(ms, this.leftPos +16, this.topPos + 280, 0, 0, 20, 250, 10,250,250);
+		this.blit(ms, this.leftPos +16, this.topPos + 280, 0, 0, 30, progress, 250, 250,250);
+
 
 		//CLANS
 		if (((entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -622,8 +593,7 @@ public class StatsScreen extends AbstractContainerScreen<StatsMenu> {
 
 		this.font.draw(poseStack, "Skill Points: " + (int) ((entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new NarutoRevivalModVariables.PlayerVariables())).skillPoints) + "", 200, 280, Color.black.getRGB());
-		this.font.draw(poseStack, "Jutsu Points: " + (int) ((entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new NarutoRevivalModVariables.PlayerVariables())).jutsuPoints) + "", 200, 272, Color.black.getRGB());
+		this.font.draw(poseStack, "Jutsu Points: " + (int) Math.floor(ClientPlayerStats.get("smmjp").get())+ "", 200, 272, Color.black.getRGB());
 		this.font.draw(poseStack, "" + (int) ((entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new NarutoRevivalModVariables.PlayerVariables())).progresspercent) + " %", 127, 279, Color.black.getRGB());
 		this.font.draw(poseStack, "Battlepower:"+ ((entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)

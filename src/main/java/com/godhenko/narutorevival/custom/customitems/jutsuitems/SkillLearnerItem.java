@@ -1,8 +1,6 @@
 package com.godhenko.narutorevival.custom.customitems.jutsuitems;
 
-import com.godhenko.narutorevival.NarutoRevival;
-import com.godhenko.narutorevival.chakra.ChakraManager;
-import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
+import com.godhenko.narutorevival.network.extra.Stats;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.*;
@@ -20,16 +18,14 @@ import java.util.function.Supplier;
 
 public class SkillLearnerItem extends Item {
     private final JutsuType jutsuType;
-    private final int jutsuPointCost;
-    private final ArrayList<Item> items = new ArrayList<>();
+    private final ArrayList<JutsuItem> items = new ArrayList<>();
 
     @SafeVarargs
-    public SkillLearnerItem(JutsuType spellType,int jutsuPointCost, Supplier<Item>... items) {
-        super(new Properties().tab(NarutoRevival.NATURES_TAB).stacksTo(1).rarity(Rarity.EPIC));
+    public SkillLearnerItem(JutsuType spellType, Supplier<JutsuItem>... items) {
+        super(new Properties().tab(CreativeModeTab.TAB_COMBAT).stacksTo(1).rarity(Rarity.EPIC));
         this.jutsuType = spellType;
-        this.jutsuPointCost = jutsuPointCost;
 
-        for (Supplier<Item> supplier : items) {
+        for (Supplier<JutsuItem> supplier : items) {
             this.items.add(supplier.get());
         }
     }
@@ -44,10 +40,12 @@ public class SkillLearnerItem extends Item {
             return InteractionResultHolder.pass(stack);
         }
 
-        Item item = items.get(++lastUse);
+        JutsuItem item = items.get(++lastUse);
         ItemStack itemStack = new ItemStack(item, 1);
 
-        if (!ChakraManager.decreaseChakraIfEnough(player,jutsuPointCost  * (lastUse+1))) {
+        int skillPointCost = item.getJutsu().skillPointCost();
+        System.out.println(item.getJutsu().getClass().getName());
+        if (!Stats.JP.get().getManager().decreaseIfEnough(player, skillPointCost)) {
             return InteractionResultHolder.pass(stack);
         }
 
@@ -70,8 +68,9 @@ public class SkillLearnerItem extends Item {
     }
 
     @Override
-    public boolean isBarVisible(ItemStack pStack) {
-        return true;
+    public boolean isBarVisible(ItemStack stack) {
+        float lastUse = (float) nbtGetLastUse(stack);
+        return lastUse >= 0;
     }
 
     @Override
@@ -125,8 +124,12 @@ public class SkillLearnerItem extends Item {
         // Next Move:
         int uses = nbtGetLastUse(stack) + 1;
         if (uses < items.size()) {
+            int skillPointCost = items.get(uses).getJutsu().skillPointCost();
             String id = items.get(uses).getDescriptionId();
-            tooltip.add(new TranslatableComponent("other.narutorevival.nextjutsu").append(new TranslatableComponent(id)));
+            tooltip.add(new TranslatableComponent("other.narutorevival.nextjutsu")
+                    .append(new TranslatableComponent(id))
+                    .append(new TextComponent(" (" + skillPointCost + " SP)").setStyle(Style.EMPTY.withColor(ChatFormatting.AQUA)))
+            );
         }
 
         // Uses:

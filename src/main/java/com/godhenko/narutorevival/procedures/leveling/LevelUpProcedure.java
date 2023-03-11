@@ -1,6 +1,7 @@
 package com.godhenko.narutorevival.procedures.leveling;
 
 import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
+import com.godhenko.narutorevival.network.extra.Stats;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
@@ -32,7 +33,7 @@ public class LevelUpProcedure {
 		double oldlvl = 0;
 		if ((entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(
 				new NarutoRevivalModVariables.PlayerVariables())).XP >= (entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new NarutoRevivalModVariables.PlayerVariables())).maxLvlXp) {
+				.orElse(new NarutoRevivalModVariables.PlayerVariables())).maxLvlXp) {
 			{
 				double _setval = (entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new NarutoRevivalModVariables.PlayerVariables())).XP
@@ -46,8 +47,8 @@ public class LevelUpProcedure {
 			{
 				double _setval = (entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new NarutoRevivalModVariables.PlayerVariables())).maxLvlXp
-						+ 0.05 * (entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new NarutoRevivalModVariables.PlayerVariables())).Lvl /2;
+						+ 2 * (entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new NarutoRevivalModVariables.PlayerVariables())).Lvl;
 				entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.maxLvlXp = _setval;
 					capability.syncPlayerVariables(entity);
@@ -55,7 +56,6 @@ public class LevelUpProcedure {
 			}
 			oldlvl = (entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new NarutoRevivalModVariables.PlayerVariables())).Lvl;
-
 			{
 				double _setval = (entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new NarutoRevivalModVariables.PlayerVariables())).Lvl + 1;
@@ -77,6 +77,7 @@ public class LevelUpProcedure {
 						capability.jutsuPoints = jutsupoints2;
 						capability.syncPlayerVariables(entity);
 					});
+					Stats.JP.get().getManager().add((Player) entity,2);
 				} else if (points < 60) {
 					double skillpoints5 = (entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new NarutoRevivalModVariables.PlayerVariables())).skillPoints + 5;
@@ -87,6 +88,7 @@ public class LevelUpProcedure {
 						capability.jutsuPoints = jutsupoints5;
 						capability.syncPlayerVariables(entity);
 					});
+					Stats.JP.get().getManager().add((Player) entity,5);
 				} else if (points < 90) {
 					double skillpoints5 = (entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new NarutoRevivalModVariables.PlayerVariables())).skillPoints + 7;
@@ -97,6 +99,7 @@ public class LevelUpProcedure {
 						capability.jutsuPoints = jutsupoints5;
 						capability.syncPlayerVariables(entity);
 					});
+					Stats.JP.get().getManager().add((Player) entity,7);
 				} else if (points < 100) {
 					double skillpoints5 = (entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new NarutoRevivalModVariables.PlayerVariables())).skillPoints + 10;
@@ -107,20 +110,26 @@ public class LevelUpProcedure {
 						capability.jutsuPoints = jutsupoints5;
 						capability.syncPlayerVariables(entity);
 					});
+					Stats.JP.get().getManager().add((Player) entity,10);
 				}
 			}
 			if (points < 10) {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(new TextComponent(("LevelUp! " + "[ lvl " + oldlvl + " ]" + " ---> " + "[ lvl " + (entity
-							.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new NarutoRevivalModVariables.PlayerVariables())).Lvl
+							.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new NarutoRevivalModVariables.PlayerVariables())).Lvl +1
 							+ " ]" + " Rewards:2SP & 2JP")), (false));
 				LevelProgressionProcedure.execute(entity);
+
+
+
 			} else if (points < 60) {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(new TextComponent(("LevelUp! " + "[ lvl " + oldlvl + " ]" + " ---> " + "[ lvl " + (entity
 							.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new NarutoRevivalModVariables.PlayerVariables())).Lvl
 							+ " ]" + " Rewards:5SP & 5JP")), (false));
 				LevelProgressionProcedure.execute(entity);
+
+
 			}
 			else if (points < 90) {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
@@ -128,6 +137,8 @@ public class LevelUpProcedure {
 							.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new NarutoRevivalModVariables.PlayerVariables())).Lvl
 							+ " ]" + " Rewards:7SP & 7JP")), (false));
 				LevelProgressionProcedure.execute(entity);
+
+
 			}
 			else if (points < 100) {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
@@ -140,3 +151,5 @@ public class LevelUpProcedure {
 
 	}
 }
+
+

@@ -23,7 +23,6 @@ public class KeyMappingsInit {
     public static final KeyMapping OPEN_STATS = new KeyMapping("key.narutorevival.open_stats_menu", GLFW.GLFW_KEY_C, "key.narutorevival.category");
     public static final KeyMapping TEST_KEYBIND = new KeyMapping("test",GLFW.GLFW_KEY_X,"key.narutorevival.category");
 
-    public static final KeyMapping CHARGE_CHAKRA = new KeyMapping("key.narutorevival.charge_chakra", KeyConflictContext.IN_GAME, InputConstants.Type.KEYSYM, InputConstants.KEY_N,"key.narutorevival.category");
     public static boolean isChakraControlActive = false;
     public static final KeyMapping CHAKRA_CONTROL_KEY = new KeyMapping("key.narutorevival.chakra_control_key", GLFW.GLFW_KEY_G, "key.narutorevival.category");
     public static final KeyMapping SUBSITUTION_JUTSU = new KeyMapping("key.narutorevival.subsitution_jutsu_key",GLFW.GLFW_KEY_X,"key.narutorevival.category");
@@ -31,7 +30,6 @@ public class KeyMappingsInit {
     @SubscribeEvent
     public static void registerKeyBindings(FMLClientSetupEvent event) {
         ClientRegistry.registerKeyBinding(OPEN_STATS);
-        ClientRegistry.registerKeyBinding(CHARGE_CHAKRA);
         ClientRegistry.registerKeyBinding(CHAKRA_CONTROL_KEY);
         ClientRegistry.registerKeyBinding(SUBSITUTION_JUTSU);
         ClientRegistry.registerKeyBinding(TEST_KEYBIND);

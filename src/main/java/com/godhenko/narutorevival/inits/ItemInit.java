@@ -4,6 +4,7 @@ import com.godhenko.narutorevival.NarutoRevival;
 import com.godhenko.narutorevival.custom.armor.ModArmorMaterials;
 import com.godhenko.narutorevival.custom.customitems.*;
 import com.godhenko.narutorevival.custom.customitems.weapons.Gunbai;
+import com.godhenko.narutorevival.custom.customitems.weapons.Mgunbai;
 import com.godhenko.narutorevival.custom.customitems.weapons.Scythe;
 import com.godhenko.narutorevival.entity.ModEntityTypes;
 import com.google.common.base.Supplier;
@@ -86,6 +87,7 @@ public class ItemInit {
             .tab(NarutoRevival.CLAN_TAB).stacksTo(1)));
 
     public static final RegistryObject<Item> GUNBAI = register("gunbai",() -> new Gunbai());
+    public static final RegistryObject<Item> MADARA_GUNBAI = register("madara_gunbai",() -> new Mgunbai());
     public static final RegistryObject<Item> SCYTHE = register("scythe",() -> new Scythe());
     public static final RegistryObject<Item> RAMEN_TRADER_SPAWN_EGG = register("ramen_trader_spawn_egg",() -> new
             ForgeSpawnEggItem(ModEntityTypes.RAMEN_TRADER,0xff0000, 0x00ff00, new Item.Properties().tab(NarutoRevival.MISC_TAB)));

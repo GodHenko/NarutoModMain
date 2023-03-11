@@ -92,19 +92,23 @@ public class ModItemModelProvider extends ItemModelProvider {
 		//Earth
 		oneLayerItem(ModRegistry.EARTH_WALL_JUTSU.get());
 		oneLayerItem(ModRegistry.SAND_TRAP_JUTSU.get());
+		oneLayerItem(ModRegistry.EARTH_ARMOR_JUTSU.get());
 		//Fire
 		oneLayerItem(ModRegistry.FIRE_BALL_JUTSU.get());
+		oneLayerItem(ModRegistry.FIRE_STAGES_JUTSU.get());
 		oneLayerItem(ModRegistry.RUNNING_FIRE_JUTSU.get());
 		//Lightning
+		oneLayerItem(ModRegistry.LARIAT_JUTSU.get());
 		oneLayerItem(ModRegistry.LIGHTNING_BALL_JUTSU.get());
 		oneLayerItem(ModRegistry.STATIC_FORCE_JUTSU.get());
 		//Water
+		oneLayerItem(ModRegistry.WATER_NEEDLES_JUTSU.get());
 		oneLayerItem(ModRegistry.WATER_WALL_JUTSU.get());
-		oneLayerItem(ModRegistry.SHARK_BULLET_JUTSU.get());
+		oneLayerItem(ModRegistry.WATER_SHARK_JUTSU.get());
 		//Wind
-		oneLayerItem(ModRegistry.WIND_FORCE_JUTSU.get());
-		oneLayerItem(ModRegistry.GALE_STRIKE_JUTSU.get());
-
+		oneLayerItem(ModRegistry.WIND_MODE_JUTSU.get());
+		oneLayerItem(ModRegistry.GALE_BURST_JUTSU.get());
+		oneLayerItem(ModRegistry.RASENSHURIKEN_JUTSU.get());
 
 		// Simple Items
 		oneLayerItem(ItemInit.RAMEN.get());

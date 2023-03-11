@@ -7,7 +7,7 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
 public interface Jutsu {
-    InteractionResult cast(Player player, Level world);
+    InteractionResult cast(Player player, Level world, int level);
 
     void tick(Player player, Level world);
 
@@ -15,10 +15,11 @@ public interface Jutsu {
         return jutsuLevel() * 5;
     }
 
-    /**
-     * Used for tooltips
-     */
-    default int attackDamage() {
+    default int skillPointCost() {
+        return jutsuLevel();
+    }
+
+    default int attackDamage(int level) {
         return 0;
     }
 

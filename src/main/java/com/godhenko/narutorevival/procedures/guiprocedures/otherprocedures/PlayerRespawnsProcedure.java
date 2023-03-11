@@ -1,7 +1,10 @@
 package com.godhenko.narutorevival.procedures.guiprocedures.otherprocedures;
 
 import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
+import com.godhenko.narutorevival.network.extra.Stats;
+import com.godhenko.narutorevival.network.extra.client.ClientPlayerStats;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;

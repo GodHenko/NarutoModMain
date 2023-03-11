@@ -46,6 +46,7 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ItemInit.GENIN_BOOTS.get(),"Genin Boots");add(ItemInit.KATANA.get(),"Iron Katana");
 		add(ItemInit.CHAKRA_PAPER.get(),"Chakra Paper");
 		add(ItemInit.GUNBAI.get(),"Gunbai");
+		add(ItemInit.MADARA_GUNBAI.get(),"Madara Gunbai");
 		//Learners
 		add(ModRegistry.SKILL_LEARNER_FIRE.get(),"Fire Release Learner");
 		add(ModRegistry.SKILL_LEARNER_WATER.get(),"Water Release Learner");
@@ -56,20 +57,25 @@ public class ModEnUsProvider extends LanguageProvider {
 
 		//Jutsus
 		//Earth
-		add(ModRegistry.EARTH_WALL_JUTSU.get(),"Earth Wall Jutsu");
-		add(ModRegistry.SAND_TRAP_JUTSU.get(),"Sand Trap Jutsu");
+		add(ModRegistry.EARTH_ARMOR_JUTSU.get(),"Earth Armor");
+		add(ModRegistry.EARTH_WALL_JUTSU.get(),"Earth Wall");
+		add(ModRegistry.SAND_TRAP_JUTSU.get(),"Sand Trap");
 		//Fire
-		add(ModRegistry.FIRE_BALL_JUTSU.get(),"Fire Ball Jutsu");
-		add(ModRegistry.RUNNING_FIRE_JUTSU.get(),"Running Fire Jutsu");
+		add(ModRegistry.FIRE_BALL_JUTSU.get(),"Fire Ball");
+		add(ModRegistry.FIRE_STAGES_JUTSU.get(),"Stages Of Fire");
+		add(ModRegistry.RUNNING_FIRE_JUTSU.get(),"Running Fire");
 		//Lightning
-		add(ModRegistry.LIGHTNING_BALL_JUTSU.get(),"Lighting Ball Jutsu");
-		add(ModRegistry.STATIC_FORCE_JUTSU.get(),"Static Force Jutsu");
+		add(ModRegistry.LARIAT_JUTSU.get(),"Lariat");
+		add(ModRegistry.LIGHTNING_BALL_JUTSU.get(),"Lightning Ball");
+		add(ModRegistry.STATIC_FORCE_JUTSU.get(),"Static Force");
 		//Water
-		add(ModRegistry.SHARK_BULLET_JUTSU.get(),"Shark Bullet Jutsu");
-		add(ModRegistry.WATER_WALL_JUTSU.get(),"Water Wall Jutsu");
+		add(ModRegistry.WATER_SHARK_JUTSU.get(),"Water Shark");
+		add(ModRegistry.WATER_NEEDLES_JUTSU.get(),"Water Needles");
+		add(ModRegistry.WATER_WALL_JUTSU.get(),"Water Wall");
 		//Wind
-		add(ModRegistry.GALE_STRIKE_JUTSU.get(),"Gale Burst Jutsu");
-		add(ModRegistry.WIND_FORCE_JUTSU.get(),"Wind Force Jutsu");
+		add(ModRegistry.GALE_BURST_JUTSU.get(),"Gale Burst");
+		add(ModRegistry.RASENSHURIKEN_JUTSU.get(),"Rasenshuriken");
+		add(ModRegistry.WIND_MODE_JUTSU.get(),"Wind Mode");
 
 		//Jutsu Desc
 		//Earth
@@ -107,6 +113,9 @@ public class ModEnUsProvider extends LanguageProvider {
 		add(ModRegistry.FIREBALL_PROJECTILE.get(),"Fire Ball");
 		add(ModRegistry.LIGHTNING_BALL_PROJECTILE.get(),"Lightning Ball");
 		add(ModRegistry.SHARK_PROJECTILE.get(),"Shark");
+		add(ModRegistry.ICE_NEEDLES_PROJECTILE.get(),"Ice Needles");
+		add(ModRegistry.OVERLOAD_PROJECTILE.get(),"OVERLOAD");
+
 		//Deaths
 		add("death.attack.stun_jutsu","%1$s was stunned by %2$s");
 		add( "death.attack.shark_jutsu","%1$s got eaten by %2$s's shark");
@@ -164,8 +173,16 @@ public class ModEnUsProvider extends LanguageProvider {
 		add("You are now part of the Uzumaki Clan","You are now part of the Uzumaki Clan");
 		add("You are now part of the Uchiha Clan","You are now part of the Uchiha Clan");
 		add("You are now part of the Hyuga Clan","You are now part of the Hyuga Clan");
+		add("other.narutorevival.stage","stage");
+		add("other.Narutorevival.chakra","Chakra:");
+		add("other.narutorevival.lvl","Lvl:");
+		add("other.narutorevival.xp","XP:");
 
-
+		add("jutsu.narutorevival.level.0","Genin");
+		add("jutsu.narutorevival.level.1","Chunin");
+		add("jutsu.narutorevival.level.2","Jonin");
+		add("jutsu.narutorevival.level.3","Anbu");
+		add("jutsu.narutorevival.level.4","Kage");
 
 
 	}

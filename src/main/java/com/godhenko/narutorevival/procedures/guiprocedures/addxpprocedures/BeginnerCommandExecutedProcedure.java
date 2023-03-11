@@ -1,6 +1,7 @@
 package com.godhenko.narutorevival.procedures.guiprocedures.addxpprocedures;
 
 import com.godhenko.narutorevival.network.NarutoRevivalModVariables;
+import com.godhenko.narutorevival.network.extra.Stats;
 import com.godhenko.narutorevival.procedures.leveling.LevelProgressionProcedure;
 import net.minecraft.commands.CommandSource;
 import net.minecraft.commands.CommandSourceStack;
@@ -24,6 +25,20 @@ public class BeginnerCommandExecutedProcedure {
 			double _setval = 0;
 			entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.XP = _setval;
+				capability.syncPlayerVariables(entity);
+			});
+		}
+		{
+			double _setval = 0;
+			entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.progresspercent = _setval;
+				capability.syncPlayerVariables(entity);
+			});
+		}
+		{
+			double _setval = 0;
+			entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.progress = _setval;
 				capability.syncPlayerVariables(entity);
 			});
 		}
@@ -56,7 +71,7 @@ public class BeginnerCommandExecutedProcedure {
 			});
 		}
 		{
-		double _setval = 0;
+		double _setval = 100;
 		entity.getCapability(NarutoRevivalModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 			capability.maxChakra = _setval;
 			capability.syncPlayerVariables(entity);
@@ -195,6 +210,7 @@ public class BeginnerCommandExecutedProcedure {
 				capability.syncPlayerVariables(entity);
 			});
 		}
+		Stats.JP.get().getManager().set((Player) entity,0);
 		if (entity instanceof Player _player && !_player.level.isClientSide())
 			_player.displayClientMessage(new TextComponent("Back to LVL 1!"), (false));
 		LevelProgressionProcedure.execute(entity);
